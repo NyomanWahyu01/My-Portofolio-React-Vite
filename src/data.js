@@ -223,7 +223,7 @@ export const listProyek = [
     tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap"],
     dad: "300",
     github: "https://github.com/NyomanWahyu01/Manajements-Siswa",
-    demo: "https://nyomanwahyu.my.id/", // isi jika ada link demo
+    demo: "", // isi jika ada link demo
   },
   {
     id: 3,
@@ -233,7 +233,7 @@ export const listProyek = [
     tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap", "TailwindCSS" ],
     dad: "400",
     github: "https://github.com/NyomanWahyu01/Survai-MPP",
-    demo: "https://nyomanwahyu.my.id/", // isi jika ada link demo
+    demo: "", // isi jika ada link demo
   },
   {
     id: 4,
@@ -243,7 +243,7 @@ export const listProyek = [
     tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap"],
     dad: "500",
     github: "https://github.com/NyomanWahyu01/Online-Shop",
-    demo: "https://nyomanwahyu.my.id/", // isi jika ada link demo
+    demo: "", // isi jika ada link demo
   },
   {
     id: 5,
@@ -253,7 +253,7 @@ export const listProyek = [
     tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
     dad: "600",
     github: "https://github.com/NyomanWahyu01/Sistem-Manajemen-Siswa",
-    demo: "https://nyomanwahyu.my.id/", // isi jika ada link demo
+    demo: "", // isi jika ada link demo
   },
   {
     id: 6,
@@ -263,6 +263,6 @@ export const listProyek = [
     tools: ["HTML", "CSS", "Javascript", "TailwindCSS" ],
     dad: "700",
     github: "https://github.com/NyomanWahyu01/Web-Portfolio-Mahasiswa",
-    demo: "https://nyomanwahyu.my.id/", // isi jika ada link demo
+    demo: "", // isi jika ada link demo
   },
 ];

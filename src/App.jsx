@@ -60,13 +60,13 @@ function App() {
             <div className="flex items-center gap-6">
               <div>
                 <h1 className="text-4xl mb-1">
-                  45<span className="text-red-500">+</span>
+                  10<span className="text-red-500">+</span>
                 </h1>
                 <p>Project Selesai</p>
               </div>
               <div>
                 <h1 className="text-4xl mb-1">
-                  4<span className="text-red-500">+</span>
+                  3<span className="text-red-500">+</span>
                 </h1>
                 <p>Tahun Pengalaman</p>
               </div>
@@ -145,14 +145,22 @@ function App() {
                   ))}
                 </div>
                 <div className="mt-auto flex flex-col sm:flex-row gap-3">
+                  {proyek.demo ? (
+                    <a
+                      href={proyek.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-red-700 p-3 rounded-lg text-center font-semibold border-zinc-600 hover:bg-red-600 transition"
+                    >
+                      Lihat Website
+                    </a>
+                  ) : (
+                    <span className="flex-1 bg-red-400 p-3 rounded-lg text-center font-semibold border-zinc-600 opacity-50 cursor-not-allowed">
+                      Lihat Website
+                    </span>
+                  )}
                   <a
-                    href=""
-                    className="flex-1 bg-red-700 p-3 rounded-lg text-center font-semibold border-zinc-600 hover:bg-red-600 transition"
-                  >
-                    Lihat Website
-                  </a>
-                  <a
-                    href="https://github.com/NyomanWahyu01"
+                    href={proyek.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-slate-700 p-3 rounded-lg text-center font-semibold border-zinc-600 hover:bg-slate-800 transition"

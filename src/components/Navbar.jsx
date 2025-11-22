@@ -20,7 +20,7 @@ const Navbar = () => {
     return (
         <div className="navbar py-7 flex items-center justify-between">
             <div className="logo">
-                <h1 className="text-3xl font-bold text-bold p-1 md:bg-transparent md:text-white">Portofolio</h1>
+                <img src="/assets/Logo-Nym.png" alt="Logo" className="object-contain rounded-full w-10 md:w-12"/>
             </div>
             <ul className={`
                 menu flex items-center sm:gap-10 gap-4

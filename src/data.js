@@ -1,10 +1,12 @@
-import HeroImage from "/assets/hero-img.webp";
+import profileSlogan from "/assets/profile-slogan.webp";
+import profileBg from "/assets/profile-bg.webp";
+import profileAbout from "/assets/profile-about.webp";
 
-const Image = {
-  HeroImage,
+export const DataImage = {
+  profileSlogan,
+  profileBg,
+  profileAbout,
 };
-
-export default Image;
 
 import Tools1 from "/assets/tools/vscode.png";
 import Tools2 from "/assets/tools/reactjs.png";
@@ -82,21 +84,21 @@ export const listTools = [
     id: 9,
     gambar: Tools9,
     nama: "Adobe Illustrator",
-    ket: "Design App",
+    ket: "design App",
     dad: "900",
   },
   {
     id: 10,
     gambar: Tools10,
     nama: "Canva",
-    ket: "Design App",
+    ket: "design App",
     dad: "1000",
   },
   {
     id: 11,
     gambar: Tools11,
     nama: "Figma",
-    ket: "Design App",
+    ket: "design App",
     dad: "1100",
   },
   {
@@ -138,7 +140,7 @@ export const listTools = [
     id: 17,
     gambar: Tools17,
     nama: "Adobe Photoshop",
-    ket: "Design App",
+    ket: "design App",
     dad: "1700",
   },
   {
@@ -191,10 +193,10 @@ export const listToolsCoding = [
 ];
 
 export const listToolsDesign = [
-  { id: 9, gambar: Tools9, nama: "Adobe Illustrator", ket: "Design App" },
-  { id: 10, gambar: Tools10, nama: "Canva", ket: "Design App" },
-  { id: 11, gambar: Tools11, nama: "Figma", ket: "Design UI/UX" },
-  { id: 17, gambar: Tools17, nama: "Adobe Photoshop", ket: "Design App" },
+  { id: 9, gambar: Tools9, nama: "Adobe Illustrator", ket: "design App" },
+  { id: 10, gambar: Tools10, nama: "Canva", ket: "design App" },
+  { id: 11, gambar: Tools11, nama: "Figma", ket: "design UI/UX" },
+  { id: 17, gambar: Tools17, nama: "Adobe Photoshop", ket: "design App" },
 ];
 
 import Proyek1 from "/assets/proyek/proyek1.webp";
@@ -210,10 +212,14 @@ export const listProyek = [
     gambar: Proyek1,
     nama: "Website Portofolio",
     desk: "Website portofolio pribadi yang menampilkan profil, keahlian, dan project yang pernah dikerjakan dengan tampilan modern dan responsif.",
-    tools: ["HTML", "CSS", "Javascript", "Vite", "ReactJS", "TailwindCSS"],
+    tools: ["HTML", "CSS", "Javascript", "ReactJS", "TailwindCSS"],
     dad: "200",
+    type: "Personal Branding System",
+    tahun: "2025",
+    status: "Online",
+    kantor : "",
     github: "https://github.com/NyomanWahyu01/My-Portofolio-React-Vite",
-    demo: "https://nyomanwahyu.my.id/", // contoh link demo
+    demo: "app.jsx", // contoh link demo
   },
   {
     id: 2,
@@ -222,6 +228,10 @@ export const listProyek = [
     desk: "Aplikasi web untuk memudahkan proses pendaftaran anggota baru pada organisasi BSC secara online dan terintegrasi.",
     tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap"],
     dad: "300",
+    tahun: "2024",
+    type: "System Management School",
+    status: "Offline",
+    kantor : "SMA NEGERI 10 MAKASSAR",
     github: "https://github.com/NyomanWahyu01/Manajements-Siswa",
     demo: "", // isi jika ada link demo
   },
@@ -232,6 +242,10 @@ export const listProyek = [
     desk: "Platform survei online untuk mengukur tingkat kepuasan masyarakat terhadap layanan MPP, dilengkapi fitur analisis data.",
     tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap", "TailwindCSS" ],
     dad: "400",
+    tahun: "2024",
+    type: "Government System",
+    status: "Offline",
+    kantor : "Mal Pelayanan Publik Pangkep",
     github: "https://github.com/NyomanWahyu01/Survai-MPP",
     demo: "", // isi jika ada link demo
   },
@@ -242,6 +256,10 @@ export const listProyek = [
     desk: "Website toko online yang menyediakan berbagai produk dengan fitur katalog, keranjang belanja, dan sistem pemesanan.",
     tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap"],
     dad: "500",
+    tahun: "2023",
+    type: "Business System",
+    status: "Offline",
+    kantor : "Universitas Dipa Makassar",
     github: "https://github.com/NyomanWahyu01/Online-Shop",
     demo: "", // isi jika ada link demo
   },
@@ -252,6 +270,10 @@ export const listProyek = [
     desk: "Aplikasi manajemen data siswa untuk sekolah, meliputi fitur input, update, dan monitoring data siswa secara efisien.",
     tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
     dad: "600",
+    tahun: "2023",
+    type: "School System",
+    status: "Offline",
+    kantor : "Special Skill Indonesia",
     github: "https://github.com/NyomanWahyu01/Sistem-Manajemen-Siswa",
     demo: "", // isi jika ada link demo
   },
@@ -262,7 +284,87 @@ export const listProyek = [
     desk: "Platform portofolio digital untuk mahasiswa, menampilkan karya, pengalaman, dan pencapaian akademik secara interaktif.",
     tools: ["HTML", "CSS", "Javascript", "TailwindCSS" ],
     dad: "700",
+    tahun: "2023",
+    type: "Personal Branding System",
+    kantor : "Universitas Dipa Makassar",
+    status: "Offline",
     github: "https://github.com/NyomanWahyu01/Web-Portfolio-Mahasiswa",
     demo: "", // isi jika ada link demo
+  },
+];
+
+import design1 from "/assets/design/design1.webp";
+import design2 from "/assets/design/design2.webp";
+import design3 from "/assets/design/design3.webp";
+import design4 from "/assets/design/design4.webp";
+import design5 from "/assets/design/design5.webp";
+import design6 from "/assets/design/design6.webp";
+import design7 from "/assets/design/design7.webp";
+import design8 from "/assets/design/design8.webp";
+
+export const listDesign = [
+  {
+    id: 1,
+    gambar: design1,
+    nama: "Benner Profile Linkedin",
+    desk: "Banner profil profesional untuk LinkedIn",
+    tools: ["Photoshop"],
+    file: "https://drive.google.com/file/d/1XXV1857pJrfLvMahS6NQ3MyYjgB0XA64/view?usp=sharing",
+  },
+  {
+    id: 2,
+    gambar: design2,
+    nama: "Benner Profile Github",
+    desk: "Banner profil kreatif untuk halaman Github",
+    tools: ["Canva"],
+    file:"https://drive.google.com/file/d/1Teao47njwfuPqD5k4aUu8Ba_vvAvptBe/view?usp=sharing",
+  },
+  {
+    id: 3,
+    gambar: design3,
+    nama: "Poster Jurnal Ilmiah Algoritma Fuzzy Mamdani",
+    desk: "Karya Ilmiah dengan hasil penelitian algoritma Fuzzy Mamdani.",
+    tools: ["Photoshop", "Illustrator"],
+    file:"https://drive.google.com/file/d/1SqI33EKY6nIgYUN4wKhu-9AolGFMf9lI/view?usp=sharing",
+  },
+  {
+    id: 4,
+    gambar: design4,
+    nama: "Poster Jurnal Ilmiah Algoritma Random Forest",
+    desk: "Karya Ilmiah dengan hasil penelitian algoritma Random Forest.",
+    tools: ["Illustrator"],
+    file: "https://drive.google.com/file/d/13oTsopYq83TqJeEd9a-UUcWF8ztNefMN/view?usp=sharing",
+  },
+  {
+    id: 5,
+    gambar: design5,
+    nama: "Poster Kegiatan Sosial KPPS TPS 23 ",
+    desk: "Poster partisipasi masyarakat dalam Pemuli di KPPS di TPS 23.",
+    tools: ["Canva"],
+    file: "https://drive.google.com/file/d/1moQ7tN3ATf0Bh6hWo9fB7S-hd5lxDcFk/view?usp=sharing",
+  },
+  {
+    id: 6,
+    gambar: design6,
+    nama: "Spanduk Kegiatan Sosial KPPS TPS 23 ",
+    desk: "Spanduk promosi kegiatan sosial dan pemungutan suara di TPS 23.",
+    tools: ["Photoshop"],
+    file: "https://drive.google.com/file/d/1XZBIM8K16SwwUlq4P6PytS3iX9ZTm4Tm/view?usp=sharing",
+  },
+  {
+    id: 7,
+    gambar: design7,
+    nama: "Spanduk Milad Badminton Smapul Club",
+    desk: "Spanduk perayaan ulang tahun ke-8 BSC.",
+    tools: ["Figma"],
+    file: "https://drive.google.com/file/d/1MxC4FaTM_3NUyUyUn5fdoaRchM8XqLte/view?usp=sharing",
+  },
+  {
+    id: 8,
+    gambar: design8,
+    nama: "Interface Website Portofolio",
+    desk: "Design modern untuk tampilan website portofolio pribadi.",
+    tools: ["Figma"],
+    file: "https://www.figma.com/design/b1C6qqAAN80fuL8UQ0JP0c/Dark-Portfolio-Nyoman(IU%2FUX)?node-id=0-1&t=uUFzCvjQY9avVisG-0",
   },
 ];

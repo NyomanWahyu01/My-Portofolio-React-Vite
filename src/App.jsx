@@ -1,5 +1,4 @@
-import DataImage from "./data";
-import { listToolsCoding, listToolsDesign, listProyek } from "./data";
+import { DataImage, listToolsCoding, listToolsDesign, listProyek, listDesign } from "./data";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,11 +10,12 @@ function App() {
   }, []);
   return (
     <>
+    {/* Hero */}
       <div id="home" className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 grid-cols-1">
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
           <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl -mt-10">
-            <img src={DataImage.HeroImage} alt="Hero Image" className="w-10 rounded-md" loading="lazy"/>
-            <q>"Programming: Mengubah ide menjadi realitas digital 🌠🚀"</q>
+            <img src={DataImage.profileSlogan} alt="Hero Image" className="w-15 h-16 object-cover rounded-2xl" loading="lazy"/>
+            <q>"Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda🌠🚀"</q>
           </div>
           <h1 className="text-5xl/tight font-bold mb-6 ">Hi, Saya I Nyoman Wahyu Trisna Winda</h1>
           <p className="text-base/loose mb-6 opacity-50">
@@ -42,21 +42,23 @@ function App() {
             </a>
           </div>
         </div>
-        <img src={DataImage.HeroImage} alt="Hero Image" className="w-130 h-130 md:ml-auto animate__animated animate__fadeInUp animate__delay-4s 
-        object-cover rounded-2xl -mt-20" loading="lazy"/>
+        {/* Image Profile */}
+        <img src={DataImage.profileAbout} alt="Profile About" className="w-120 h-200 md:ml-auto animate__animated animate__fadeInUp animate__delay-4s 
+        object-cover rounded-3xl md:-mt-15 -mt-5 py-14" loading="lazy"/>
       </div>
+      {/* End Hero */}
 
-      {/* ABOUT */}
-      <div id="about" className="about mt-32">
+
+      {/* ABOUT */} 
+      <div id="about" className="about mt-32">  
         <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg" data-aos="fade-up" data-aos-duration="1000">
-          <img src={DataImage.HeroImage} alt="ImageHero" className="w-12 rounded-md md-10 sm:hidden" loading="lazy" />
           <p className="text-base/loose mb-10 ">
             Hi, perkenalkan saya I Nyoman Wahyu, Seorang Full Stack Devoloper dan Designer untuk UI/UX Design maupun Project Digital,
             Saya dipercayakan bahwa design dan fungsional harus berjalan beriringan, sehingga proyek yang saya kembangkan tidak hanya
             terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
           </p>
           <div className="flex items-center justify-between">
-            <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy"/>
+            <img src={DataImage.profileBg} alt="Image" className="w-25 h-26 object-cover rounded-2xl sm:block hidden" loading="lazy"/>
             <div className="flex items-center gap-6">
               <div>
                 <h1 className="text-4xl mb-1">
@@ -97,8 +99,8 @@ function App() {
           ))}
         </div>
 
-        <h1 className="text-center text-2xl font-bold mb-4 mt-5">Tools Graphic Design - Designer IU/UX</h1>
-        <div className="tools-box mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+        <h1 className="text-center text-2xl font-bold mb-4 mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Tools Graphic Design - Designer IU/UX</h1>
+        <div className="tools-box mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
           {listToolsDesign.map((tool, idx) => (
             <div
               className="flex items-center gap-2 p-4 border border-zinc-600 rounded-md hover:bg-zinc-800"
@@ -116,6 +118,7 @@ function App() {
           ))}
         </div>
       </div>
+      {/* END TOOLS */}
 
       {/* PROJECT */}
       <div id="project" className="Project mt-32 py-10">
@@ -125,24 +128,41 @@ function App() {
           {listProyek.map((proyek, idx) => (
             <div
               key={proyek.id}
-              className="flex flex-col bg-zinc-800 rounded-md py-4 h-full"
+              className="flex flex-col bg-zinc-800 rounded-md py-4 h-full relative"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={proyek.dad || idx * 100}
             >
-              <img src={proyek.gambar} alt="Proyek Gambar" loading="lazy" />
+              <div className="relative">
+                <img src={proyek.gambar} alt="Proyek Gambar" loading="lazy" />
+                <span className={`absolute top-2 right-2 px-2 py-1 rounded-md text-xs font-semibold flex items-center gap-1 ${
+                  proyek.status === "Online" 
+                    ? "bg-cyan-500/80 text-white" 
+                    : "bg-gray-500/80 text-white"
+                }`}>
+                  <i className={`ri-${proyek.status === "Online" ? "global" : "global-line"}-fill`}></i>
+                  {proyek.status}
+                </span>
+              </div>
               <div className="flex-1 flex flex-col">
-                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                <p className="text-base/loose mb-4">{proyek.desk}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <h1 className="text-lg font-bold mb-1 truncate text-center mt-1">{proyek.nama}</h1>
+                <div className="flex items-center justify-center gap-6 mt-2 mb-1">
+                  <span className="px-2 py-1 rounded-md text-xs opacity-70 bg-zinc-700">{proyek.type}</span>
+                  <span className="px-2 py-1 rounded-md text-xs opacity-70 bg-zinc-700">{proyek.tahun}</span>
+                </div>                
+                <p className="text-sm opacity-80 mb-2 text-center line-clamp-2 mt-3">{proyek.desk}</p>
+                <div className="flex flex-wrap gap-2 mb-4 mt-3 justify-center">
                   {proyek.tools.map((tool, index) => (
                     <p
-                      className="py-1 px-3 border border-amber-500 bg-amber-600 rounded-md font-semibold"
+                      className="py-1 px-3 border border-amber-500 bg-amber-600 rounded-md font-semibold text-center"
                       key={index}
                     >
                       {tool}
                     </p>
                   ))}
+                </div>
+                <div className="flex items-center justify-center gap-2 mt-2 mb-1">
+                  <span className="px-2 py-1 rounded-md text-xs opacity-70 bg-zinc-700">{proyek.kantor}</span>
                 </div>
                 <div className="mt-auto flex flex-col sm:flex-row gap-3">
                   {proyek.demo ? (
@@ -174,6 +194,32 @@ function App() {
         </div>
       </div>
       {/* END PROJECT */}
+
+      {/* MY DESIGN */}
+      <div id="design" className="Design mt-32 py-10">
+        <h1 className="text-center text-4xl font-bold mb-4">My - Design</h1>
+        <p className="text-base/loose text-center mb-10 opacity-50">Kumpulan hasil Grahfip Design, UI/UX,  Poster, Banner, dan Karya vsisual lainnya.</p>
+        <div className="design-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+          {listDesign.map((item, idx) => (
+            <div key={item.id} className="bg-zinc-800 rounded-md overflow-hidden shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-duration="2000" data-aos-delay={item.dad || idx * 100}>
+              <img src={item.gambar} alt={item.nama} className="w-full h-48 object-cover" loading="lazy" />
+              <div className="p-4 flex-1 flex flex-col">
+                <h2 className="text-lg font-bold mb-1 truncate text-center">{item.nama}</h2>
+                <p className="text-sm opacity-80 mb-2 text-center line-clamp-2 mt-3">{item.desk}</p>
+                <div className="mt-auto w-full">
+                  <div className="flex flex-wrap gap-2 mb-4 justify-center">
+                    {item.tools && item.tools.map((tool, idx2) => (
+                      <p key={idx2} className="py-1 px-3 border border-amber-500 bg-amber-600 rounded-md font-semibold text-center mt-3">{tool}</p>
+                    ))}
+                  </div>
+                  <a href={item.file} target="_blank" rel="noopener noreferrer" className="flex-1 bg-red-700 p-2 rounded text-center font-semibold hover:bg-red-800 transition block">Lihat Full</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* END MY DESIGN */}
 
       {/* CONTACT */}
     <div id="contact" className="Contact mt-32 p-4 sm:p-10" data-aos="fade-up" data-aos-duration="1000">

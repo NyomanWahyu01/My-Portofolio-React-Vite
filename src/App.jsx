@@ -13,18 +13,20 @@ function App() {
     {/* Hero */}
       <div id="home" className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 grid-cols-1">
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl -mt-10">
+          <h1 className="text-5xl/tight font-bold mb-6 ">Hi, Saya I Nyoman Wahyu Trisna Winda</h1>
+          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
             <img src={DataImage.profileSlogan} alt="Hero Image" className="w-15 h-16 object-cover rounded-2xl" loading="lazy"/>
             <q>"Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda🌠🚀"</q>
           </div>
-          <h1 className="text-5xl/tight font-bold mb-6 ">Hi, Saya I Nyoman Wahyu Trisna Winda</h1>
-          <p className="text-base/loose mb-6 opacity-50">
+          {/* <p className="text-base/loose mb-6 opacity-50">
             Saya memiliki passion dalam Programming dan Design, dengan fokus pada pengembangan
             Website responsif dan kreasi visual seperti Poster, Pamflet, dan Banner. Pengalaman
             saya di kedua bidang ini telah berkembang selama lebih dari 3 tahun, di mana saya terus
             mengasah kemampuan teknis dan memperdalam pemahaman UI/UX Design untuk menciptakan karya
              yang estetik dan fungsional.
-          </p>
+          </p> */}
+
+          {/* Button Download CV dan Lihat Project */}
           <div className="flex items-center sm:gap-5 gap-2">
             <a
               href="https://drive.google.com/file/d/1dtsnEkmGVh8uDE_XmcCOMxtkBqEiT_t4/view?usp=sharing"
@@ -38,7 +40,7 @@ function App() {
               href="#project"
               className="bg-blue-700 p-4 rounded-2xl hover:bg-blue-600"
             >
-              Lihat Project <i className="ri-arrow-down-double-line ri-lg"></i>
+              Project Me <i className="ri-arrow-down-double-line ri-lg"></i>
             </a>
           </div>
         </div>

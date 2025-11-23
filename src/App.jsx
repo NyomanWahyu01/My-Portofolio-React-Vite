@@ -43,8 +43,8 @@ function App() {
           </div>
         </div>
         {/* Image Profile */}
-        <img src={DataImage.profileAbout} alt="Profile About" className="w-120 h-200 md:ml-auto animate__animated animate__fadeInUp animate__delay-4s 
-        object-cover rounded-3xl md:-mt-15 -mt-5 py-14" loading="lazy"/>
+        <img src={DataImage.profileAbout} alt="Profile About" className="w-120 h-170 md:ml-30 animate__animated animate__fadeInUp animate__delay-4s 
+        object-cover rounded-3xl object-center"loading="lazy"/>
       </div>
       {/* End Hero */}
 

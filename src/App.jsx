@@ -13,18 +13,18 @@ function App() {
     {/* Hero */}
       <div id="home" className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 grid-cols-1">
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
-          <h1 className="text-5xl/tight font-bold mb-6 ">Hi, Saya I Nyoman Wahyu Trisna Winda</h1>
-          <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
+        <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
             <img src={DataImage.profileSlogan} alt="Hero Image" className="w-15 h-16 object-cover rounded-2xl" loading="lazy"/>
-            <q>"Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda🌠🚀"</q>
+            <q>
+              Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda🌠🚀"
+              </q>
           </div>
-          {/* <p className="text-base/loose mb-6 opacity-50">
-            Saya memiliki passion dalam Programming dan Design, dengan fokus pada pengembangan
-            Website responsif dan kreasi visual seperti Poster, Pamflet, dan Banner. Pengalaman
-            saya di kedua bidang ini telah berkembang selama lebih dari 3 tahun, di mana saya terus
-            mengasah kemampuan teknis dan memperdalam pemahaman UI/UX Design untuk menciptakan karya
-             yang estetik dan fungsional.
-          </p> */}
+          <h1 className="text-5xl/tight font-bold mb-6">Hi, Saya I Nyoman Wahyu Trisna Winda</h1>
+          <p className="text-base/loose mb-6 opacity-50">
+            Passion dalam Programming, Design, dan UI/UX dengan fokus pada pengembangan
+            Website responsif, code yang clean, rapih, dan tampilan yang menarik. Dengan pengalaman
+            saya di bidang ini telah berkembang pada setiap project yang saya kerjakan. 
+          </p>
 
           {/* Button Download CV dan Lihat Project */}
           <div className="flex items-center sm:gap-5 gap-2">
@@ -32,14 +32,14 @@ function App() {
               href="https://drive.google.com/file/d/1dtsnEkmGVh8uDE_XmcCOMxtkBqEiT_t4/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-red-700 p-4 rounded-2xl hover:bg-red-600"
-            >
+              class="bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-800 p-4 rounded-4xl">
+
               Download CV <i className="ri-download-fill ri-lg"></i>
             </a>
             <a
               href="#project"
-              className="bg-blue-700 p-4 rounded-2xl hover:bg-blue-600"
-            >
+              class="bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 p-4 rounded-4xl">
+          
               Project Me <i className="ri-arrow-down-double-line ri-lg"></i>
             </a>
           </div>

@@ -3,29 +3,42 @@ import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import SplitText from './components/SplitText';
+import TextType from "./components/TextType";
 
 function App() {
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
   return (
+    
     <>
     {/* Hero */}
       <div id="home" className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 grid-cols-1">
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
         <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
             <img src={DataImage.profileSlogan} alt="Hero Image" className="w-15 h-16 object-cover rounded-2xl" loading="lazy"/>
-            <q>
-              Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda🌠🚀"
-              </q>
-          </div>
-          <h1 className="text-5xl/tight font-bold mb-6">Hi, Saya I Nyoman Wahyu Trisna Winda</h1>
-          <p className="text-base/loose mb-6 opacity-50">
-            Passion dalam Programming, Design, dan UI/UX dengan fokus pada pengembangan
-            Website responsif, code yang clean, rapih, dan tampilan yang menarik. Dengan pengalaman
-            saya di bidang ini telah berkembang pada setiap project yang saya kerjakan. 
-          </p>
+            <TextType 
+            text={["Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda✅"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+          />
+      </div>
+    <div className="items-center">
+      <SplitText
+        text="I Nyoman Wahyu Trisna Winda - Full Stack"
+        tag="h1"
+        delay={100}
+        duration={0.5}
+        className="text-2xl/relaxed font-bold"
+      />
+    </div>
+      <p className="text-base/loose mb-6 opacity-50">
+            Halo! Gue Full Stack Developer yang suka ngoding, ngedesain, dan bikin UI/UX kece. Misi gue simpel: bikin website yang enak dilihat, responsif, dan rapi banget!
 
+          </p>
           {/* Button Download CV dan Lihat Project */}
           <div className="flex items-center sm:gap-5 gap-2">
             <a
@@ -48,7 +61,9 @@ function App() {
         <img src={DataImage.profileAbout} alt="Profile About" className="w-120 h-170 md:ml-30 animate__animated animate__fadeInUp animate__delay-4s 
         object-cover rounded-3xl object-center"loading="lazy"/>
       </div>
+      
       {/* End Hero */}
+    
 
 
       {/* ABOUT */} 
@@ -257,6 +272,8 @@ function App() {
     </div>      
       {/* END CONTACT */}
     </>
+
+
   );
 }
 

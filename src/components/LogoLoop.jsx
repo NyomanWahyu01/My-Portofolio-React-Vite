@@ -260,10 +260,13 @@ export const LogoLoop = memo(({
       return (
         <li
           className={cx(
-            'flex-none text-[length:var(--logoloop-logoHeight)] leading-none',
-            isVertical ? 'mb-[var(--logoloop-gap)]' : 'mr-[var(--logoloop-gap)]',
+            'flex-none leading-none',
             scaleOnHover && 'overflow-visible group/item'
           )}
+          style={{
+            fontSize: 'var(--logoloop-logoHeight)',
+            [isVertical ? 'marginBottom' : 'marginRight']: 'var(--logoloop-gap)'
+          }}
           key={key}
           role="listitem">
           {renderItem(item, key)}
@@ -287,13 +290,16 @@ export const LogoLoop = memo(({
     ) : (
       <img
         className={cx(
-          'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
+          'w-auto block object-contain',
           '[-webkit-user-drag:none] pointer-events-none',
           '[image-rendering:-webkit-optimize-contrast]',
           'motion-reduce:transition-none',
           scaleOnHover &&
             'transition-transform duration-300 ease-in-out group-hover/item:scale-120'
         )}
+        style={{
+          height: 'var(--logoloop-logoHeight)'
+        }}
         src={item.src}
         srcSet={item.srcSet}
         sizes={item.sizes}
@@ -329,10 +335,13 @@ export const LogoLoop = memo(({
     return (
       <li
         className={cx(
-          'flex-none text-[length:var(--logoloop-logoHeight)] leading-none',
-          isVertical ? 'mb-[var(--logoloop-gap)]' : 'mr-[var(--logoloop-gap)]',
+          'flex-none leading-none',
           scaleOnHover && 'overflow-visible group/item'
         )}
+        style={{
+          fontSize: 'var(--logoloop-logoHeight)',
+          [isVertical ? 'marginBottom' : 'marginRight']: 'var(--logoloop-gap)'
+        }}
         key={key}
         role="listitem">
         {inner}

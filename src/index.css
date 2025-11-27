@@ -1,9 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* stylelint-disable */
+/* Tailwind CSS v4 syntax - valid */
+/* eslint-disable-next-line */
 @custom-variant dark (&:is(.dark *));
-/* stylelint-enable */
 
 @layer base {
     body {
@@ -135,7 +135,8 @@
     }
   }
 
-  /* stylelint-disable */
+  /* Tailwind CSS v4 syntax - valid */
+  /* eslint-disable-next-line */
   @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
@@ -244,14 +245,16 @@
     --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-  /* stylelint-disable */
+  /* Tailwind CSS v4 syntax - valid */
+  /* eslint-disable-next-line */
   @layer base {
   * {
+    /* eslint-disable-next-line */
     @apply border-border outline-ring/50;
     }
   body {
+    /* eslint-disable-next-line */
     @apply bg-background text-foreground;
     }
 }
-  /* stylelint-enable */
   

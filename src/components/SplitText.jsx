@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(GSAPSplitText, useGSAP);
 
 const SplitText = ({
-  text ='I Nyoman Wahyu Trisna Winda  Full Stack Web Developer',
+  text ='I Nyoman Wahyu Trisna Winda',
   className = 'text-4xl/relaxed font-bold',
   delay = 100,
   duration = 5.0,

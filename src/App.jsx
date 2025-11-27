@@ -7,6 +7,8 @@ import SplitText from './components/SplitText';
 import TextType from "./components/TextType";
 import AnimatedList from "./components/AnimatedList";
 import LogoLoop from "./components/LogoLoop";
+import ProfileCard from "./components/ProfileCard";
+import ChromaGrid from "./components/ChromaGrid";
 function App() {
   useEffect(() => {
     AOS.init({ once: true });
@@ -63,25 +65,20 @@ function App() {
         </div>
         {/* Image Profile */}
         <div className="flex justify-center md:justify-end mt-8 md:mt-0">
-          <img src={DataImage.profileAbout} 
-          alt="Profile About" 
-          className="profile-hero-img w-full 
-                      max-w-full
-                      sm:max-w-[400px]
-                      md:max-w-[450px] 
-                      lg:max-w-[500px]
-                      h-auto
-                      min-h-[400px]
-                      sm:min-h-[450px]
-                      md:min-h-[500px]
-                      md:h-[555px]
-                      object-cover 
-                      rounded-3xl 
-                      mx-auto
-                      md:mx-0
-                      md:ml-auto 
-                      animate__animated animate__fadeInUp animate__delay-4s"
-          loading="lazy"/>
+          <ProfileCard
+           name="Nyoman"
+           title="Full Stack Devolover"
+           handle=""
+           status="Online"
+           contactText="My Contact"
+           avatarUrl="/public/assets/profile-about.png"
+           showUserInfo={true}
+           enableTilt={true}
+           enableMobileTilt={false}
+            onContactClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
         </div>
       </div>
       
@@ -186,99 +183,86 @@ function App() {
       <div id="project" className="Project mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-4">My - Project</h1>
         <p className="text-base/loose text-center mb-10 opacity-50">Beberapa ini merupakan Project yang sudah pernah saya Buat</p>
-        <div className="project-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-          {listProyek.map((proyek, idx) => (
-            <div
-              key={proyek.id}
-              className="flex flex-col bg-zinc-800 rounded-md py-4 h-full relative"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay={proyek.dad || idx * 100}
-            >
-              <div className="relative">
-                <img src={proyek.gambar} alt="Proyek Gambar" loading="lazy" />
-                <span className={`absolute top-2 right-2 px-2 py-1 rounded-md text-xs font-semibold flex items-center gap-1 ${
-                  proyek.status === "Online" 
-                    ? "bg-cyan-500/80 text-white" 
-                    : "bg-gray-500/80 text-white"
-                }`}>
-                  <i className={`ri-${proyek.status === "Online" ? "global" : "global-line"}-fill`}></i>
-                  {proyek.status}
-                </span>
-              </div>
-              <div className="flex-1 flex flex-col">
-                <h1 className="text-lg font-bold mb-1 truncate text-center mt-1">{proyek.nama}</h1>
-                <div className="flex items-center justify-center gap-6 mt-2 mb-1">
-                  <span className="px-2 py-1 rounded-md text-xs opacity-70 bg-zinc-700">{proyek.type}</span>
-                  <span className="px-2 py-1 rounded-md text-xs opacity-70 bg-zinc-700">{proyek.tahun}</span>
-                </div>                
-                <p className="text-sm opacity-80 mb-2 text-center line-clamp-2 mt-3">{proyek.desk}</p>
-                <div className="flex flex-wrap gap-2 mb-4 mt-3 justify-center">
-                  {proyek.tools.map((tool, index) => (
-                    <p
-                      className="py-1 px-3 border border-amber-500 bg-amber-600 rounded-md font-semibold text-center"
-                      key={index}
-                    >
-                      {tool}
-                    </p>
-                  ))}
-                </div>
-                <div className="flex items-center justify-center gap-2 mt-2 mb-1">
-                  <span className="px-2 py-1 rounded-md text-xs opacity-70 bg-zinc-700">{proyek.kantor}</span>
-                </div>
-                <div className="mt-auto flex flex-col sm:flex-row gap-3">
-                  {proyek.demo ? (
-                    <a
-                      href={proyek.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-red-700 p-3 rounded-lg text-center font-semibold border-zinc-600 hover:bg-red-600 transition"
-                    >
-                      Lihat Website
-                    </a>
-                  ) : (
-                    <span className="flex-1 bg-red-400 p-3 rounded-lg text-center font-semibold border-zinc-600 opacity-50 cursor-not-allowed">
-                      Lihat Website
-                    </span>
-                  )}
-                  <a
-                    href={proyek.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-slate-700 p-3 rounded-lg text-center font-semibold border-zinc-600 hover:bg-slate-800 transition"
-                  >
-                    Github
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="project-box mt-14">
+          <ChromaGrid
+            items={listProyek.map((proyek, idx) => {
+              // Array of gradient colors untuk variasi
+              const gradients = [
+                { borderColor: '#4F46E5', gradient: 'linear-gradient(145deg,#4F46E5,#000)' },
+                { borderColor: '#10B981', gradient: 'linear-gradient(210deg,#10B981,#000)' },
+                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#000)' },
+                { borderColor: '#EF4444', gradient: 'linear-gradient(195deg,#EF4444,#000)' },
+                { borderColor: '#8B5CF6', gradient: 'linear-gradient(225deg,#8B5CF6,#000)' },
+                { borderColor: '#06B6D4', gradient: 'linear-gradient(135deg,#06B6D4,#000)' }
+              ];
+              const colorScheme = gradients[idx % gradients.length];
+              
+              return {
+                image: proyek.gambar,
+                title: proyek.nama,
+                subtitle: proyek.desk,
+                handle: proyek.type,
+                location: proyek.tahun,
+                borderColor: colorScheme.borderColor,
+                gradient: colorScheme.gradient,
+                url: proyek.demo || proyek.github || '',
+                // Data tambahan untuk ditampilkan
+                status: proyek.status,
+                tools: proyek.tools,
+                kantor: proyek.kantor,
+                github: proyek.github,
+                demo: proyek.demo
+              };
+            })}
+            className="min-h-[500px]"
+            radius={400}
+            damping={0.45}
+            fadeOut={0.6}
+          />
         </div>
       </div>
       {/* END PROJECT */}
+
 
       {/* MY DESIGN */}
       <div id="design" className="Design mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-4">My - Design</h1>
         <p className="text-base/loose text-center mb-10 opacity-50">Kumpulan hasil Grahfip Design, UI/UX,  Poster, Banner, dan Karya vsisual lainnya.</p>
-        <div className="design-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-          {listDesign.map((item, idx) => (
-            <div key={item.id} className="bg-zinc-800 rounded-md overflow-hidden shadow-lg flex flex-col h-full" data-aos="fade-up" data-aos-duration="2000" data-aos-delay={item.dad || idx * 100}>
-              <img src={item.gambar} alt={item.nama} className="w-full h-48 object-cover" loading="lazy" />
-              <div className="p-4 flex-1 flex flex-col">
-                <h2 className="text-lg font-bold mb-1 truncate text-center">{item.nama}</h2>
-                <p className="text-sm opacity-80 mb-2 text-center line-clamp-2 mt-3">{item.desk}</p>
-                <div className="mt-auto w-full">
-                  <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                    {item.tools && item.tools.map((tool, idx2) => (
-                      <p key={idx2} className="py-1 px-3 border border-amber-500 bg-amber-600 rounded-md font-semibold text-center mt-3">{tool}</p>
-                    ))}
-                  </div>
-                  <a href={item.file} target="_blank" rel="noopener noreferrer" className="flex-1 bg-red-700 p-2 rounded text-center font-semibold hover:bg-red-800 transition block">Lihat Full</a>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="project-box mt-14">
+          <ChromaGrid
+            items={listDesign.map((design, idx) => {
+              // Array of gradient colors untuk variasi design (warna yang lebih kreatif)
+              const gradients = [
+                { borderColor: '#EC4899', gradient: 'linear-gradient(145deg,#EC4899,#000)' },
+                { borderColor: '#8B5CF6', gradient: 'linear-gradient(210deg,#8B5CF6,#000)' },
+                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#000)' },
+                { borderColor: '#10B981', gradient: 'linear-gradient(195deg,#10B981,#000)' },
+                { borderColor: '#3B82F6', gradient: 'linear-gradient(225deg,#3B82F6,#000)' },
+                { borderColor: '#EF4444', gradient: 'linear-gradient(135deg,#EF4444,#000)' },
+                { borderColor: '#06B6D4', gradient: 'linear-gradient(150deg,#06B6D4,#000)' },
+                { borderColor: '#F97316', gradient: 'linear-gradient(180deg,#F97316,#000)' }
+              ];
+              const colorScheme = gradients[idx % gradients.length];
+              
+              return {
+                image: design.gambar,
+                title: design.nama,
+                subtitle: design.desk,
+                handle: design.tools ? design.tools.join(', ') : '',
+                location: '',
+                borderColor: colorScheme.borderColor,
+                gradient: colorScheme.gradient,
+                url: design.file || '',
+                // Data tambahan untuk ditampilkan
+                tools: design.tools,
+                file: design.file
+              };
+            })}
+            className="min-h-[500px]"
+            radius={500}
+            damping={0.45}
+            fadeOut={0.6}
+          />
         </div>
       </div>
       {/* END MY DESIGN */}

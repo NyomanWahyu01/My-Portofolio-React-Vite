@@ -5,7 +5,8 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import SplitText from './components/SplitText';
 import TextType from "./components/TextType";
-
+import AnimatedList from "./components/AnimatedList";
+import LogoLoop from "./components/LogoLoop";
 function App() {
   useEffect(() => {
     AOS.init({ once: true });
@@ -16,50 +17,72 @@ function App() {
     {/* Hero */}
       <div id="home" className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 grid-cols-1">
         <div className="animate__animated animate__fadeInUp animate__delay-3s">
-        <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
-            <img src={DataImage.profileSlogan} alt="Hero Image" className="w-15 h-16 object-cover rounded-2xl" loading="lazy"/>
+        <div className="flex items-center gap-2 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
+            <img src={DataImage.profileSlogan} 
+            alt="Hero Image" 
+            className="w-15 h-16 object-cover rounded-2xl" 
+            loading="lazy"
+             />
+            
+          <div className="overflow-hidden">
             <TextType 
             text={["Programming: Mengubah ide menjadi realitas digital Sesuai dengan keinginan Anda✅"]}
-            typingSpeed={75}
+            className="animate__animated animate__fadeInUp animate__delay-1s"
+            typingSpeed={90}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter="|"
           />
+          </div>
       </div>
     <div className="items-center">
       <SplitText
-        text="I Nyoman Wahyu Trisna Winda - Full Stack"
-        tag="h1"
-        delay={100}
-        duration={0.5}
-        className="text-2xl/relaxed font-bold"
       />
     </div>
+  
       <p className="text-base/loose mb-6 opacity-50">
-            Halo! Gue Full Stack Developer yang suka ngoding, ngedesain, dan bikin UI/UX kece. Misi gue simpel: bikin website yang enak dilihat, responsif, dan rapi banget!
-
-          </p>
+        Saya berfokus pada pengembangan Website yang responsif, memiliki coding yang Clean, ontime pada Deadline, serta tampilan yang Menarik dan Modern. Pengalaman membuatsaya terus berkembang melalui setiap project yang saya kerjakan.📊
+      </p>
           {/* Button Download CV dan Lihat Project */}
-          <div className="flex items-center sm:gap-5 gap-2">
+          <div className="flex items-center sm:gap-5 gap-2 mb-8 md:mb-0">
             <a
               href="https://drive.google.com/file/d/1dtsnEkmGVh8uDE_XmcCOMxtkBqEiT_t4/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-800 p-4 rounded-4xl">
-
-              Download CV <i className="ri-download-fill ri-lg"></i>
+              className="hero-btn bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-800 p-4 rounded-4xl">
+             Download CV 
+             <i className="ri-download-fill ri-lg"></i>
             </a>
             <a
               href="#project"
-              class="bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 p-4 rounded-4xl">
-          
-              Project Me <i className="ri-arrow-down-double-line ri-lg"></i>
+              className="hero-btn bg-blue-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 p-4 rounded-4xl">
+              Project Me 
+              <i className="ri-arrow-down-double-line ri-lg"></i>
             </a>
           </div>
         </div>
         {/* Image Profile */}
-        <img src={DataImage.profileAbout} alt="Profile About" className="w-120 h-170 md:ml-30 animate__animated animate__fadeInUp animate__delay-4s 
-        object-cover rounded-3xl object-center"loading="lazy"/>
+        <div className="flex justify-center md:justify-end mt-8 md:mt-0">
+          <img src={DataImage.profileAbout} 
+          alt="Profile About" 
+          className="profile-hero-img w-full 
+                      max-w-full
+                      sm:max-w-[400px]
+                      md:max-w-[450px] 
+                      lg:max-w-[500px]
+                      h-auto
+                      min-h-[400px]
+                      sm:min-h-[450px]
+                      md:min-h-[500px]
+                      md:h-[555px]
+                      object-cover 
+                      rounded-3xl 
+                      mx-auto
+                      md:mx-0
+                      md:ml-auto 
+                      animate__animated animate__fadeInUp animate__delay-4s"
+          loading="lazy"/>
+        </div>
       </div>
       
       {/* End Hero */}
@@ -68,28 +91,66 @@ function App() {
 
       {/* ABOUT */} 
       <div id="about" className="about mt-32">  
-        <div className="xl:w-2/3 lg:w-3/4 w-full mx-auto p-7 bg-zinc-800 rounded-lg" data-aos="fade-up" data-aos-duration="1000">
-          <p className="text-base/loose mb-10 ">
-            Hi, perkenalkan saya I Nyoman Wahyu, Seorang Full Stack Devoloper dan Designer untuk UI/UX Design maupun Project Digital,
-            Saya dipercayakan bahwa design dan fungsional harus berjalan beriringan, sehingga proyek yang saya kembangkan tidak hanya
-            terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
-          </p>
-          <div className="flex items-center justify-between">
-            <img src={DataImage.profileBg} alt="Image" className="w-25 h-26 object-cover rounded-2xl sm:block hidden" loading="lazy"/>
-            <div className="flex items-center gap-6">
-              <div>
-                <h1 className="text-4xl mb-1">
-                  10<span className="text-red-500">+</span>
-                </h1>
-                <p>Project Selesai</p>
-              </div>
-              <div>
-                <h1 className="text-4xl mb-1">
-                  3<span className="text-red-500">+</span>
-                </h1>
-                <p>Tahun Pengalaman</p>
+        <div className="xl:w-4/5 lg:w-5/6 w-full mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+          {/* Card About */}
+          <div className="flex-1 p-7 bg-zinc-800 rounded-lg" data-aos="fade-up" data-aos-duration="1000">
+            <p className="text-base/loose mb-10 ">
+              Hi, perkenalkan saya I Nyoman Wahyu, Seorang Full Stack Devoloper dan Designer untuk UI/UX Design maupun Project Digital,
+              Saya dipercayakan bahwa design dan fungsional harus berjalan beriringan, sehingga proyek yang saya kembangkan tidak hanya
+              terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
+            </p>
+            {/* Foto About */}
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-2">
+              <img 
+                src={DataImage.profileBg} 
+                alt="Image" 
+                className="w-full 
+                           max-w-[200px] 
+                           sm:max-w-[250px] 
+                           md:max-w-[200px] 
+                           lg:max-w-[100px] 
+                           h-auto object-cover 
+                           rounded-2xl" 
+                loading="lazy"
+                data-aos="fade-right"
+                data-aos-duration="800"
+              />
+
+              <div className="flex items-center justify-center gap-8">
+                <div 
+                  className="fade-up fade-up-delay-2"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="200"
+                >
+                  <h1 className="text-5xl mb-1 font-bold">
+                    10<span className="text-red-500">+</span>
+                  </h1>
+                  <p className="opacity-50">Project Selesai</p>
+                </div>
+                <div 
+                  className="fade-up fade-up-delay-3"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="400"
+                >
+                  <h1 className="text-5xl mb-1 font-bold">
+                    3<span className="text-red-500">+</span>
+                  </h1>
+                  <p className="opacity-50">Tahun Pengalaman</p>
+                </div>
               </div>
             </div>
+          </div>
+          
+          {/* AnimatedList - Right Side */}
+          <div className="w-full lg:w-auto lg:shrink-0  bg-zinc-700 rounded-lg">
+            <AnimatedList 
+              className="w-full lg:w-[350px]"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            />
           </div>
         </div>
       </div>
@@ -97,43 +158,27 @@ function App() {
       {/* TOOLS */}
       <div id="tools" className="tools mt-32">
         <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">Tools & Framework Coding</h1>
-        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"> Dibawah ini merupakan beberapa Tools yang biasa diguakan untuk membuat Coding dan Design</p>
-        <div className="tools-box mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-          {listToolsCoding.map((tool, idx) => (
-            <div
-              className="flex items-center gap-2 p-4 border border-zinc-600 rounded-md hover:bg-zinc-800"
-              key={tool.id}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay={tool.dad || idx * 100}
-            >
-              <img src={tool.gambar} alt={tool.nama} className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900" />
-              <div>
-                <h4 className="font-bold">{tool.nama}</h4>
-                <p className="opacity-50">{tool.ket}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h1 className="text-center text-2xl font-bold mb-4 mt-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Tools Graphic Design - Designer IU/UX</h1>
-        <div className="tools-box mt-8 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-          {listToolsDesign.map((tool, idx) => (
-            <div
-              className="flex items-center gap-2 p-4 border border-zinc-600 rounded-md hover:bg-zinc-800"
-              key={tool.id}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay={tool.dad || idx * 100}
-            >
-              <img src={tool.gambar} alt={tool.nama} className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900" />
-              <div>
-                <h4 className="font-bold">{tool.nama}</h4>
-                <p className="opacity-50">{tool.ket}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <p className="text-base/loose text-center opacity-50 mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"> Dibawah ini merupakan beberapa Tools yang biasa diguakan untuk membuat Coding dan Design</p>
+        
+        {/* LogoLoop Section */}
+        <div className="mb-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <LogoLoop
+            logos={[...listToolsCoding, ...listToolsDesign].map(tool => ({
+              src: tool.gambar,
+              alt: tool.nama,
+              title: tool.nama
+            }))}
+            speed={60}
+            direction="left"
+            logoHeight={60}
+            gap={48}
+            pauseOnHover={true}
+            scaleOnHover={true}
+            fadeOut={true}
+            ariaLabel="Technology tools and frameworks"
+            className="py-4"
+          />
+        </div>        
       </div>
       {/* END TOOLS */}
 

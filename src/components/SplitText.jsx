@@ -6,14 +6,14 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(GSAPSplitText, useGSAP);
 
 const SplitText = ({
-  text,
-  className = '',
+  text ='I Nyoman Wahyu Trisna Winda  Full Stack Web Developer',
+  className = 'text-4xl/relaxed font-bold',
   delay = 100,
-  duration = 0.6,
+  duration = 5.0,
   ease = 'power3.out',
   splitType = 'chars',
   from = { opacity: 0, y: 40 },
-  to = { opacity: 1, y: 0 },
+  to = { opacity: 3, y: 0 },
   textAlign = 'center',
   tag = 'p',
   onLetterAnimationComplete

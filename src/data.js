@@ -1,6 +1,6 @@
 import profileSlogan from "/assets/profile-slogan.webp";
 import profileBg from "/assets/profile-bg.webp";
-import profileAbout from "/assets/profile-about.webp";
+import profileAbout from "/assets/profile-about.png";
 
 export const DataImage = {
   profileSlogan,
@@ -206,6 +206,7 @@ import Proyek4 from "/assets/proyek/proyek4.webp";
 import Proyek5 from "/assets/proyek/proyek5.webp";
 import Proyek6 from "/assets/proyek/proyek6.webp";
 
+
 export const listProyek = [
   {
     id: 1,
@@ -291,6 +292,34 @@ export const listProyek = [
     github: "https://github.com/NyomanWahyu01/Web-Portfolio-Mahasiswa",
     demo: "", // isi jika ada link demo
   },
+  {
+    id: 7,
+    gambar: Proyek6,
+    nama: "Web Portfolio Mahasiswa",
+    desk: "Platform portofolio digital untuk mahasiswa, menampilkan karya, pengalaman, dan pencapaian akademik secara interaktif.",
+    tools: ["HTML", "CSS", "Javascript", "TailwindCSS" ],
+    dad: "700",
+    tahun: "2023",
+    type: "Personal Branding System",
+    kantor : "Universitas Dipa Makassar",
+    status: "Offline",
+    github: "https://github.com/NyomanWahyu01/Web-Portfolio-Mahasiswa",
+    demo: "", // isi jika ada link demo
+  },
+  {
+    id: 8,
+    gambar: Proyek6,
+    nama: "Web Portfolio Mahasiswa",
+    desk: "Platform portofolio digital untuk mahasiswa, menampilkan karya, pengalaman, dan pencapaian akademik secara interaktif.",
+    tools: ["HTML", "CSS", "Javascript", "TailwindCSS" ],
+    dad: "700",
+    tahun: "2023",
+    type: "Personal Branding System",
+    kantor : "Universitas Dipa Makassar",
+    status: "Offline",
+    github: "https://github.com/NyomanWahyu01/Web-Portfolio-Mahasiswa",
+    demo: "", // isi jika ada link demo
+  },
 ];
 
 import design1 from "/assets/design/design1.webp";
@@ -301,6 +330,7 @@ import design5 from "/assets/design/design5.webp";
 import design6 from "/assets/design/design6.webp";
 import design7 from "/assets/design/design7.webp";
 import design8 from "/assets/design/design8.webp";
+import design9 from "/assets/design/design9.webp";
 
 export const listDesign = [
   {
@@ -364,6 +394,14 @@ export const listDesign = [
     gambar: design8,
     nama: "Interface Website Portofolio",
     desk: "Design modern untuk tampilan website portofolio pribadi.",
+    tools: ["Figma"],
+    file: "https://www.figma.com/design/b1C6qqAAN80fuL8UQ0JP0c/Dark-Portfolio-Nyoman(IU%2FUX)?node-id=0-1&t=uUFzCvjQY9avVisG-0",
+  },
+  {
+    id: 9,
+    gambar: design9,
+    nama: "Interface DahsBord Grafik Admin",
+    desk: "Design modern dan responsif untuk tampilan Corporet.",
     tools: ["Figma"],
     file: "https://www.figma.com/design/b1C6qqAAN80fuL8UQ0JP0c/Dark-Portfolio-Nyoman(IU%2FUX)?node-id=0-1&t=uUFzCvjQY9avVisG-0",
   },

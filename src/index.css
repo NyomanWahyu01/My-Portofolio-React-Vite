@@ -14,12 +14,12 @@
 /* ================================
    GLOBAL ANIMATION UTILITY CLASS
 ================================ */
-  .fade-up {
+.fade-up {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 1s ease forwards;
   }
-
+  
   .fade-up-delay-1 {
     animation-delay: .2s;
   }
@@ -32,14 +32,14 @@
   .fade-up-delay-4 {
     animation-delay: .8s;
   }
-
+  
   @keyframes fadeUp {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-
+  
   /* ==========================================
      TEXT TYPING ANIMATION FOR NAME / TITLE
   ========================================== */
@@ -53,24 +53,24 @@
       typing 3s steps(40) forwards,
       blink .7s step-end infinite;
   }
-
+  
   @keyframes typing {
     to {
       width: 100%;
     }
   }
-
+  
   @keyframes blink {
     50% { border-color: transparent; }
   }
-
+  
   /* ==========================================
      CARD SLOGAN FLOAT ANIMATION
   ========================================== */
   .slogan-card {
     animation: cardFloat 6s ease-in-out infinite;
   }
-
+  
   @keyframes cardFloat {
     0%, 100% {
       transform: translateY(0px);
@@ -79,7 +79,7 @@
       transform: translateY(-8px);
     }
   }
-
+  
   /* ==========================================
      PROFILE IMAGE REVEAL MASK + ZOOM SLIDE
   ========================================== */
@@ -87,7 +87,7 @@
     opacity: 0;
     animation: revealImage 1.3s ease forwards;
   }
-
+  
   @keyframes revealImage {
     0% {
       opacity: 0;
@@ -100,7 +100,7 @@
       filter: blur(0);
     }
   }
-
+  
   /* ==========================================
      BUTTON HOVER EFFECT – SOFT NEON GLOW
   ========================================== */
@@ -108,19 +108,19 @@
     position: relative;
     transition: 0.3s ease;
   }
-
+  
   .hero-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(255, 255, 255, .18);
   }
-
+  
   /* ==========================================
      BUTTON PRESS FEEDBACK
   ========================================== */
   .hero-btn:active {
     transform: scale(.96);
   }
-
+  
   /* ==========================================
      TEXT PARAGRAPH FADE
   ========================================== */
@@ -128,7 +128,7 @@
     opacity: 0;
     animation: fadeSoft 1.4s ease forwards;
   }
-
+  
   @keyframes fadeSoft {
     to {
       opacity: 1;
@@ -256,5 +256,5 @@
     /* eslint-disable-next-line */
     @apply bg-background text-foreground;
     }
-}
+  }
   

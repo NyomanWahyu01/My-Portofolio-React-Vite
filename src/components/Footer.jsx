@@ -1,13 +1,77 @@
+import { useState } from "react";
+
 const Footer = () => {
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleLinkClick = (linkName) => {
+    setActiveLink(linkName);
+  };
+
   return (
     <footer data-aos="fade-up" data-aos-duration="1000">
       <div className="mt-32 py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
         <h1 className="text-2xl font-bold" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Portofolio</h1>
         <div className="flex gap-7" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#project">Project</a>
-          <a href="#contact">Contact</a>
+          <a 
+            href="#home"
+            onClick={() => handleLinkClick("home")}
+            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
+              ${activeLink === "home" 
+                ? "text-blue-600 font-semibold" 
+                : "text-gray-300 hover:text-blue-500"
+              }
+            `}
+          >
+            Home
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+              ${activeLink === "home" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
+            `}></span>
+          </a>
+          <a 
+            href="#about"
+            onClick={() => handleLinkClick("about")}
+            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
+              ${activeLink === "about" 
+                ? "text-blue-600 font-semibold" 
+                : "text-gray-300 hover:text-blue-500"
+              }
+            `}
+          >
+            About
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+              ${activeLink === "about" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
+            `}></span>
+          </a>
+          <a 
+            href="#project"
+            onClick={() => handleLinkClick("project")}
+            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
+              ${activeLink === "project" 
+                ? "text-blue-600 font-semibold" 
+                : "text-gray-300 hover:text-blue-500"
+              }
+            `}
+          >
+            Project
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+              ${activeLink === "project" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
+            `}></span>
+          </a>
+          <a 
+            href="#contact"
+            onClick={() => handleLinkClick("contact")}
+            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
+              ${activeLink === "contact" 
+                ? "text-blue-600 font-semibold" 
+                : "text-gray-300 hover:text-blue-500"
+              }
+            `}
+          >
+            Contact
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+              ${activeLink === "contact" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
+            `}></span>
+          </a>
         </div>
         <div className="flex items-center gap-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
           <a href="https://github.com/NyomanWahyu01" target="_blank" rel="noopener noreferrer">

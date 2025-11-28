@@ -2,14 +2,21 @@ import { DataImage, listToolsCoding, listToolsDesign, listProyek, listDesign } f
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SplitText from './components/SplitText';
 import TextType from "./components/TextType";
 import AnimatedList from "./components/AnimatedList";
 import LogoLoop from "./components/LogoLoop";
 import ProfileCard from "./components/ProfileCard";
 import ChromaGrid from "./components/ChromaGrid";
+import DetailProjectModal from "./components/DetailProjectModal";
+import DetailDesignModal from "./components/DetailDesignModal";
 function App() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedDesign, setSelectedDesign] = useState(null);
+  const [showMoreProject, setShowMoreProject] = useState(false);
+  const [showMoreDesign, setShowMoreDesign] = useState(false);
+
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
@@ -185,15 +192,15 @@ function App() {
         <p className="text-base/loose text-center mb-10 opacity-50">Beberapa ini merupakan Project yang sudah pernah saya Buat</p>
         <div className="project-box mt-14">
           <ChromaGrid
-            items={listProyek.map((proyek, idx) => {
-              // Array of gradient colors untuk variasi
+            items={(showMoreProject ? listProyek : listProyek.slice(0, 6)).map((proyek, idx) => {
+              // Array of gradient colors untuk variasi (tanpa background hitam)
               const gradients = [
-                { borderColor: '#4F46E5', gradient: 'linear-gradient(145deg,#4F46E5,#000)' },
-                { borderColor: '#10B981', gradient: 'linear-gradient(210deg,#10B981,#000)' },
-                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#000)' },
-                { borderColor: '#EF4444', gradient: 'linear-gradient(195deg,#EF4444,#000)' },
-                { borderColor: '#8B5CF6', gradient: 'linear-gradient(225deg,#8B5CF6,#000)' },
-                { borderColor: '#06B6D4', gradient: 'linear-gradient(135deg,#06B6D4,#000)' }
+                { borderColor: '#4F46E5', gradient: 'linear-gradient(145deg,#4F46E5,#1a1a2e)' },
+                { borderColor: '#10B981', gradient: 'linear-gradient(210deg,#10B981,#1a2e1a)' },
+                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#2e1a1a)' },
+                { borderColor: '#EF4444', gradient: 'linear-gradient(195deg,#EF4444,#2e1a1a)' },
+                { borderColor: '#8B5CF6', gradient: 'linear-gradient(225deg,#8B5CF6,#1a1a2e)' },
+                { borderColor: '#06B6D4', gradient: 'linear-gradient(135deg,#06B6D4,#1a2e2e)' }
               ];
               const colorScheme = gradients[idx % gradients.length];
               
@@ -211,17 +218,47 @@ function App() {
                 tools: proyek.tools,
                 kantor: proyek.kantor,
                 github: proyek.github,
-                demo: proyek.demo
+                demo: proyek.demo,
+                // Data original untuk modal
+                originalData: proyek
               };
             })}
-            className="min-h-[500px]"
+            className="min-h-[500px] grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1"
             radius={400}
             damping={0.45}
             fadeOut={0.6}
+            onCardClick={(item) => setSelectedProject(item)}
           />
+          {listProyek.length > 6 && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={() => setShowMoreProject(!showMoreProject)}
+                className="flex items-center gap-2 px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-lg transition-colors border border-zinc-700"
+              >
+                {showMoreProject ? (
+                  <>
+                    <i className="ri-arrow-up-line"></i>
+                    Lihat Lebih Sedikit
+                  </>
+                ) : (
+                  <>
+                    Lihat Lebih Banyak
+                    <i className="ri-arrow-down-line"></i>
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </div>
       {/* END PROJECT */}
+      
+      {/* Project Detail Modal */}
+      <DetailProjectModal
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        data={selectedProject}
+      />
 
 
       {/* MY DESIGN */}
@@ -230,17 +267,17 @@ function App() {
         <p className="text-base/loose text-center mb-10 opacity-50">Kumpulan hasil Grahfip Design, UI/UX,  Poster, Banner, dan Karya vsisual lainnya.</p>
         <div className="project-box mt-14">
           <ChromaGrid
-            items={listDesign.map((design, idx) => {
-              // Array of gradient colors untuk variasi design (warna yang lebih kreatif)
+            items={(showMoreDesign ? listDesign : listDesign.slice(0, 8)).map((design, idx) => {
+              // Array of gradient colors untuk variasi design (tanpa background hitam)
               const gradients = [
-                { borderColor: '#EC4899', gradient: 'linear-gradient(145deg,#EC4899,#000)' },
-                { borderColor: '#8B5CF6', gradient: 'linear-gradient(210deg,#8B5CF6,#000)' },
-                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#000)' },
-                { borderColor: '#10B981', gradient: 'linear-gradient(195deg,#10B981,#000)' },
-                { borderColor: '#3B82F6', gradient: 'linear-gradient(225deg,#3B82F6,#000)' },
-                { borderColor: '#EF4444', gradient: 'linear-gradient(135deg,#EF4444,#000)' },
-                { borderColor: '#06B6D4', gradient: 'linear-gradient(150deg,#06B6D4,#000)' },
-                { borderColor: '#F97316', gradient: 'linear-gradient(180deg,#F97316,#000)' }
+                { borderColor: '#EC4899', gradient: 'linear-gradient(145deg,#EC4899,#2e1a2e)' },
+                { borderColor: '#8B5CF6', gradient: 'linear-gradient(210deg,#8B5CF6,#1a1a2e)' },
+                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#2e2a1a)' },
+                { borderColor: '#10B981', gradient: 'linear-gradient(195deg,#10B981,#1a2e1a)' },
+                { borderColor: '#3B82F6', gradient: 'linear-gradient(225deg,#3B82F6,#1a1a2e)' },
+                { borderColor: '#EF4444', gradient: 'linear-gradient(135deg,#EF4444,#2e1a1a)' },
+                { borderColor: '#06B6D4', gradient: 'linear-gradient(150deg,#06B6D4,#1a2e2e)' },
+                { borderColor: '#F97316', gradient: 'linear-gradient(180deg,#F97316,#2e1a1a)' }
               ];
               const colorScheme = gradients[idx % gradients.length];
               
@@ -255,50 +292,147 @@ function App() {
                 url: design.file || '',
                 // Data tambahan untuk ditampilkan
                 tools: design.tools,
-                file: design.file
+                file: design.file,
+                // Data original untuk modal
+                originalData: design
               };
             })}
-            className="min-h-[500px]"
-            radius={500}
+            className="min-h-[500px] grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+            radius={400}
             damping={0.45}
             fadeOut={0.6}
+            onCardClick={(item) => setSelectedDesign(item)}
           />
+          {listDesign.length > 8 && (
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={() => setShowMoreDesign(!showMoreDesign)}
+                className="flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold rounded-lg transition-colors border border-zinc-700"
+              >
+                {showMoreDesign ? (
+                  <>
+                    <i className="ri-arrow-up-line"></i>
+                    Lihat Lebih Sedikit
+                  </>
+                ) : (
+                  <>
+                    Lihat Lebih Banyak
+                    <i className="ri-arrow-down-line"></i>
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </div>
       {/* END MY DESIGN */}
+      
+      {/* Design Detail Modal */}
+      <DetailDesignModal
+        isOpen={!!selectedDesign}
+        onClose={() => setSelectedDesign(null)}
+        data={selectedDesign}
+      />
 
       {/* CONTACT */}
-    <div id="contact" className="Contact mt-32 p-4 sm:p-10" data-aos="fade-up" data-aos-duration="1000">
-      <h1 className="text-4xl mb-2 font-bold text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Contact</h1>
-      <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Jika berminat Silahkan Hubungi saya</p>
-      <form
-        action="https://formsubmit.co/2098e39a4924096cbac533341acf4454"
-        method="POST"
-        className="bg-zinc-800 p-4 sm:p-10 w-full max-w-md mx-auto rounded-md"
-        autoComplete="off"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="300"
-      >
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <label className="font-semibold">Nama Lengkap</label>
-            <input type="text" name="nama" placeholder="Masukkan Nama Anda" className="border border-zinc-500 p-2 rounded-md w-full" required/>
-          </div>
-          <div className="flex flex-col gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-            <label className="font-semibold">Email</label>
-            <input type="email" name="email" placeholder="Masukkan Email Anda" className="border border-zinc-500 p-2 rounded-md w-full" required />
-          </div>
-          <div className="flex flex-col gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-            <label htmlFor="pesan" className="font-semibold">Pesan</label>
-            <textarea name="pesan" id="pesan" cols="45" rows="7" placeholder="Pesan Yang Ingin DiSampaikan" className="border border-zinc-500 p-2 rounded-md w-full" required></textarea>
-          </div>
-          <div className="text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
-            <button type="submit" className="bg-sky-600 p-3 rounded-lg w-full cursor-pointer border-zinc-600 hover:bg-sky-700">KIRIM</button>
-          </div>
+      <div id="contact" className="Contact mt-32 p-4 sm:p-10" data-aos="fade-up" data-aos-duration="1000">
+        <h1 className="text-4xl mb-2 font-bold text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Contact</h1>
+        <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Jika berminat Silahkan Hubungi saya</p>
+        
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+          {/* Email Card */}
+          <a
+            href="mailto:inyomanwahyu123@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-br from-red-500/20 to-red-600/10 border border-red-500/30 rounded-2xl p-6 hover:border-red-500/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/20"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center group-hover:bg-red-500/30 transition-colors duration-300">
+                <i className="ri-mail-fill text-3xl text-red-400 group-hover:text-red-300 transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">Email</h3>
+                <p className="text-sm text-gray-400">Kirim pesan via email</p>
+              </div>
+            </div>
+            <p className="text-red-300 font-medium break-all">inyomanwahyu123@gmail.com</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-600/0 group-hover:from-red-500/10 group-hover:to-red-600/5 rounded-2xl transition-all duration-300"></div>
+          </a>
+
+          {/* Instagram Card */}
+          <a
+            href="https://www.instagram.com/inyoman_wahyu1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-br from-pink-500/20 to-purple-600/10 border border-pink-500/30 rounded-2xl p-6 hover:border-pink-500/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/20"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center group-hover:bg-pink-500/30 transition-colors duration-300">
+                <i className="ri-instagram-fill text-3xl text-pink-400 group-hover:text-pink-300 transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">Instagram</h3>
+                <p className="text-sm text-gray-400">Follow & DM saya</p>
+              </div>
+            </div>
+            <p className="text-pink-300 font-medium">@inyoman_wahyu1</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 to-purple-600/0 group-hover:from-pink-500/10 group-hover:to-purple-600/5 rounded-2xl transition-all duration-300"></div>
+          </a>
+
+          {/* LinkedIn Card */}
+          <a
+            href="https://www.linkedin.com/in/i-nyoman-wahyu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/30 rounded-2xl p-6 hover:border-blue-500/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:bg-blue-500/30 transition-colors duration-300">
+                <i className="ri-linkedin-fill text-3xl text-blue-400 group-hover:text-blue-300 transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">LinkedIn</h3>
+                <p className="text-sm text-gray-400">Connect dengan saya</p>
+              </div>
+            </div>
+            <p className="text-blue-300 font-medium">I Nyoman Wahyu</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-600/0 group-hover:from-blue-500/10 group-hover:to-blue-600/5 rounded-2xl transition-all duration-300"></div>
+          </a>
+
+          {/* WhatsApp Card */}
+          <a
+            href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20untuk%20berkolaborasi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-br from-green-500/20 to-green-600/10 border border-green-500/30 rounded-2xl p-6 hover:border-green-500/60 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="700"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center group-hover:bg-green-500/30 transition-colors duration-300">
+                <i className="ri-whatsapp-fill text-3xl text-green-400 group-hover:text-green-300 transition-colors duration-300"></i>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">WhatsApp</h3>
+                <p className="text-sm text-gray-400">Chat langsung</p>
+              </div>
+            </div>
+            <p className="text-green-300 font-medium">Klik untuk chat</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-600/0 group-hover:from-green-500/10 group-hover:to-green-600/5 rounded-2xl transition-all duration-300"></div>
+          </a>
         </div>
-      </form>
-    </div>      
+      </div>
       {/* END CONTACT */}
     </>
 

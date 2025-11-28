@@ -255,6 +255,10 @@
   body {
     /* eslint-disable-next-line */
     @apply bg-background text-foreground;
+    overflow-x: hidden;
     }
+  html {
+    overflow-x: hidden;
+  }
   }
   

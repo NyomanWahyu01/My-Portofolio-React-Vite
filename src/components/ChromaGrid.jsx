@@ -155,8 +155,9 @@ const ChromaGrid = ({ items, className = '', radius = 300, damping = 0.45, fadeO
             <div className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1 mb-2 shrink-0">
               <h3 className="m-0 text-[1.05rem] font-semibold line-clamp-1">{c.title}</h3>
               {c.handle && <span className="text-[0.95rem] opacity-80 text-right line-clamp-1">{c.handle}</span>}
-              <p className="m-0 text-[0.85rem] opacity-85 line-clamp-2 col-span-2">{c.subtitle}</p>
+              <p className="m-0 text-[0.85rem] opacity-85 line-clamp-2 col-span-2 min-h-10 flex items-start">{c.subtitle}</p>
               {c.location && <span className="text-[0.85rem] opacity-85 text-right col-span-2">{c.location}</span>}
+              {c.tahun && !c.location && <span className="text-[0.85rem] opacity-85 text-right col-span-2">{c.tahun}</span>}
             </div>
             
             {/* Tools Tags */}

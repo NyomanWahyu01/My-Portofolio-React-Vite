@@ -34,18 +34,18 @@ const Navbar = () => {
             <div className="logo flex items-center gap-2">
                 <img src="/assets/Logo-Nym.png" alt="Logo" className="object-contain rounded-full w-10 md:w-12"/>
                 <h1 className="text-2xl font-bold"></h1>
-                
-                {/* Hamburger Button - Mobile Only, di samping logo */}
-                <button
-                    onClick={toggleMenu}
-                    className="md:hidden ml-4 z-50 relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                    aria-label="Toggle menu"
-                >
-                    <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                    <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                    <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-                </button>
             </div>
+            
+            {/* Hamburger Button - Mobile Only, di sebelah kanan */}
+            <button
+                onClick={toggleMenu}
+                className="md:hidden z-50 relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
+                aria-label="Toggle menu"
+            >
+                <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
 
             <ul className={`
                 menu flex items-center sm:gap-10 gap-4

@@ -27,7 +27,10 @@ const DetailDesignModal = ({ isOpen, onClose, data }) => {
     subtitle: data?.subtitle || itemData?.desk || '',
     tools: data?.tools || itemData?.tools || [],
     file: data?.file || itemData?.file || '',
-    handle: data?.handle || (itemData?.tools ? itemData.tools.join(', ') : '')
+    type: data?.type || itemData?.type || '',
+    tahun: data?.tahun || itemData?.tahun || '',
+    kantor: data?.kantor || itemData?.kantor || '',
+    handle: data?.handle || itemData?.type || ''
   };
 
   return (
@@ -91,18 +94,42 @@ const DetailDesignModal = ({ isOpen, onClose, data }) => {
                 {displayData.subtitle || displayData.desk}
               </p>
 
-              {/* Tools Info */}
-              {displayData.handle && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="mb-6"
-                >
-                  <span className="text-sm opacity-40 text-white/70">Tools</span>
-                  <p className="text-white">{displayData.handle}</p>
-                </motion.div>
-              )}
+              {/* Type, Tahun, Kantor Info */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                {displayData.type && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
+                  >
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Type</span>
+                    <p className="text-white font-medium">{displayData.type}</p>
+                  </motion.div>
+                )}
+                {displayData.tahun && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
+                  >
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Tahun</span>
+                    <p className="text-white font-medium">{displayData.tahun}</p>
+                  </motion.div>
+                )}
+                {displayData.kantor && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
+                  >
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Kantor/Institusi</span>
+                    <p className="text-white font-medium line-clamp-2">{displayData.kantor}</p>
+                  </motion.div>
+                )}
+              </div>
 
               {/* Tools Used */}
               {displayData.tools && displayData.tools.length > 0 && (

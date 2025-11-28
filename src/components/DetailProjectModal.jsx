@@ -65,7 +65,7 @@ const DetailProjectModal = ({ isOpen, onClose, data }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
@@ -168,61 +168,65 @@ const DetailProjectModal = ({ isOpen, onClose, data }) => {
                 {displayData.subtitle || displayData.desk}
               </p>
 
-              {/* Project Info Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              {/* Project Info Grid - Same style as Design Modal */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 {displayData.status && (
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
                   >
-                    <span className="text-sm opacity-60 text-white/70">Status</span>
-                    <div className="flex items-center gap-2 mt-1">
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Status</span>
+                    <div className="flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full ${
                         displayData.status === "Online" ? "bg-green-500" : "bg-gray-500"
                       }`} />
-                      <span className="text-white">{displayData.status}</span>
+                      <p className="text-white font-medium">{displayData.status}</p>
                     </div>
                   </motion.div>
                 )}
                 {displayData.location && (
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.35 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
                   >
-                    <span className="text-sm opacity-60 text-white/70">Tahun</span>
-                    <p className="text-white">{displayData.location}</p>
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Tahun</span>
+                    <p className="text-white font-medium">{displayData.location}</p>
                   </motion.div>
                 )}
                 {displayData.handle && (
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
                   >
-                    <span className="text-sm opacity-60 text-white/70">Type</span>
-                    <p className="text-white">{displayData.handle}</p>
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Type</span>
+                    <p className="text-white font-medium">{displayData.handle}</p>
                   </motion.div>
                 )}
                 {displayData.kantor && (
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45 }}
+                    className="bg-zinc-800/50 p-3 rounded-lg border border-zinc-700"
                   >
-                    <span className="text-sm opacity-60 text-white/70">Kantor/Institusi</span>
-                    <p className="text-white">{displayData.kantor}</p>
+                    <span className="text-xs opacity-60 text-white/70 block mb-1">Kantor/Institusi</span>
+                    <p className="text-white font-medium line-clamp-2">{displayData.kantor}</p>
                   </motion.div>
                 )}
               </div>
 
-              {/* Technologies */}
+              {/* Technologies - Same style as Design Modal */}
               {displayData.tools && displayData.tools.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.4 }}
                   className="mb-6"
                 >
                   <span className="text-sm opacity-60 text-white/70 block mb-2">
@@ -234,7 +238,7 @@ const DetailProjectModal = ({ isOpen, onClose, data }) => {
                         key={idx}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.55 + idx * 0.05 }}
+                        transition={{ delay: 0.45 + idx * 0.05 }}
                         whileHover={{ scale: 1.05 }}
                         className="px-3 py-1 bg-zinc-800 border border-amber-500/50 text-amber-400 rounded-md text-sm font-medium"
                       >
@@ -245,11 +249,11 @@ const DetailProjectModal = ({ isOpen, onClose, data }) => {
                 </motion.div>
               )}
 
-              {/* Action Buttons */}
+              {/* Action Buttons - Same style as Design Modal */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 0.5 }}
                 className="flex flex-col sm:flex-row gap-3 mt-8"
               >
                 {displayData.demo && displayData.demo !== "app.jsx" && (

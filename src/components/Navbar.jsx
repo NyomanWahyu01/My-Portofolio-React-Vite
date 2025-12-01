@@ -32,8 +32,7 @@ const Navbar = () => {
     return (
         <div className="navbar py-7 flex items-center justify-between">
             <div className="logo flex items-center gap-2">
-                <img src="/assets/Logo-Nym.png" alt="Logo" className="object-contain rounded-full w-10 md:w-12"/>
-                <h1 className="text-2xl font-bold"></h1>
+                <img src="/assets/Logo-Nym.png" alt="Logo" href="#home"   onClick={() => handleLinkClick("home")} className="object-contain rounded-full w-10 md:w-12"/>
             </div>
             
             {/* Hamburger Button - Mobile Only, di sebelah kanan */}
@@ -69,9 +68,9 @@ const Navbar = () => {
                         `}
                     >
                         Home
-                        <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
                             ${activeLink === "home" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span>
+                        `}></span> */}
                     </a>
                 </li>
                 <li>
@@ -86,9 +85,9 @@ const Navbar = () => {
                         `}
                     >
                         About
-                        <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
                             ${activeLink === "about" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span>
+                        `}></span> */}
                     </a>
                 </li>
                 <li>
@@ -103,9 +102,9 @@ const Navbar = () => {
                         `}
                     >
                         Project
-                        <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
                             ${activeLink === "project" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span>
+                        `}></span> */}
                     </a>
                 </li>
                 <li>
@@ -120,9 +119,9 @@ const Navbar = () => {
                         `}
                     >
                         Contact
-                        <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
+                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
                             ${activeLink === "contact" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span>
+                        `}></span> */}
                     </a>
                 </li>
             </ul>

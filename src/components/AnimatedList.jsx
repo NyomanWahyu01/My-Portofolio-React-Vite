@@ -21,15 +21,16 @@ const AnimatedItem = ({ children, delay = 0, index, onMouseEnter, onClick }) => 
 
 const AnimatedList = ({
   items = [
-    'Mengembangkan website modern dengan performa tinggi.',
-    'Mendesain UI/UX yang intuitif dan user–friendly.',
-    'Mengoptimalkan tampilan agar responsif di semua perangkat.',
-    'Kolaborasi efektif untuk menyelesaikan project tepat waktu.'
+    'FrontEnd Developer',
+    'Full Stack Developer',
+    'UI/UX Design.',
+    `Graphic Design`,
+    'Performance Optimization'
   ],
   onItemSelect,
   showGradients = true,
   enableArrowNavigation = true,
-  className = '',
+  className = "",
   itemClassName = '',
   displayScrollbar = true,
   initialSelectedIndex = -1
@@ -130,7 +131,7 @@ const AnimatedList = ({
       {showGradients && (
         <>
           <div
-            className="absolute top-0 left-0 right-0 h-[50px] pointer-events-none transition-opacity duration-300 ease"
+            className="absolute top-0 left-0 right-0 h-[100px] pointer-events-none transition-opacity duration-300 ease"
             style={{ 
               opacity: topGradientOpacity,
               background: 'linear-gradient(to bottom, #060010, transparent)'

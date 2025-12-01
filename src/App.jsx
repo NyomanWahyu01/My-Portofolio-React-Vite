@@ -12,6 +12,7 @@ import ChromaGrid from "./components/ChromaGrid";
 import DetailProjectModal from "./components/DetailProjectModal";
 import DetailDesignModal from "./components/DetailDesignModal";
 import Contact from "./components/Contact";
+import FormEmail from "./components/FormEmail";
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -53,12 +54,12 @@ function App() {
     </div>
   
       <p className="text-base/loose mb-6 opacity-50">
-        Saya berfokus pada pengembangan Website yang responsif, memiliki coding yang Clean, ontime pada Deadline, serta tampilan yang Menarik dan Modern. Pengalaman membuatsaya terus berkembang melalui setiap project yang saya kerjakan.📊
+        Berfokus pada pengembangan Website yang responsif, coding yang Clean, ontime pada Deadline, serta tampilan yang Menarik dan Modern. Pengalaman membuat saya terus berkembang melalui setiap project yang saya kerjakan📊.
       </p>
           {/* Button Download CV dan Lihat Project */}
           <div className="flex items-center sm:gap-5 gap-2 mb-8 md:mb-0">
             <a
-              href="https://drive.google.com/file/d/1dtsnEkmGVh8uDE_XmcCOMxtkBqEiT_t4/view?usp=sharing"
+              href="https://drive.google.com/drive/folders/1CV1RdSf5p0lBML3RB_ewfTXhdUk8Qiuz?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="hero-btn bg-red-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-red-800 p-4 rounded-4xl">
@@ -77,7 +78,7 @@ function App() {
         <div className="flex justify-center md:justify-end mt-8 md:mt-0">
           <ProfileCard
            name="Nyoman"
-           title="Full Stack Devolover"
+           title="Full Stack Developer"
            handle=""
            status="Online"
            contactText="My Contact"
@@ -101,11 +102,22 @@ function App() {
         <div className="xl:w-4/5 lg:w-5/6 w-full mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
           {/* Card About */}
           <div className="flex-1 p-7 bg-zinc-800 rounded-lg" data-aos="fade-up" data-aos-duration="1000">
-            <p className="text-base/loose mb-10 ">
-              Hi, perkenalkan saya I Nyoman Wahyu, Seorang Full Stack Devoloper dan Designer untuk UI/UX Design maupun Project Digital,
-              Saya dipercayakan bahwa design dan fungsional harus berjalan beriringan, sehingga proyek yang saya kembangkan tidak hanya
-              terlihat menarik tetapi juga memberikan pengalaman pengguna yang optimal.
-            </p>
+          <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">About</h1>
+          <p className="text-base/loose mb-3">
+            Hi, Guys. Saya I Nyoman Wahyu, seorang Web Developer yang suka membangun sesuatu yang sederhana, rapi, dan nyaman digunakan.
+          </p>
+
+          <p className="text-base/loose mb-3">
+            Saya senang mempelajari hal baru, berdiskusi, dan memberi kontribusi kecil untuk komunitas. 
+            Semakin banyak hal menarik yang saya temukan, semakin bersemangat saya untuk terus berkembang.
+          </p>
+
+          <p className="text-base/loose mb-3">
+            Pada setiap project, saya fokus pada detail, pengalaman pengguna, dan kualitas. 
+         </p>
+
+          {/* End About */}
+
             {/* Foto About */}
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-2">
               <img 
@@ -115,7 +127,7 @@ function App() {
                            max-w-[200px] 
                            sm:max-w-[250px] 
                            md:max-w-[200px] 
-                           lg:max-w-[115px] 
+                           lg:max-w-[110px] 
                            h-auto object-cover 
                            rounded-2xl" 
                 loading="lazy"
@@ -125,10 +137,7 @@ function App() {
 
               <div className="flex items-center justify-center gap-8">
                 <div 
-                  className="fade-up fade-up-delay-2"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="200"
+                  className="transform transition-all duration-1000 ease-out translate-y-0 opacity-100"
                 >
                   <h1 className="text-5xl mb-1 font-bold">
                     10<span className="text-red-500">+</span>
@@ -136,10 +145,8 @@ function App() {
                   <p className="opacity-50">Project Selesai</p>
                 </div>
                 <div 
-                  className="fade-up fade-up-delay-3"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="400"
+                  className="transform transition-all duration-1000 ease-out translate-y-0 opacity-100"
+                 
                 >
                   <h1 className="text-5xl mb-1 font-bold">
                     3<span className="text-red-500">+</span>
@@ -193,7 +200,37 @@ function App() {
       <div id="project" className="Project mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-4">My - Project</h1>
         <p className="text-base/loose text-center mb-10 opacity-50">Beberapa Project yang telah saya bangun dan kembangkan untuk berbagai kebutuhan digital.</p>
-        <div className="project-box mt-14 animate__animated animate__fadeInUp animate__delay-3s">
+        <div className="project-box mt-14 animate__animated animate__fadeInUp animate__delay-5s">
+          <style>{`
+            @keyframes floatIn {
+              from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+              }
+            }
+
+            .project-box {
+              animation: floatIn 0.8s ease-out forwards;
+            }
+            
+            .stagger-item {
+              animation: floatIn 0.6s ease-out backwards;
+            }
+            
+            .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+            .stagger-item:nth-child(2) { animation-delay: 0.15s; }
+            .stagger-item:nth-child(3) { animation-delay: 0.2s; }
+            .stagger-item:nth-child(4) { animation-delay: 0.25s; }
+            .stagger-item:nth-child(5) { animation-delay: 0.3s; }
+            .stagger-item:nth-child(6) { animation-delay: 0.35s; }
+            .stagger-item:nth-child(7) { animation-delay: 0.4s; }
+            .stagger-item:nth-child(8) { animation-delay: 0.45s; }
+            .stagger-item:nth-child(n+9) { animation-delay: 0.5s; }
+          `}</style>
           <ChromaGrid
             items={(showMoreProject ? listProyek : listProyek.slice(0, 6)).map((proyek, idx) => {
               // Array of gradient colors untuk variasi (tanpa background hitam)
@@ -216,6 +253,7 @@ function App() {
                 borderColor: colorScheme.borderColor,
                 gradient: colorScheme.gradient,
                 url: proyek.demo || proyek.github || '',
+                className: 'stagger-item',
                 // Data tambahan untuk ditampilkan
                 status: proyek.status,
                 tools: proyek.tools,
@@ -233,24 +271,53 @@ function App() {
             onCardClick={(item) => setSelectedProject(item)}
           />
           {listProyek.length > 6 && (
-            <div className="flex justify-center mt-8">
-              <button
-                onClick={() => setShowMoreProject(!showMoreProject)}
-                className="flex items-center gap-2 px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-lg transition-colors border border-zinc-700"
-              >
-                {showMoreProject ? (
-                  <>
-                    <i className="ri-arrow-up-line"></i>
-                    Lihat Lebih Sedikit
-                  </>
-                ) : (
-                  <>
-                    Lihat Lebih Banyak
-                    <i className="ri-arrow-down-line"></i>
-                  </>
-                )}
-              </button>
-            </div>
+         <div className="flex justify-center mt-8">
+         <button
+           onClick={() => setShowMoreProject(!showMoreProject)}
+           className="group relative flex items-center gap-2 px-6 py-3 bg-blue-900 hover:bg-zinc-800 text-white font-semibold rounded-lg transition-all duration-300 border border-zinc-700 hover:border-zinc-600 overflow-hidden
+           active:scale-95 active:shadow-inner
+           transform hover:scale-105 hover:shadow-xl"
+         >
+           {/* Shine effect */}
+           <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
+           
+           {/* Ripple effect saat klik */}
+           <span className="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 group-active:animate-ripple bg-white/20">
+           
+           <span className="relative flex items-center gap-2 transition-transform duration-300 group-hover:scale-105">
+             {showMoreProject ? (
+               <>
+                 <i className="ri-arrow-up-line text-red-500 transition-transform duration-300 group-hover:-translate-y-1 group-active:scale-90"></i>
+                 Lihat Lebih Sedikit
+               </>
+             ) : (
+               <>
+                 Lihat Lebih Banyak
+                 <i className="ri-arrow-down-line text-green-500 transition-transform duration-300 group-hover:translate-y-1 group-active:scale-90"></i>
+               </>
+             )}
+             </span>
+             </span>
+           </span>
+         </button>
+         
+         <style>{`
+           @keyframes ripple {
+             0% {
+               transform: scale(0);
+               opacity: 1;
+             }
+             100% {
+               transform: scale(2);
+               opacity: 0;
+             }
+           }
+           
+           .animate-ripple {
+             animation: ripple 0.6s ease-out;
+           }
+         `}</style>
+       </div>
           )}
         </div>
       </div>
@@ -268,68 +335,102 @@ function App() {
       <div id="design" className="Design mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-4">My - Design</h1>
         <p className="text-base/loose text-center mb-10 opacity-50">Galeri karya visual saya yang mencakup Design UI/UX, Graphic Design, poster, banner, dan berbagai desain kreatif lainnya.</p>
-        <div className="project-box mt-14 animate__animated animate__fadeInUp animate__delay-3s">
-          <ChromaGrid
-            items={(showMoreDesign ? listDesign : listDesign.slice(0, 8)).map((design, idx) => {
-              // Array of gradient colors untuk variasi design (tanpa background hitam)
-              const gradients = [
-                { borderColor: '#EC4899', gradient: 'linear-gradient(145deg,#EC4899,#2e1a2e)' },
-                { borderColor: '#8B5CF6', gradient: 'linear-gradient(210deg,#8B5CF6,#1a1a2e)' },
-                { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#2e2a1a)' },
-                { borderColor: '#10B981', gradient: 'linear-gradient(195deg,#10B981,#1a2e1a)' },
-                { borderColor: '#3B82F6', gradient: 'linear-gradient(225deg,#3B82F6,#1a1a2e)' },
-                { borderColor: '#EF4444', gradient: 'linear-gradient(135deg,#EF4444,#2e1a1a)' },
-                { borderColor: '#06B6D4', gradient: 'linear-gradient(150deg,#06B6D4,#1a2e2e)' },
-                { borderColor: '#F97316', gradient: 'linear-gradient(180deg,#F97316,#2e1a1a)' }
-              ];
-              const colorScheme = gradients[idx % gradients.length];
-              
-              return {
-                image: design.gambar,
-                title: design.nama,
-                subtitle: design.desk,
-                handle: design.type || '',
-                location: design.tahun || '',
-                borderColor: colorScheme.borderColor,
-                gradient: colorScheme.gradient,
-                url: design.file || '',
-                // Data tambahan untuk ditampilkan
-                tools: design.tools,
-                status: design.status,
-                kantor: design.kantor,
-                tahun: design.tahun,
-                type: design.type,
-                file: design.file,
-                // Data original untuk modal
-                originalData: design
-              };
-            })}
-            className="min-h-[500px] grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
-            radius={400}
-            damping={0.45}
-            fadeOut={0.6}
-            onCardClick={(item) => setSelectedDesign(item)}
-          />
-          {listDesign.length > 8 && (
-            <div className="flex justify-center mt-8">
-              <button
-                onClick={() => setShowMoreDesign(!showMoreDesign)}
-                className="flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold rounded-lg transition-colors border border-zinc-700"
-              >
-                {showMoreDesign ? (
-                  <>
-                    <i className="ri-arrow-up-line"></i>
-                    Lihat Lebih Sedikit
-                  </>
-                ) : (
-                  <>
-                    Lihat Lebih Banyak
-                    <i className="ri-arrow-down-line"></i>
-                  </>
-                )}
-              </button>
-            </div>
+        <div className="project-box mt-14 animate__animated animate__fadeInUp animate__delay-5s">
+  <style>{`
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .project-box {
+      animation: floatIn 0.8s ease-out forwards;
+    }
+    
+    .stagger-item {
+      animation: floatIn 0.6s ease-out backwards;
+    }
+    
+    .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+    .stagger-item:nth-child(2) { animation-delay: 0.15s; }
+    .stagger-item:nth-child(3) { animation-delay: 0.2s; }
+    .stagger-item:nth-child(4) { animation-delay: 0.25s; }
+    .stagger-item:nth-child(5) { animation-delay: 0.3s; }
+    .stagger-item:nth-child(6) { animation-delay: 0.35s; }
+    .stagger-item:nth-child(7) { animation-delay: 0.4s; }
+    .stagger-item:nth-child(8) { animation-delay: 0.45s; }
+    .stagger-item:nth-child(n+9) { animation-delay: 0.5s; }
+  `}</style>
+
+  <ChromaGrid
+    items={(showMoreDesign ? listDesign : listDesign.slice(0, 8)).map((design, idx) => {
+      // Array of gradient colors untuk variasi design (tanpa background hitam)
+      const gradients = [
+        { borderColor: '#EC4899', gradient: 'linear-gradient(145deg,#EC4899,#2e1a2e)' },
+        { borderColor: '#8B5CF6', gradient: 'linear-gradient(210deg,#8B5CF6,#1a1a2e)' },
+        { borderColor: '#F59E0B', gradient: 'linear-gradient(165deg,#F59E0B,#2e2a1a)' },
+        { borderColor: '#10B981', gradient: 'linear-gradient(195deg,#10B981,#1a2e1a)' },
+        { borderColor: '#3B82F6', gradient: 'linear-gradient(225deg,#3B82F6,#1a1a2e)' },
+        { borderColor: '#EF4444', gradient: 'linear-gradient(135deg,#EF4444,#2e1a1a)' },
+        { borderColor: '#06B6D4', gradient: 'linear-gradient(150deg,#06B6D4,#1a2e2e)' },
+        { borderColor: '#F97316', gradient: 'linear-gradient(180deg,#F97316,#2e1a1a)' }
+      ];
+      const colorScheme = gradients[idx % gradients.length];
+      
+      return {
+        image: design.gambar,
+        title: design.nama,
+        subtitle: design.desk,
+        handle: design.type || '',
+        location: design.tahun || '',
+        borderColor: colorScheme.borderColor,
+        gradient: colorScheme.gradient,
+        url: design.file || '',
+        // Data tambahan untuk ditampilkan
+        tools: design.tools,
+        status: design.status,
+        kantor: design.kantor,
+        tahun: design.tahun,
+        type: design.type,
+        file: design.file,
+        // Data original untuk modal
+        originalData: design
+      };
+    })}
+    className="min-h-[500px] grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+    radius={400}
+    damping={0.45}
+    fadeOut={0.6}
+    onCardClick={(item) => setSelectedDesign(item)}
+  />
+  {listDesign.length > 8 && (
+    <div className="flex justify-center mt-8">
+      <button
+        onClick={() => setShowMoreDesign(!showMoreDesign)}
+        className="group relative flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold rounded-lg transition-all duration-300 border border-zinc-700 hover:border-zinc-600 overflow-hidden"
+      >
+        <span className="absolute inset-0 bg-linear-to-r from-transparent to-transparent translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+        <span className="relative flex items-center gap-2 transition-transform duration-300 group-hover:scale-105">
+          {showMoreDesign ? (
+            <>
+              <i className="ri-arrow-up-line transition-transform duration-300 group-hover:-translate-y-1"></i>
+              Lihat Lebih Sedikit
+            </>
+          ) : (
+            <>
+              Lihat Lebih Banyak
+              <i className="ri-arrow-down-line transition-transform duration-300 group-hover:translate-y-1"></i>
+            </>
           )}
+        </span>
+      </button>
+    </div>
+  )}
         </div>
       </div>
       {/* END MY DESIGN */}
@@ -345,77 +446,21 @@ function App() {
       {/* CONTACT */}
     <div id="contact" className="Contact mt-32 p-10 sm:p-10">
       <h1 className="text-4xl mb-2 font-bold text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Contact</h1>
-      <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">“Untuk peluang kerja sama atau pertanyaan lebih lanjut, saya dapat dihubungi melalui kontak berikut.”</p>
-
-
-      {/* Contact Cards */}
-      <div className="mb-0">
-        <Contact />
-      </div>
+      <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">“Peluang kerja sama atau pertanyaan lebih lanjut, saya dapat dihubungi melalui kontak berikut.”</p>
 
       {/* Contact Form */}
-      {/* <div className="max-w-2xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Atau Kirim Pesan Langsung</h2>
-        <form
-          action="https://formsubmit.co/2098e39a4924096cbac533341acf4454"
-          method="POST"
-          className="bg-zinc-800 p-4 sm:p-10 w-full rounded-md"
-          autoComplete="off"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="400"
-        >
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-              <label className="font-semibold text-white">Nama Lengkap</label>
-              <input 
-                type="text" 
-                name="nama" 
-                placeholder="Masukkan Nama Anda" 
-                className="border border-zinc-500 bg-zinc-900 text-white p-3 rounded-md w-full focus:outline-none focus:border-blue-500 transition-colors" 
-                required
-              />
-            </div>
-            <div className="flex flex-col gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-              <label className="font-semibold text-white">Email</label>
-              <input 
-                type="email" 
-                name="email" 
-                placeholder="Masukkan Email Anda" 
-                className="border border-zinc-500 bg-zinc-900 text-white p-3 rounded-md w-full focus:outline-none focus:border-blue-500 transition-colors" 
-                required 
-              />
-            </div>
-            <div className="flex flex-col gap-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
-              <label htmlFor="pesan" className="font-semibold text-white">Pesan</label>
-              <textarea 
-                name="pesan" 
-                id="pesan" 
-                cols="45" 
-                rows="7" 
-                placeholder="Pesan Yang Ingin DiSampaikan" 
-                className="border border-zinc-500 bg-zinc-900 text-white p-3 rounded-md w-full focus:outline-none focus:border-blue-500 transition-colors resize-none" 
-                required
-              ></textarea>
-            </div>
-            <div className="text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-              <button 
-                type="submit" 
-                className="bg-sky-600 hover:bg-sky-700 p-3 rounded-lg w-full cursor-pointer border border-sky-500 transition-all duration-300 hover:scale-105 font-semibold text-white flex items-center justify-center gap-2"
-              >
-                <i className="ri-send-plane-fill"></i>
-                KIRIM PESAN
-              </button>
-            </div>
-          </div>
-        </form>      
-      </div> */}
+      <div className="mb-0">
+        <FormEmail/>
+      </div>
+
+       {/* Contact Cards */}
+       <div className="mb-0">
+        <Contact />
+      </div>
 
     </div>      
       {/* END CONTACT */}
     </>
-
-
   );
 }
 

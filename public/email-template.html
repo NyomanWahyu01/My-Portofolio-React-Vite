@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Baru dari Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    .email-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 40px 30px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .email-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .email-header p {
+      font-size: 16px;
+      opacity: 0.95;
+    }
+    .email-body {
+      padding: 40px 30px;
+      background: #ffffff;
+    }
+    .info-card {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 4px solid #667eea;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .info-row:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .info-label {
+      font-weight: 700;
+      color: #667eea;
+      min-width: 100px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .info-value {
+      flex: 1;
+      color: #333333;
+      font-size: 16px;
+      word-break: break-word;
+    }
+    .message-box {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 20px;
+      border: 2px solid #e9ecef;
+    }
+    .message-box .info-label {
+      display: block;
+      margin-bottom: 15px;
+    }
+    .message-box .info-value {
+      color: #495057;
+      line-height: 1.8;
+      white-space: pre-wrap;
+    }
+    .email-footer {
+      background: #f8f9fa;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #e9ecef;
+    }
+    .email-footer p {
+      color: #6c757d;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .timestamp {
+      color: #adb5bd;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        margin: 0;
+        border-radius: 0;
+      }
+      .email-header, .email-body, .email-footer {
+        padding: 25px 20px;
+      }
+      .info-row {
+        flex-direction: column;
+      }
+      .info-label {
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-header">
+      <h1>📧 Pesan Baru dari Portfolio</h1>
+      <p>Anda menerima pesan baru dari website portfolio Anda</p>
+    </div>
+    
+    <div class="email-body">
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-label">👤 Nama:</span>
+          <span class="info-value">{{nama}}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="info-label">✉️ Email:</span>
+          <span class="info-value">{{email}}</span>
+        </div>
+      </div>
+      
+      <div class="message-box">
+        <span class="info-label">💬 Pesan:</span>
+        <div class="info-value">{{pesan}}</div>
+      </div>
+    </div>
+    
+    <div class="email-footer">
+      <p><strong>Portfolio Contact Form</strong></p>
+      <p class="timestamp">Dikirim pada: {{date}}</p>
+    </div>
+  </div>
+</body>
+</html>
+

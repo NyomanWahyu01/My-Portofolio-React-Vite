@@ -26,4 +26,4 @@ useEffect(() => {
     )
 }
 
-export default PreLoeder
+export default PreLoeder;

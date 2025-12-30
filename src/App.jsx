@@ -12,7 +12,6 @@ import ChromaGrid from "./components/ChromaGrid";
 import DetailProjectModal from "./components/DetailProjectModal";
 import DetailDesignModal from "./components/DetailDesignModal";
 import Contact from "./components/Contact";
-import FormEmail from "./components/FormEmail";
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -452,15 +451,8 @@ function App() {
       <h1 className="text-4xl mb-2 font-bold text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Contact</h1>
       <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">“Peluang kerja sama atau pertanyaan lebih lanjut, saya dapat dihubungi melalui kontak berikut.”</p>
 
-      {/* Contact Form */}
-      {/* <div className="mb-0">
-        <FormEmail/>
-      </div> */}
-
        {/* Contact Cards */}
        <div className="mb-0">
-
-
         <Contact />
       </div>
 

@@ -6,7 +6,7 @@ const ProfileCard = ({
   handle = "",
   status = "Online",
   contactText = "My Contact",
-  avatarUrl="/public/assets/profile-about.png",
+  avatarUrl,
   showUserInfo = true,
   enableTilt = true,
   enableMobileTilt = false,

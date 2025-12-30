@@ -32,7 +32,7 @@ const Navbar = () => {
     return (
         <div className="navbar py-7 flex items-center justify-between">
             <div className="logo flex items-center gap-2">
-                <img src="/assets/Logo-Nym.png" alt="Logo" href="#home"   onClick={() => handleLinkClick("home")} className="object-contain rounded-full w-10 md:w-12"/>
+                <img src="/assets/Logo-Nym.png" alt="Logo" href="#home"   onClick={() => handleLinkClick("home")}  className="object-contain rounded-full w-10 md:w-12"/>
             </div>
             
             {/* Hamburger Button - Mobile Only, di sebelah kanan */}

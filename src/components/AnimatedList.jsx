@@ -21,7 +21,7 @@ const AnimatedItem = ({ children, delay = 0, index, onMouseEnter, onClick }) => 
 
 const AnimatedList = ({
   items = [
-    'FrontEnd Developer',
+    'Front-End Developer',
     'Full Stack Developer',
     'UI/UX Design.',
     `Graphic Design`,
@@ -33,7 +33,7 @@ const AnimatedList = ({
   className = "",
   itemClassName = '',
   displayScrollbar = true,
-  initialSelectedIndex = -1
+  initialSelectedIndex = -5
 }) => {
   const listRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(initialSelectedIndex);
@@ -99,9 +99,9 @@ const AnimatedList = ({
     <div className={`relative w-full max-w-[500px] ${className}`}>
       <div
         ref={listRef}
-        className={`max-h-[500px] overflow-y-auto p-6 ${
+        className={`max-h-[800px] overflow-y-auto p-7 ${
           displayScrollbar
-            ? '[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-[#060010] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]'
+            ? '[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-[#060010] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[8px]'
             : 'scrollbar-hidden'
         }`}
         onScroll={handleScroll}
@@ -122,7 +122,7 @@ const AnimatedList = ({
               }
             }}>
             <div
-              className={`p-4 bg-[#111] rounded-lg ${selectedIndex === index ? 'bg-[#222]' : ''} ${itemClassName}`}>
+              className={`p-9 bg-[#111] rounded-lg ${selectedIndex === index ? 'bg-[#222]' : ''} ${itemClassName}`}>
               <p className="text-white m-0">{item}</p>
             </div>
           </AnimatedItem>

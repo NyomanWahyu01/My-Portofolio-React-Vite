@@ -205,6 +205,9 @@ import Proyek3 from "/assets/proyek/proyek3.webp";
 import Proyek4 from "/assets/proyek/proyek4.webp";
 import Proyek5 from "/assets/proyek/proyek5.webp";
 import Proyek6 from "/assets/proyek/proyek6.webp";
+import Proyek7 from "/assets/proyek/proyek7.webp";
+import Proyek8 from "/assets/proyek/proyek8.webp";
+
 
 
 export const listProyek = [
@@ -213,7 +216,7 @@ export const listProyek = [
     gambar: Proyek1,
     nama: "Website Portofolio",
     desk: "Website portofolio pribadi yang menampilkan profil, keahlian, dan project yang pernah dikerjakan dengan tampilan modern dan responsif.",
-    tools: ["HTML", "CSS", "Javascript", "ReactJS", "TailwindCSS"],
+    tools: ["HTML", "CSS", "Javascript", "ReactJS", "Vite", "TailwindCSS", "Animate.css"],
     dad: "200",
     type: "Personal Branding System",
     tahun: "2025",
@@ -227,7 +230,7 @@ export const listProyek = [
     gambar: Proyek2,
     nama: "Sistem Pendaftaran Organisasi BSC",
     desk: "Aplikasi web untuk memudahkan proses pendaftaran anggota baru pada organisasi BSC secara online dan terintegrasi.",
-    tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap"],
+    tools: ["PHP-3", "MySQL", "Laragon", "HTML5", "CSS3", "Javascript", "Bootstrap", "SweetAlert2"],
     dad: "300",
     tahun: "2024",
     type: "System Management School",
@@ -241,7 +244,7 @@ export const listProyek = [
     gambar: Proyek3,
     nama: "Survei Kepuasan Masyarakat MPP",
     desk: "Platform survei online untuk mengukur tingkat kepuasan masyarakat terhadap layanan MPP, dilengkapi fitur analisis data.",
-    tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap", "TailwindCSS" ],
+    tools: ["PHP-3", "MySQL", "Laragon", "HTML", "CSS", "Javascript", "Bootstrap", "TailwindCSS", "SweetAlert2"],
     dad: "400",
     tahun: "2024",
     type: "Government System",
@@ -255,7 +258,7 @@ export const listProyek = [
     gambar: Proyek4,
     nama: "Toko Orange Web",
     desk: "Website toko online yang menyediakan berbagai produk dengan fitur katalog, keranjang belanja, dan sistem pemesanan.",
-    tools: ["HTML", "CSS", "Javascript",'MySQL', "PHP", "Bootstrap"],
+    tools: ["PHP-3", "MySQL", "Laragon", "HTML", "CSS", "Javascript", "Bootstrap"],
     dad: "500",
     tahun: "2023",
     type: "Business System",
@@ -269,7 +272,7 @@ export const listProyek = [
     gambar: Proyek5,
     nama: "Sistem Manajemen Siswa ",
     desk: "Aplikasi manajemen data siswa untuk sekolah, meliputi fitur input, update, dan monitoring data siswa secara efisien.",
-    tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
+    tools: ["HTML5", "CSS3", "Javascript", "Bootstrap5"],
     dad: "600",
     tahun: "2023",
     type: "School System",
@@ -283,15 +286,43 @@ export const listProyek = [
     gambar: Proyek6,
     nama: "Web Portfolio Mahasiswa",
     desk: "Platform portofolio digital untuk mahasiswa, menampilkan karya, pengalaman, dan pencapaian akademik secara interaktif.",
-    tools: ["HTML", "CSS", "Javascript", "TailwindCSS" ],
+    tools: ["HTML5", "CSS3", "Javascript", "TailwindCSS" ],
     dad: "700",
     tahun: "2023",
-    type: "Personal Branding System",
+    type: "Personal Landing Page",
     kantor : "Universitas Dipa Makassar",
     status: "Offline",
     github: "https://github.com/NyomanWahyu01/Web-Portfolio-Mahasiswa",
+    demo: "", // //  isi jika ada link demo
+  },
+  {
+    id: 7,
+    gambar: Proyek7,
+    nama: "Jeneberang Digital Archive (JENDIG) Berbasis Web Local",
+    desk: "Platform Digital Manajemen Dokumen Archive Persuratan pada Kantor Balai BPDAS Jeneberang Kota Makassar.",
+    tools: ["PHP-3", "Laravel-11", "MySQL", "Laragon", "HTML5", "CSS3", "Javascript", "Bootstrap5", "Vite", "SweetAlert2" ],
+    dad: "700",
+    tahun: "2025",
+    type: "E-Archive | Government",
+    kantor : "Universitas Dipa Makassar",
+    status: "Offline",
+    github: "https://github.com/NyomanWahyu01",
     demo: "", // isi jika ada link demo
   },
+  {
+    id: 8,
+    gambar: Proyek8,
+    nama: "BCL Laundry Makassar Berbasis Web",
+    desk: "Sistem informasi layanan jasa binatu berbasis web untuk meningkatkan branding dan jangkauan pelanggan secara digital di wilayah Kota Makassar.",
+    tools: ["HTML5", "CSS3", "Javascript", "Bootstrap 5", "Animate.css"],
+    dad: "700",
+    tahun: "2025",
+    type: "Business Landing Page", // Tipe ini lebih cocok untuk Laundry
+    kantor : "BCL Laundry",
+    status: "Offline",
+    github: "https://github.com/NyomanWahyu01", // Sesuaikan link jika ada
+    demo: "", 
+},
 ];
 
 import design1 from "/assets/design/design1.webp";

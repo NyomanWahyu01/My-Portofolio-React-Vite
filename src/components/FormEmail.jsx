@@ -58,7 +58,7 @@ const FormEmail = () => {
       )}
 
       <form
-        action="https://formsubmit.co/trisnawinda088@gmail.com"
+        action="https://formsubmit.co/inyomanwahyu123@gmail.com"
         method="POST"
         onSubmit={handleSubmit}
         className="bg-linear-to-br from-zinc-800 to-zinc-900 p-6 sm:p-10 w-full rounded-xl border border-zinc-700 shadow-2xl"

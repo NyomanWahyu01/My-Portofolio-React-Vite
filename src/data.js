@@ -1,6 +1,6 @@
 import profileSlogan from "/assets/profile-slogan.webp";
 import profileBg from "/assets/profile-bg.webp";
-import profileAbout from "/assets/profile-about.png";
+import profileAbout from "/assets/profile-about.webp";
 
 export const DataImage = {
   profileSlogan,

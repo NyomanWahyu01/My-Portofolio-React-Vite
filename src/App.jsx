@@ -81,7 +81,7 @@ function App() {
            handle=""
            status="Online"
            contactText="My Contact"
-           avatarUrl="/public/assets/profile-about.png"
+           avatarUrl="/public/assets/profile-about.webp"
            showUserInfo={true}
            enableTilt={true}
            enableMobileTilt={false}

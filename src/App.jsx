@@ -38,7 +38,7 @@ function App() {
 
              <div className="relative z-10">
             <TextType 
-            text={["Programming: Mengubah ide menjadi realitas digital sesuai dengan keinginan anda✅"]}
+            text={["Programmer: Mengubah ide menjadi realitas digital sesuai dengan keinginan anda✅"]}
             className="animate__animated animate__fadeInUp animate__delay-1s overflow-hidden"
             typingSpeed={90}
             pauseDuration={1500}
@@ -77,7 +77,7 @@ function App() {
         <div className="flex justify-center md:justify-end mt-8 md:mt-0">
           <ProfileCard
            name="Nyoman"
-           title="Full Stack Developer"
+           title="FullStack Developer"
            handle=""
            status="Online"
            contactText="My Contact"
@@ -170,7 +170,7 @@ function App() {
       {/* TOOLS */}
       <div id="tools" className="tools mt-32">
         <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">Tools & Framework Coding</h1>
-        <p className="text-base/loose text-center opacity-50 mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> Dibawah ini merupakan beberapa Tools yang biasa digunakan untuk membuat Coding dan Design</p>
+        <p className="text-base/loose text-center opacity-50 mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"> Dibawah ini merupakan beberapa tools yang biasa digunakan untuk membuat Coding dan Design</p>
         
         {/* LogoLoop Section */}
         <div className="mb-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
@@ -197,7 +197,7 @@ function App() {
       {/* PROJECT */}
       <div id="project" className="Project mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">My - Project</h1>
-        <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Beberapa Project yang telah saya bangun dan kembangkan untuk berbagai kebutuhan digital.</p>
+        <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Beberapa project yang telah saya bangun dan kembangkan untuk berbagai kebutuhan digital.</p>
         <div className="project-box mt-14 animate__animated animate__fadeInUp animate__delay-5s">
           <style>{`
             @keyframes floatIn {
@@ -328,7 +328,7 @@ function App() {
       {/* MY DESIGN */}
       <div id="design" className="Design mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">My - Design</h1>
-        <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Galeri karya visual saya yang mencakup Design UI/UX, Graphic Design, poster, banner, dan berbagai desain kreatif lainnya.</p>
+        <p className="text-base/loose text-center mb-10 opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Galeri karya visual saya yang mencakup design ui/ux, graphic design, poster, banner, dan berbagai desain kreatif lainnya.</p>
         <div className="design-box mt-14">
   <style>{`
     @keyframes smoothFloatIn {

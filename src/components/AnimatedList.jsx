@@ -21,9 +21,9 @@ const AnimatedItem = ({ children, delay = 0, index, onMouseEnter, onClick }) => 
 
 const AnimatedList = ({
   items = [
-    'Front-End Developer',
-    'Full Stack Developer',
-    'UI/UX Design.',
+    'Frontend Developer',
+    'FullStack Developer',
+    'UI/UX Design',
     `Graphic Design`,
     'Performance Optimization'
   ],

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-/* eslint-disable-next-line no-unused-vars */
 import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listProyek } from "../data";

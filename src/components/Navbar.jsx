@@ -1,26 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { useT } from "../i18n/LanguageProvider";
+import { getStoredTheme, applyTheme, setTheme as persistTheme } from "../theme";
 
 export default function Navbar() {
   const { lang, setLang, t } = useT();
-  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "system");
+  const [theme, setThemeState] = useState(getStoredTheme);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const root = document.documentElement;
-    const isDark = 
-      theme === "dark" || 
-      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    
-    if (isDark) {
-      root.classList.add("dark");
-      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#0b0b0b");
-    } else {
-      root.classList.remove("dark");
-      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#fbf6ea");
-    }
-    localStorage.setItem("theme", theme);
+    applyTheme(theme);
   }, [theme]);
+
+  useEffect(() => {
+    const sync = () => setThemeState(getStoredTheme());
+    window.addEventListener("ecc-theme-change", sync);
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const onSystem = () => {
+      if (getStoredTheme() === "system") applyTheme("system");
+    };
+    mq.addEventListener("change", onSystem);
+    return () => {
+      window.removeEventListener("ecc-theme-change", sync);
+      mq.removeEventListener("change", onSystem);
+    };
+  }, []);
+
+  const cycleTheme = () => {
+    const next =
+      theme === "light" ? "dark" : theme === "dark" ? "system" : "light";
+    setThemeState(next);
+    persistTheme(next);
+  };
 
   return (
     <header className="sticky top-4 z-50 mx-auto max-w-[1200px] px-4">
@@ -59,7 +69,7 @@ export default function Navbar() {
 
           {/* Theme Selector */}
           <button 
-            onClick={() => setTheme(theme === "light" ? "dark" : theme === "dark" ? "system" : "light")}
+            onClick={cycleTheme}
             className="flex h-9 w-9 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-[var(--fg)] shadow-[2px_2px_0px_var(--shadow)] transition-transform active:translate-x-[2px] active:translate-y-[2px]"
             title={`Theme: ${theme}`}
           >
@@ -99,7 +109,7 @@ export default function Navbar() {
               <button onClick={() => setLang("en")} className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : ""}`}>EN</button>
             </div>
             <button 
-              onClick={() => setTheme(theme === "light" ? "dark" : theme === "dark" ? "system" : "light")}
+              onClick={cycleTheme}
               className="px-3 py-1 rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-xs font-bold"
             >
               Theme: {theme}

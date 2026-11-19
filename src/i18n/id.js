@@ -95,5 +95,29 @@ export default {
     subtitle: "Karya poster, banner, dan eksplorasi visual.",
     more: "Lihat Lebih Banyak",
     less: "Lihat Lebih Sedikit"
+  },
+  contact: {
+    title: "AYO BIKIN SESUATU BARENG",
+    chipResponse: "Respon < 24 jam",
+    chipAvailable: "Tersedia sekarang",
+    emailLabel: "Email",
+    whatsappLabel: "WhatsApp",
+    locationLabel: "Lokasi",
+    locationValue: "Makassar, Indonesia",
+    formTitle: "Kirim Pesan",
+    nameLabel: "Nama Lengkap",
+    namePlaceholder: "Masukkan nama Anda",
+    emailFieldLabel: "Email",
+    emailPlaceholder: "Masukkan email Anda",
+    messageLabel: "Pesan",
+    messagePlaceholder: "Pesan yang ingin disampaikan",
+    send: "Kirim Pesan",
+    sending: "Mengirim...",
+    success: "Pesan berhasil dikirim. Terima kasih!",
+    error: "Gagal mengirim pesan. Silakan coba lagi."
+  },
+  footer: {
+    backToTop: "Kembali ke atas",
+    rights: "Hak cipta dilindungi."
   }
 };

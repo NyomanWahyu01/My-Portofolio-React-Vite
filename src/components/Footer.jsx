@@ -1,142 +1,122 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useT } from "../i18n/LanguageProvider";
+import { getStoredTheme, setTheme as persistTheme } from "../theme";
 
+const themeOptions = [
+  { key: "light", icon: "ri-sun-line" },
+  { key: "system", icon: "ri-computer-line" },
+  { key: "dark", icon: "ri-moon-line" },
+];
 
-const Footer = () => {
-  const [activeLink, setActiveLink] = useState("");
+export default function Footer() {
+  const { lang, setLang, t } = useT();
+  const [theme, setThemeState] = useState(getStoredTheme);
+  const year = new Date().getFullYear();
 
-  const handleLinkClick = (linkName) => {
-    setActiveLink(linkName);
+  useEffect(() => {
+    const sync = () => setThemeState(getStoredTheme());
+    window.addEventListener("ecc-theme-change", sync);
+    return () => window.removeEventListener("ecc-theme-change", sync);
+  }, []);
+
+  const changeTheme = (next) => {
+    setThemeState(next);
+    persistTheme(next);
   };
 
   return (
-    <footer data-aos="fade-up" data-aos-duration="1000">
-      <div className="mt-32 py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
-      <div className="logo flex items-center gap-2">
-                <img src="/assets/Logo-Nym.png" alt="Logo" className="object-contain rounded-full w-10 md:w-12"/>
-                <h1 className="text-2xl font-bold"></h1>
+    <footer className="mt-20 border-t-[3px] border-[var(--line)] bg-[var(--bg)] overflow-hidden">
+      <div className="container mx-auto px-5 md:px-8 pt-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
+          {/* Anchor links */}
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm font-medium text-[var(--fg)]">
+            <a href="#about" className="hover:text-[var(--accent)]">{t("nav.about")}</a>
+            <a href="#projects" className="hover:text-[var(--accent)]">{t("nav.projects")}</a>
+            <a href="#services" className="hover:text-[var(--accent)]">{t("nav.services")}</a>
+            <a href="#experience" className="hover:text-[var(--accent)]">{t("nav.experience")}</a>
+            <a href="#contact" className="hover:text-[var(--accent)]">{t("nav.contact")}</a>
+          </nav>
+
+          {/* Social */}
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/NyomanWahyu01"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-[var(--card)] text-[var(--on-card)] shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+            >
+              <i className="ri-github-fill text-xl"></i>
+            </a>
+            <a
+              href="mailto:inyomanwahyu123@gmail.com"
+              aria-label="Email"
+              className="flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-[var(--card)] text-[var(--on-card)] shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+            >
+              <i className="ri-mail-fill text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        {/* Controls */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
+          <div className="flex items-center gap-3">
+            {/* Language */}
+            <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-[var(--card)]">
+              <button
+                onClick={() => setLang("id")}
+                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : "text-[var(--muted)]"}`}
+              >
+                ID
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : "text-[var(--muted)]"}`}
+              >
+                EN
+              </button>
             </div>
 
-        <div 
-          className="flex gap-7" 
-          data-aos="fade-up" 
-          data-aos-duration="2000" 
-          data-aos-delay="200"
-          data-aos-easing="ease-out-cubic">
-          <a 
-            href="#home"
-            onClick={() => handleLinkClick("home")}
-            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-              ${activeLink === "home" 
-                ? "text-blue-600 font-semibold" 
-                : "text-gray-300 hover:text-blue-500"
-              }
-            `}
-          >
-            Home
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-              ${activeLink === "home" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-            `}></span>
-          </a>
-          <a 
-            href="#about"
-            onClick={() => handleLinkClick("about")}
-            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-              ${activeLink === "about" 
-                ? "text-blue-600 font-semibold" 
-                : "text-gray-300 hover:text-blue-500"
-              }
-            `}
-          >
-            About
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-              ${activeLink === "about" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-            `}></span>
-          </a>
-          <a 
-            href="#project"
-            onClick={() => handleLinkClick("project")}
-            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-              ${activeLink === "project" 
-                ? "text-blue-600 font-semibold" 
-                : "text-gray-300 hover:text-blue-500"
-              }
-            `}
-          >
-            Project
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-              ${activeLink === "project" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-            `}></span>
-          </a>
-          <a 
-            href="#contact"
-            onClick={() => handleLinkClick("contact")}
-            className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-              ${activeLink === "contact" 
-                ? "text-blue-600 font-semibold" 
-                : "text-gray-300 hover:text-blue-500"
-              }
-            `}
-          >
-            Contact
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-              ${activeLink === "contact" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-            `}></span>
-          </a>
-        </div>
-        <div 
-          className="flex items-center gap-3" 
-          data-aos="fade-left" 
-          data-aos-duration="1000" 
-          data-aos-delay="300"
-          data-aos-easing="ease-out-cubic"
-        >
-          <a 
-            href="https://wa.me/6285399101184?text=Halo,%20saya%20tertarik%20untuk%20berkolaborasi" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="transition-all duration-300 hover:scale-125 hover:rotate-12 hover:text-green-600"
-            data-aos="zoom-in"
-            data-aos-duration="600"
-            data-aos-delay="400"
-          >
-            <i className="ri-whatsapp-fill ri-2x"></i>
-          </a>
-          <a 
-            href="https://www.instagram.com/inyoman_wahyu1/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="transition-all duration-300 hover:scale-125 hover:rotate-12 hover:text-pink-400"
-            data-aos="zoom-in"
-            data-aos-duration="600"
-            data-aos-delay="500"
-          >
-            <i className="ri-instagram-fill ri-2x"></i>
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/i-nyoman-wahyu" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="transition-all duration-300 hover:scale-125 hover:rotate-12 hover:text-blue-500"
-            data-aos="zoom-in"
-            data-aos-duration="600"
-            data-aos-delay="600"
-          >
-            <i className="ri-linkedin-fill ri-2x"></i>
-          </a>
-          <a 
-            href="mailto:inyomanwahyu123@gmail.com"
-            className="transition-all duration-300 hover:scale-125 hover:rotate-12 hover:text-red-400"
-            data-aos="zoom-in"
-            data-aos-duration="600"
-            data-aos-delay="700"
-          >
-            <i className="ri-mail-fill ri-2x"></i>
-          </a>
-        </div>
-      </div>
-      
-    </footer>
-  )
-}
+            {/* Theme */}
+            <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-[var(--card)]">
+              {themeOptions.map((opt) => (
+                <button
+                  key={opt.key}
+                  onClick={() => changeTheme(opt.key)}
+                  aria-label={`Theme ${opt.key}`}
+                  aria-pressed={theme === opt.key}
+                  className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                    theme === opt.key
+                      ? "bg-[var(--card-alt)] text-[var(--on-card)]"
+                      : "text-[var(--muted)]"
+                  }`}
+                >
+                  <i className={`${opt.icon} text-sm`}></i>
+                </button>
+              ))}
+            </div>
+          </div>
 
-export default Footer;
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--card)] px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-[var(--fg)] shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+          >
+            <i className="ri-arrow-up-line"></i>
+            {t("footer.backToTop")}
+          </a>
+        </div>
+
+        <p className="font-sans text-sm text-[var(--muted)] mb-6">
+          © {year} I Nyoman Wahyu. {t("footer.rights")}
+        </p>
+      </div>
+
+      {/* Giant wordmark */}
+      <div className="relative select-none pointer-events-none" aria-hidden="true">
+        <p className="font-display uppercase leading-[0.75] text-center text-[clamp(6rem,22vw,20rem)] text-[var(--fg)] opacity-[0.08] translate-y-[12%]">
+          NYOMAN
+        </p>
+      </div>
+    </footer>
+  );
+}

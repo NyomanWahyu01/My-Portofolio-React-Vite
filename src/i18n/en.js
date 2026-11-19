@@ -95,5 +95,29 @@ export default {
     subtitle: "Posters, banners, and visual explorations.",
     more: "View More",
     less: "View Less"
+  },
+  contact: {
+    title: "LET'S BUILD SOMETHING TOGETHER",
+    chipResponse: "Reply < 24 hours",
+    chipAvailable: "Available now",
+    emailLabel: "Email",
+    whatsappLabel: "WhatsApp",
+    locationLabel: "Location",
+    locationValue: "Makassar, Indonesia",
+    formTitle: "Send a Message",
+    nameLabel: "Full Name",
+    namePlaceholder: "Enter your name",
+    emailFieldLabel: "Email",
+    emailPlaceholder: "Enter your email",
+    messageLabel: "Message",
+    messagePlaceholder: "Your message",
+    send: "Send Message",
+    sending: "Sending...",
+    success: "Message sent successfully. Thank you!",
+    error: "Failed to send message. Please try again."
+  },
+  footer: {
+    backToTop: "Back to top",
+    rights: "All rights reserved."
   }
 };

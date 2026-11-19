@@ -7,6 +7,7 @@
   --bg: #fbf6ea;
   --fg: #111111;
   --muted: #5b5b5b;
+  --muted-card: #5b5b5b;
   --card: #ffffff;
   --on-card: #111111;
   --card-alt: #ffcb1f;
@@ -27,6 +28,7 @@
   --bg: #0b0b0b;
   --fg: #f2ebd3;
   --muted: #b9b29b;
+  --muted-card: #4a4636;
   --card: #f2ebd3;
   --on-card: #111111;
   --card-alt: #bfddd9;
@@ -41,6 +43,7 @@
   --color-bg: var(--bg);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
+  --color-muted-card: var(--muted-card);
   --color-card: var(--card);
   --color-on-card: var(--on-card);
   --color-card-alt: var(--card-alt);

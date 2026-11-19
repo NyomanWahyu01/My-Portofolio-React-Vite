@@ -73,7 +73,7 @@ export default function Design() {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-fg shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {showAll ? t("design.less") : t("design.more")}
           </button>
@@ -127,7 +127,7 @@ export default function Design() {
                 {selected.tools?.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-on-card"
+                    className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-fg"
                   >
                     {tool}
                   </span>

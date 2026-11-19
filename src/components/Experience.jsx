@@ -48,11 +48,11 @@ export default function Experience() {
                   <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
                     {item.title}
                   </h3>
-                  <span className="rounded-full border-[2px] border-[var(--border)] bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card">
+                  <span className="rounded-full border-[2px] border-[var(--border)] bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-fg">
                     {item.period}
                   </span>
                 </div>
-                <p className="font-sans text-sm font-bold text-muted mb-4 flex items-center gap-2">
+                <p className="font-sans text-sm font-bold text-muted-card mb-4 flex items-center gap-2">
                   <i className="ri-building-line"></i> {item.org}
                 </p>
                 
@@ -62,7 +62,7 @@ export default function Experience() {
                   </p>
                 )}
 
-                <ul className="font-sans text-sm leading-relaxed text-muted space-y-2 list-disc list-inside">
+                <ul className="font-sans text-sm leading-relaxed text-muted-card space-y-2 list-disc list-inside">
                   {item.desc.map((d, index) => (
                     <li key={index}>{d}</li>
                   ))}

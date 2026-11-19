@@ -38,7 +38,7 @@ export default function Contact() {
                 <i className="ri-whatsapp-line text-lg"></i>
               </span>
               <span className="flex flex-col">
-                <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-muted">
+                <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-muted-card">
                   WhatsApp
                 </span>
                 <span className="font-sans text-sm font-bold text-on-card">
@@ -55,7 +55,7 @@ export default function Contact() {
                 <i className="ri-mail-line text-lg"></i>
               </span>
               <span className="flex flex-col">
-                <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-muted">
+                <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-muted-card">
                   {t("contact.emailLabel")}
                 </span>
                 <span className="font-sans text-sm font-bold text-on-card">

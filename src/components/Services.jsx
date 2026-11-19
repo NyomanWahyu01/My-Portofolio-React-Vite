@@ -55,7 +55,7 @@ export default function Services() {
             <h3 className="font-sans text-[1.25rem] font-bold text-on-card mb-2">
               {t(`services.${s.key}Title`)}
             </h3>
-            <p className="font-sans text-sm leading-relaxed text-muted">
+            <p className="font-sans text-sm leading-relaxed text-muted-card">
               {t(`services.${s.key}Desc`)}
             </p>
           </motion.div>

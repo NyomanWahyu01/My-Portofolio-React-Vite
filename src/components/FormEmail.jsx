@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useT } from "../i18n/LanguageProvider";
 
 const inputClass =
-  "h-12 w-full rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 font-sans text-on-card placeholder:text-muted focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
+  "h-12 w-full rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
 
 const FormEmail = () => {
   const { t } = useT();
@@ -104,7 +104,7 @@ const FormEmail = () => {
             id="pesan"
             rows="5"
             placeholder={t("contact.messagePlaceholder")}
-            className="w-full resize-none rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 py-3 font-sans text-on-card placeholder:text-muted focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow"
+            className="w-full resize-none rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 py-3 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow"
             required
           ></textarea>
         </div>

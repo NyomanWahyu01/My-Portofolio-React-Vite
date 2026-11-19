@@ -27,5 +27,22 @@ export default {
     statYears: "Tahun Pengalaman",
     rolesTitle: "Peran",
     roles: ["Frontend", "Full Stack", "UI/UX", "Graphic Design", "Performance"]
+  },
+  projects: {
+    title: "PROJECT KAMI",
+    subtitle: "Koleksi karya digital, sistem informasi, dan aplikasi web.",
+    filterAll: "Semua",
+    filterWeb: "Web App",
+    filterGov: "Pemerintahan",
+    filterBusiness: "Bisnis",
+    filterPersonal: "Personal",
+    statusLive: "Live",
+    statusDev: "Dalam Pengembangan",
+    statusConcept: "Konsep",
+    statusArchived: "Arsip",
+    demo: "Demo",
+    github: "GitHub",
+    roleLabel: "Peran:",
+    stackLabel: "Stack:"
   }
 };

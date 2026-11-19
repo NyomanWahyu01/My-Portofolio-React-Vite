@@ -27,5 +27,22 @@ export default {
     statYears: "Years Experience",
     rolesTitle: "Roles",
     roles: ["Frontend", "Full Stack", "UI/UX", "Graphic Design", "Performance"]
+  },
+  projects: {
+    title: "PROJECTS",
+    subtitle: "A collection of digital works, information systems, and web applications.",
+    filterAll: "All",
+    filterWeb: "Web App",
+    filterGov: "Government",
+    filterBusiness: "Business",
+    filterPersonal: "Personal",
+    statusLive: "Live",
+    statusDev: "In Development",
+    statusConcept: "Concept",
+    statusArchived: "Archived",
+    demo: "Demo",
+    github: "GitHub",
+    roleLabel: "Role:",
+    stackLabel: "Stack:"
   }
 };

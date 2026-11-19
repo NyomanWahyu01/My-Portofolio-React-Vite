@@ -59,13 +59,13 @@ export default function Footer() {
             <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-card">
               <button
                 onClick={() => setLang("id")}
-                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-card-alt text-on-card" : "text-muted"}`}
+                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
               >
                 ID
               </button>
               <button
                 onClick={() => setLang("en")}
-                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-card-alt text-on-card" : "text-muted"}`}
+                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
               >
                 EN
               </button>
@@ -82,7 +82,7 @@ export default function Footer() {
                   className={`flex h-8 w-8 items-center justify-center rounded-full ${
                     theme === opt.key
                       ? "bg-card-alt text-on-card"
-                      : "text-muted"
+                      : "text-muted-card"
                   }`}
                 >
                   <i className={`${opt.icon} text-sm`}></i>

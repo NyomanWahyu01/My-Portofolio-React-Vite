@@ -156,22 +156,25 @@
 @keyframes revealImage {
   0% {
     opacity: 0;
-    transform: translateY(50px) scale(0.9);
+    transform: translateY(50px) scale(0.9) rotate(2deg);
     filter: blur(8px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) rotate(2deg);
     filter: blur(0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fade-up,
-  .profile-hero-img {
+  .fade-up {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+  .profile-hero-img {
+    animation: none;
+    opacity: 1;
     filter: none;
   }
 }

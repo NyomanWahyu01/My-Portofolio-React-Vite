@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+/* eslint-disable-next-line no-unused-vars */
 import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listDesign } from "../data";
@@ -26,10 +27,10 @@ export default function Design() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var(--fg)] mb-4">
+        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
           {t("design.title")}
         </h2>
-        <p className="font-sans text-[var(--muted)] mb-10 max-w-prose">
+        <p className="font-sans text-muted mb-10 max-w-prose">
           {t("design.subtitle")}
         </p>
       </motion.div>
@@ -48,7 +49,7 @@ export default function Design() {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               onClick={() => setSelected(item)}
-              className="group relative block w-full overflow-hidden rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] text-left shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)]"
+              className="group relative block w-full overflow-hidden rounded-[24px] border-[3px] border-[var(--border)] bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)]"
             >
               <img
                 src={item.gambar}
@@ -56,7 +57,7 @@ export default function Design() {
                 className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
-              <span className="absolute left-4 top-4 rounded-full border-[2px] border-[var(--border)] bg-[var(--card-alt)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-[var(--on-card)] opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="absolute left-4 top-4 rounded-full border-[2px] border-[var(--border)] bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">
                 {item.type}
               </span>
             </motion.button>
@@ -72,7 +73,7 @@ export default function Design() {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--card)] px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-[var(--fg)] shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-fg shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {showAll ? t("design.less") : t("design.more")}
           </button>
@@ -89,19 +90,19 @@ export default function Design() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-[var(--fg)]/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-fg/60 backdrop-blur-sm"
               onClick={() => setSelected(null)}
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
+              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-[var(--bg)] text-[var(--fg)]"
+                className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-bg text-fg"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
@@ -115,10 +116,10 @@ export default function Design() {
                 />
               </div>
 
-              <h3 className="font-sans text-2xl font-bold text-[var(--on-card)] mb-2">
+              <h3 className="font-sans text-2xl font-bold text-on-card mb-2">
                 {selected.nama}
               </h3>
-              <p className="font-sans text-[var(--on-card)] leading-relaxed mb-6 opacity-80">
+              <p className="font-sans text-on-card leading-relaxed mb-6 opacity-80">
                 {selected.desk}
               </p>
 
@@ -126,7 +127,7 @@ export default function Design() {
                 {selected.tools?.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-3 py-1 text-xs font-bold text-[var(--on-card)]"
+                    className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-on-card"
                   >
                     {tool}
                   </span>
@@ -138,7 +139,7 @@ export default function Design() {
                   href={selected.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full text-center rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] px-5 py-3 font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)]"
+                  className="inline-block w-full text-center rounded-[16px] border-[3px] border-[var(--border)] bg-cta px-5 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                 >
                   {t("projects.demo")}
                 </a>

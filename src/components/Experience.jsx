@@ -1,4 +1,5 @@
 import React from "react";
+/* eslint-disable-next-line no-unused-vars */
 import { motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 
@@ -16,16 +17,16 @@ export default function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var(--fg)] mb-4">
+        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
           {t("experience.title")}
         </h2>
-        <p className="font-sans text-[var(--muted)] mb-16 max-w-prose">
+        <p className="font-sans text-muted mb-16 max-w-prose">
           {t("experience.subtitle")}
         </p>
       </motion.div>
 
       {/* Timeline */}
-      <div className="relative border-l-[3px] border-[var(--line)] pl-8 space-y-12">
+      <div className="relative border-l-[3px] border-line pl-8 space-y-12">
         {Array.isArray(timeline) &&
           timeline.map((item, i) => (
             <motion.div 
@@ -42,26 +43,26 @@ export default function Experience() {
                 style={{ backgroundColor: dotColors[i % dotColors.length] }}
                 aria-hidden="true"
               />
-              <div className="rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)] hover:shadow-[10px_10px_0px_var(--shadow)] transition-shadow">
+              <div className="rounded-[24px] border-[3px] border-[var(--border)] bg-card p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)] hover:shadow-[10px_10px_0px_var(--shadow)] transition-shadow">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <h3 className="font-sans text-[1.25rem] font-bold text-[var(--on-card)]">
+                  <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
                     {item.title}
                   </h3>
-                  <span className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-[var(--on-card)]">
+                  <span className="rounded-full border-[2px] border-[var(--border)] bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card">
                     {item.period}
                   </span>
                 </div>
-                <p className="font-sans text-sm font-bold text-[var(--muted)] mb-4 flex items-center gap-2">
+                <p className="font-sans text-sm font-bold text-muted mb-4 flex items-center gap-2">
                   <i className="ri-building-line"></i> {item.org}
                 </p>
                 
                 {item.stack && (
-                  <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-[var(--accent)] mb-4 bg-[var(--bg)] inline-block px-3 py-1 rounded-md border-[1px] border-[var(--border)]">
+                  <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-accent mb-4 bg-bg inline-block px-3 py-1 rounded-md border-[1px] border-[var(--border)]">
                     {item.stack}
                   </p>
                 )}
 
-                <ul className="font-sans text-sm leading-relaxed text-[var(--muted)] space-y-2 list-disc list-inside">
+                <ul className="font-sans text-sm leading-relaxed text-muted space-y-2 list-disc list-inside">
                   {item.desc.map((d, index) => (
                     <li key={index}>{d}</li>
                   ))}
@@ -78,7 +79,7 @@ export default function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h3 className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--muted)] mb-8">
+        <h3 className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-muted mb-8">
           {t("experience.certTitle")}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -87,10 +88,10 @@ export default function Experience() {
               <motion.div
                 key={i}
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-3 rounded-[16px] border-[2px] border-[var(--border)] bg-[var(--card)] px-5 py-3 shadow-[3px_3px_0px_var(--shadow)]"
+                className="flex items-center gap-3 rounded-[16px] border-[2px] border-[var(--border)] bg-card px-5 py-3 shadow-[3px_3px_0px_var(--shadow)]"
               >
-                <i className="ri-award-line text-[var(--accent)] text-lg"></i>
-                <span className="font-sans text-sm font-bold text-[var(--on-card)]">
+                <i className="ri-award-line text-accent text-lg"></i>
+                <span className="font-sans text-sm font-bold text-on-card">
                   {cert}
                 </span>
               </motion.div>

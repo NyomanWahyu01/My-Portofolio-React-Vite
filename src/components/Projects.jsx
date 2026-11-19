@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+/* eslint-disable-next-line no-unused-vars */
 import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listProyek } from "../data";
@@ -66,10 +67,10 @@ export default function Projects() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var(--fg)] mb-4">
+        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
           {t("projects.title")}
         </h2>
-        <p className="font-sans text-[var(--muted)] mb-8 max-w-prose">
+        <p className="font-sans text-muted mb-8 max-w-prose">
           {t("projects.subtitle")}
         </p>
 
@@ -81,8 +82,8 @@ export default function Projects() {
               onClick={() => setFilter(f.key)}
               className={`rounded-full border-[2px] border-[var(--border)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.08em] transition-all ${
                 filter === f.key
-                  ? "bg-[var(--accent)] text-[var(--on-card)] shadow-[3px_3px_0px_var(--shadow)]"
-                  : "bg-[var(--card)] text-[var(--on-card)]"
+                  ? "bg-accent text-on-card shadow-[3px_3px_0px_var(--shadow)]"
+                  : "bg-card text-on-card"
               }`}
             >
               {t(f.label)}
@@ -105,7 +106,7 @@ export default function Projects() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className={`group relative rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]`}
+              className={`group relative rounded-[24px] border-[3px] border-[var(--border)] bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]`}
             >
               {/* Folder tab */}
               <span
@@ -116,17 +117,17 @@ export default function Projects() {
 
               <div className="flex items-start justify-between mb-4">
                 <span
-                  className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-[var(--on-card)]"
+                  className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-on-card"
                   style={{ backgroundColor: p.color }}
                 >
                   <i className="ri-folder-2-line text-xl"></i>
                 </span>
                 <div className="flex items-center gap-2">
-                  <span className="font-sans text-xs font-bold text-[var(--muted)]">
+                  <span className="font-sans text-xs font-bold text-muted">
                     {p.tahun}
                   </span>
                   <span
-                    className="rounded-full border-[2px] border-[var(--border)] px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-[var(--on-card)]"
+                    className="rounded-full border-[2px] border-[var(--border)] px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card"
                     style={{ backgroundColor: statusColor[p.status] }}
                   >
                     {t(statusKey[p.status])}
@@ -135,7 +136,7 @@ export default function Projects() {
               </div>
 
               {p.gambar && (
-                <div className="mb-4 overflow-hidden rounded-[16px] border-[3px] border-[var(--border)] aspect-video bg-[var(--bg)]">
+                <div className="mb-4 overflow-hidden rounded-[16px] border-[3px] border-[var(--border)] aspect-video bg-bg">
                   <img
                     src={p.gambar}
                     alt={p.nama}
@@ -145,10 +146,10 @@ export default function Projects() {
                 </div>
               )}
 
-              <h3 className="font-sans text-[1.25rem] font-bold leading-tight text-[var(--on-card)] mb-2">
+              <h3 className="font-sans text-[1.25rem] font-bold leading-tight text-on-card mb-2">
                 {p.nama}
               </h3>
-              <p className="font-sans text-sm text-[var(--muted)] leading-relaxed line-clamp-2 mb-4">
+              <p className="font-sans text-sm text-muted leading-relaxed line-clamp-2 mb-4">
                 {p.desk}
               </p>
 
@@ -157,7 +158,7 @@ export default function Projects() {
                   {p.tools.slice(0, 3).map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-2 py-0.5 text-[0.65rem] font-bold text-[var(--on-card)]"
+                      className="rounded-full border-[2px] border-[var(--border)] bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-on-card"
                     >
                       {tool}
                     </span>
@@ -172,7 +173,7 @@ export default function Projects() {
                       href={p.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--card-alt)] text-[var(--on-card)] shadow-[2px_2px_0px_var(--shadow)]"
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-card-alt text-on-card shadow-[2px_2px_0px_var(--shadow)]"
                       title="GitHub"
                     >
                       <i className="ri-github-fill text-lg"></i>
@@ -182,7 +183,7 @@ export default function Projects() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setSelected(p)}
-                    className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-[var(--on-card)] shadow-[2px_2px_0px_var(--shadow)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-bg text-on-card shadow-[2px_2px_0px_var(--shadow)]"
                     title="Details"
                   >
                     <i className="ri-arrow-right-up-line text-lg"></i>
@@ -204,19 +205,19 @@ export default function Projects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-[var(--fg)]/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-fg/60 backdrop-blur-sm"
               onClick={() => setSelected(null)}
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-[var(--bg)] text-[var(--on-card)]"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-bg text-on-card"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
@@ -224,13 +225,13 @@ export default function Projects() {
 
               <div className="flex items-center gap-3 mb-6 pr-12">
                 <span
-                  className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-[var(--on-card)]"
+                  className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-on-card"
                   style={{ backgroundColor: selected.color }}
                 >
                   <i className="ri-folder-2-line text-xl"></i>
                 </span>
                 <span
-                  className="rounded-full border-[2px] border-[var(--border)] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-[var(--on-card)]"
+                  className="rounded-full border-[2px] border-[var(--border)] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-on-card"
                   style={{ backgroundColor: statusColor[selected.status] }}
                 >
                   {t(statusKey[selected.status])}
@@ -238,7 +239,7 @@ export default function Projects() {
               </div>
 
               {selected.gambar && (
-                <div className="mb-6 overflow-hidden rounded-[20px] border-[3px] border-[var(--border)] bg-[var(--bg)]">
+                <div className="mb-6 overflow-hidden rounded-[20px] border-[3px] border-[var(--border)] bg-bg">
                    <img
                     src={selected.gambar}
                     alt={selected.nama}
@@ -247,31 +248,31 @@ export default function Projects() {
                 </div>
               )}
 
-              <h3 className="font-sans text-2xl font-bold text-[var(--on-card)] mb-3">
+              <h3 className="font-sans text-2xl font-bold text-on-card mb-3">
                 {selected.nama}
               </h3>
-              <p className="font-sans text-[var(--on-card)] leading-relaxed mb-6 opacity-80">
+              <p className="font-sans text-on-card leading-relaxed mb-6 opacity-80">
                 {selected.desk}
               </p>
 
               {selected.kantor && (
                 <div className="flex items-center gap-2 mb-6">
-                  <i className="ri-building-line text-[var(--muted)]"></i>
-                  <p className="font-sans text-sm font-bold text-[var(--muted)]">
+                  <i className="ri-building-line text-muted"></i>
+                  <p className="font-sans text-sm font-bold text-muted">
                     {selected.kantor}
                   </p>
                 </div>
               )}
 
               <div className="mb-8">
-                <p className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--muted)] mb-3">
+                <p className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-muted mb-3">
                   {t("projects.stackLabel")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {selected.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-3 py-1 text-xs font-bold text-[var(--on-card)]"
+                      className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-on-card"
                     >
                       {tool}
                     </span>
@@ -287,7 +288,7 @@ export default function Projects() {
                     href={selected.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)]"
+                    className="flex-1 text-center rounded-[16px] border-[3px] border-[var(--border)] bg-cta px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     {t("projects.demo")}
                   </motion.a>
@@ -299,7 +300,7 @@ export default function Projects() {
                     href={selected.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--card)] px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)]"
+                    className="flex-1 text-center rounded-[16px] border-[3px] border-[var(--border)] bg-card px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     <i className="ri-github-fill mr-2"></i>
                     {t("projects.github")}

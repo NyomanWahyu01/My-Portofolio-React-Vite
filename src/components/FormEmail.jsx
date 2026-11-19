@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useT } from "../i18n/LanguageProvider";
 
 const inputClass =
-  "h-12 w-full rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--card)] px-4 font-sans text-[var(--on-card)] placeholder:text-[var(--muted)] focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
+  "h-12 w-full rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 font-sans text-on-card placeholder:text-muted focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
 
 const FormEmail = () => {
   const { t } = useT();
@@ -40,17 +40,17 @@ const FormEmail = () => {
 
   return (
     <div className="w-full">
-      <h3 className="font-sans text-[1.25rem] font-bold text-[var(--on-card)] mb-4">
+      <h3 className="font-sans text-[1.25rem] font-bold text-on-card mb-4">
         {t("contact.formTitle")}
       </h3>
 
       {submitStatus === "success" && (
-        <p className="mb-4 rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--green)] px-4 py-3 font-sans text-sm font-bold text-[var(--on-card)]">
+        <p className="mb-4 rounded-[10px] border-[2px] border-[var(--border)] bg-green px-4 py-3 font-sans text-sm font-bold text-on-card">
           {t("contact.success")}
         </p>
       )}
       {submitStatus === "error" && (
-        <p className="mb-4 rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--pink)] px-4 py-3 font-sans text-sm font-bold text-[var(--on-card)]">
+        <p className="mb-4 rounded-[10px] border-[2px] border-[var(--border)] bg-pink px-4 py-3 font-sans text-sm font-bold text-on-card">
           {t("contact.error")}
         </p>
       )}
@@ -68,7 +68,7 @@ const FormEmail = () => {
         <input type="hidden" name="_format" value="plain" />
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="nama" className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--on-card)]">
+          <label htmlFor="nama" className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-on-card">
             {t("contact.nameLabel")}
           </label>
           <input
@@ -82,7 +82,7 @@ const FormEmail = () => {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="email" className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--on-card)]">
+          <label htmlFor="email" className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-on-card">
             {t("contact.emailFieldLabel")}
           </label>
           <input
@@ -96,7 +96,7 @@ const FormEmail = () => {
         </div>
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="pesan" className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--on-card)]">
+          <label htmlFor="pesan" className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-on-card">
             {t("contact.messageLabel")}
           </label>
           <textarea
@@ -104,7 +104,7 @@ const FormEmail = () => {
             id="pesan"
             rows="5"
             placeholder={t("contact.messagePlaceholder")}
-            className="w-full resize-none rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--card)] px-4 py-3 font-sans text-[var(--on-card)] placeholder:text-[var(--muted)] focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow"
+            className="w-full resize-none rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 py-3 font-sans text-on-card placeholder:text-muted focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow"
             required
           ></textarea>
         </div>
@@ -112,7 +112,7 @@ const FormEmail = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none disabled:opacity-50"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-[16px] border-[3px] border-[var(--border)] bg-cta font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none disabled:opacity-50"
         >
           {isSubmitting ? (
             <>

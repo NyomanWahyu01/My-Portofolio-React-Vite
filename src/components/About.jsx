@@ -12,14 +12,14 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left: Story + Stats */}
         <div>
-          <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var--fg] mb-4">
+          <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
             {t("about.title")}
           </h2>
-          <p className="font-sans text-[var--muted] mb-8 max-w-prose">
+          <p className="font-sans text-muted mb-8 max-w-prose">
             {t("about.subtitle")}
           </p>
 
-          <div className="space-y-4 max-w-prose font-sans text-[var--fg] leading-[1.65] mb-10">
+          <div className="space-y-4 max-w-prose font-sans text-fg leading-[1.65] mb-10">
             <p>{t("about.p1")}</p>
             <p>{t("about.p2")}</p>
             <p>{t("about.p3")}</p>
@@ -27,15 +27,15 @@ export default function About() {
 
           {/* Stat stickers */}
           <div className="flex flex-wrap gap-5">
-            <div className="rounded-[16px] border-[3px] border-[var--border] bg-[var--yellow] px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
-              <p className="font-display text-5xl leading-none text-[var--on-card]">10+</p>
-              <p className="font-sans text-sm font-bold uppercase tracking-wider text-[var--on-card]">
+            <div className="rounded-[16px] border-[3px] border-[var(--border)] bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+              <p className="font-display text-5xl leading-none text-on-card">10+</p>
+              <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
                 {t("about.statProjects")}
               </p>
             </div>
-            <div className="rounded-[16px] border-[3px] border-[var--border] bg-[var--pink] px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
-              <p className="font-display text-5xl leading-none text-[var--on-card]">3+</p>
-              <p className="font-sans text-sm font-bold uppercase tracking-wider text-[var--on-card]">
+            <div className="rounded-[16px] border-[3px] border-[var(--border)] bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+              <p className="font-display text-5xl leading-none text-on-card">3+</p>
+              <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
                 {t("about.statYears")}
               </p>
             </div>
@@ -44,7 +44,7 @@ export default function About() {
 
         {/* Right: Role folder cards */}
         <div>
-          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var--muted] mb-6">
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-muted mb-6">
             {t("about.rolesTitle")}
           </h3>
           <div className="space-y-4">
@@ -52,7 +52,7 @@ export default function About() {
               roles.map((role, i) => (
                 <div
                   key={role}
-                  className={`relative rounded-[24px] border-[3px] border-[var--(border)] bg-[var--card] px-6 py-5 shadow-[6px_6px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5 ${
+                  className={`relative rounded-[24px] border-[3px] border-[var(--border)] bg-card px-6 py-5 shadow-[6px_6px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5 ${
                     i % 2 === 0 ? "-rotate-1" : "rotate-1"
                   }`}
                 >
@@ -64,12 +64,12 @@ export default function About() {
                   />
                   <div className="flex items-center gap-4">
                     <span
-                      className="flex h-12 w-12 items-center justify-center rounded-(12px) border-[3px] border-[var--(border)] text-[var--on-card]"
+                      className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-on-card"
                       style={{ backgroundColor: roleColors[i % roleColors.length] }}
                     >
                       <i className="ri-folder-line text-xl"></i>
                     </span>
-                    <p className="font-sans text-[1.25rem] font-bold text-[var--on-card]">
+                    <p className="font-sans text-[1.25rem] font-bold text-on-card">
                       {role}
                     </p>
                   </div>

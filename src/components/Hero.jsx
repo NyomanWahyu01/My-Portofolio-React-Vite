@@ -11,9 +11,9 @@ export default function Hero() {
       <div className="absolute top-10 -left-20 w-64 h-64 rounded-full bg-pink opacity-20 blur-3xl pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-10 -right-20 w-80 h-80 rotate-45 bg-purple opacity-20 blur-3xl pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 animate-fade-up">
+      <div className="relative z-10">
         {/* Status Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border-[2px] border-[var(--border)] bg-card px-4 py-1.5 mb-6 shadow-[2px_2px_0px_var(--shadow)]">
+        <div className="fade-up fade-up-delay-1 inline-flex items-center gap-2 rounded-full border-[2px] border-[var(--border)] bg-card px-4 py-1.5 mb-6 shadow-[2px_2px_0px_var(--shadow)]">
           <span className="h-2 w-2 rounded-full bg-green animate-pulse" />
           <span className="text-[0.75rem] font-bold uppercase tracking-[0.08em] text-on-card">
             {t("hero.badge")}
@@ -21,16 +21,16 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="font-display text-[clamp(3.25rem,9vw,7.5rem)] leading-[0.95] uppercase text-fg mb-6">
+        <h1 className="fade-up fade-up-delay-2 font-display text-[clamp(3.25rem,9vw,7.5rem)] leading-[0.95] uppercase text-fg mb-6">
           {t("hero.title")}
         </h1>
 
-        <p className="font-sans text-[1.125rem] text-muted mb-8 max-w-lg leading-relaxed">
+        <p className="fade-up fade-up-delay-3 font-sans text-[1.125rem] text-muted mb-8 max-w-lg leading-relaxed">
           {t("hero.desc")}
         </p>
 
         {/* CTA */}
-        <div className="flex items-center gap-4">
+        <div className="fade-up fade-up-delay-4 flex items-center gap-4">
           <a 
             href="https://drive.google.com/drive/folders/1CV1RdSf5p0lBML3RB_ewfTXhdUk8Qiuz?usp=sharing"
             target="_blank"
@@ -50,7 +50,7 @@ export default function Hero() {
 
       {/* Profile Image */}
       <div className="relative z-10 flex justify-center md:justify-end">
-        <div className="relative rotate-[2deg] rounded-[24px] border-[3px] border-[var(--border)] bg-card-alt p-4 shadow-[10px_10px_0px_var(--shadow)] w-full max-w-[400px]">
+        <div className="profile-hero-img relative rotate-[2deg] rounded-[24px] border-[3px] border-[var(--border)] bg-card-alt p-4 shadow-[10px_10px_0px_var(--shadow)] w-full max-w-[400px]">
           <div className="aspect-square bg-card rounded-[16px] overflow-hidden border-[2px] border-[var(--border)]">
              <img 
                src={DataImage.profileBg} 

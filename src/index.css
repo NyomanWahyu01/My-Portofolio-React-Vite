@@ -119,3 +119,59 @@
     transform: none;
   }
 }
+
+/* Hero fade-up stagger */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpHero 1s ease forwards;
+}
+
+.fade-up-delay-1 {
+  animation-delay: 0.2s;
+}
+.fade-up-delay-2 {
+  animation-delay: 0.4s;
+}
+.fade-up-delay-3 {
+  animation-delay: 0.6s;
+}
+.fade-up-delay-4 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUpHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero profile image reveal */
+.profile-hero-img {
+  opacity: 0;
+  animation: revealImage 1.3s ease forwards;
+}
+
+@keyframes revealImage {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .profile-hero-img {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

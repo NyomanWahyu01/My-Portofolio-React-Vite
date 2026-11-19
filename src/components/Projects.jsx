@@ -40,6 +40,7 @@ const statusColor = {
 export default function Projects() {
   const { t } = useT();
   const [filter, setFilter] = useState("all");
+  const [showAll, setShowAll] = useState(false);
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
@@ -58,6 +59,8 @@ export default function Projects() {
 
   const visible =
     filter === "all" ? projects : projects.filter((p) => p.category === filter);
+
+  const shown = showAll ? visible : visible.slice(0, 6);
 
   return (
     <section id="projects" className="py-20 md:py-32">
@@ -98,7 +101,7 @@ export default function Projects() {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         <AnimatePresence mode="popLayout">
-          {visible.map((p, i) => (
+          {shown.map((p, i) => (
             <motion.div
               layout
               key={p.id}
@@ -123,7 +126,7 @@ export default function Projects() {
                   <i className="ri-folder-2-line text-xl"></i>
                 </span>
                 <div className="flex items-center gap-2">
-                  <span className="font-sans text-xs font-bold text-muted">
+                  <span className="font-sans text-xs font-bold text-muted-card">
                     {p.tahun}
                   </span>
                   <span
@@ -149,7 +152,7 @@ export default function Projects() {
               <h3 className="font-sans text-[1.25rem] font-bold leading-tight text-on-card mb-2">
                 {p.nama}
               </h3>
-              <p className="font-sans text-sm text-muted leading-relaxed line-clamp-2 mb-4">
+              <p className="font-sans text-sm text-muted-card leading-relaxed line-clamp-2 mb-4">
                 {p.desk}
               </p>
 
@@ -158,7 +161,7 @@ export default function Projects() {
                   {p.tools.slice(0, 3).map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-[2px] border-[var(--border)] bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-on-card"
+                      className="rounded-full border-[2px] border-[var(--border)] bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-fg"
                     >
                       {tool}
                     </span>
@@ -183,7 +186,7 @@ export default function Projects() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setSelected(p)}
-                    className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-bg text-on-card shadow-[2px_2px_0px_var(--shadow)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-bg text-fg shadow-[2px_2px_0px_var(--shadow)]"
                     title="Details"
                   >
                     <i className="ri-arrow-right-up-line text-lg"></i>
@@ -194,6 +197,21 @@ export default function Projects() {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {visible.length > 6 && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mt-12 flex justify-center"
+        >
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-fg shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+          >
+            {showAll ? t("design.less") : t("design.more")}
+          </button>
+        </motion.div>
+      )}
 
       {/* Modal */}
       <AnimatePresence>
@@ -217,7 +235,7 @@ export default function Projects() {
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-bg text-on-card"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-bg text-fg"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
@@ -258,21 +276,21 @@ export default function Projects() {
               {selected.kantor && (
                 <div className="flex items-center gap-2 mb-6">
                   <i className="ri-building-line text-muted"></i>
-                  <p className="font-sans text-sm font-bold text-muted">
+                  <p className="font-sans text-sm font-bold text-muted-card">
                     {selected.kantor}
                   </p>
                 </div>
               )}
 
               <div className="mb-8">
-                <p className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-muted mb-3">
+                <p className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-muted-card mb-3">
                   {t("projects.stackLabel")}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {selected.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-on-card"
+                      className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-fg"
                     >
                       {tool}
                     </span>

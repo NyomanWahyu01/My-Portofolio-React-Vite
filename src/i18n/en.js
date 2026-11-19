@@ -60,5 +60,28 @@ export default {
     p3: "Build",
     p4: "Launch",
     cta: "Discuss a Project"
+  },
+  experience: {
+    title: "EXPERIENCE",
+    subtitle: "Work, education, and certifications.",
+    timelineTitle: "Journey",
+    certTitle: "Certifications",
+    present: "Present",
+    todoDate: "Date to be confirmed",
+    timeline: [
+      {
+        title: "Development Team Member — JENDIG",
+        org: "Balai BPDAS Jeneberang Saddang",
+        period: "2025",
+        desc: "Web-based archive and correspondence system built with Laravel + MySQL, delivered with the team."
+      },
+      {
+        title: "Education",
+        org: "Universitas Dipa Makassar",
+        period: "TODO",
+        desc: "Education background and major to be completed by the owner."
+      }
+    ],
+    certs: ["TODO: certification list pending owner data"]
   }
 };

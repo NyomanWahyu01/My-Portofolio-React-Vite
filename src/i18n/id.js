@@ -60,5 +60,28 @@ export default {
     p3: "Build",
     p4: "Launch",
     cta: "Diskusi Project"
+  },
+  experience: {
+    title: "PENGALAMAN",
+    subtitle: "Jejak kerja, pendidikan, dan sertifikasi.",
+    timelineTitle: "Perjalanan",
+    certTitle: "Sertifikasi",
+    present: "Sekarang",
+    todoDate: "Tanggal menyusul",
+    timeline: [
+      {
+        title: "Anggota Tim Pengembang — JENDIG",
+        org: "Balai BPDAS Jeneberang Saddang",
+        period: "2025",
+        desc: "Sistem arsip dan persuratan berbasis web dengan Laravel + MySQL, dikerjakan bersama tim."
+      },
+      {
+        title: "Pendidikan",
+        org: "Universitas Dipa Makassar",
+        period: "TODO",
+        desc: "Latar belakang pendidikan dan jurusan akan dilengkapi oleh pemilik."
+      }
+    ],
+    certs: ["TODO: daftar sertifikasi menunggu data pemilik"]
   }
 };

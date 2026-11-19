@@ -31,7 +31,9 @@ export default function Hero() {
         {/* CTA */}
         <div className="flex items-center gap-4">
           <a 
-            href="/cv.pdf" 
+            href="https://drive.google.com/drive/folders/1CV1RdSf5p0lBML3RB_ewfTXhdUk8Qiuz?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-[var(--on-card)] shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {t("hero.downloadCv")}

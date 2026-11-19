@@ -4,7 +4,6 @@ import { getStoredTheme, setTheme as persistTheme } from "../theme";
 
 const themeOptions = [
   { key: "light", icon: "ri-sun-line" },
-  { key: "system", icon: "ri-computer-line" },
   { key: "dark", icon: "ri-moon-line" },
 ];
 
@@ -55,12 +54,7 @@ export default function Footer() {
             >
               <i className="ri-mail-fill text-xl"></i>
             </a>
-          </div>
-        </div>
 
-        {/* Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
-          <div className="flex items-center gap-3">
             {/* Language */}
             <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-[var(--card)]">
               <button
@@ -96,14 +90,6 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--card)] px-4 py-2 font-sans text-xs font-bold uppercase tracking-wider text-[var(--fg)] shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
-          >
-            <i className="ri-arrow-up-line"></i>
-            {t("footer.backToTop")}
-          </a>
         </div>
 
         <p className="font-sans text-sm text-[var(--muted)] mb-6">

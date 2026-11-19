@@ -15,10 +15,10 @@ export default function App() {
   const { t } = useT();
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] text-[var(--fg)]">
+    <div className="min-h-screen bg-[var--bg] text-[var--fg]">
       <a
         href="#hero"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[200] focus:rounded-[10px] focus:border-[3px] focus:border-[var(--border)] focus:bg-[var(--card-alt)] focus:px-4 focus:py-2 focus:font-sans focus:font-bold focus:text-[var(--on-card)]"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-(200) focus:rounded-(10px) focus:border-[3px] focus:border-[var--border] focus:bg-[var--card-alt] focus:px-4 focus:py-2 focus:font-sans focus:font-bold focus:text-[var--on-card]"
       >
         {t("a11y.skip")}
       </a>

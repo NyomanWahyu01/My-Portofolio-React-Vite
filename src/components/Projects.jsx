@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listProyek } from "../data";
 
@@ -59,41 +60,52 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 md:py-32">
-      <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var(--fg)] mb-4">
-        {t("projects.title")}
-      </h2>
-      <p className="font-sans text-[var(--muted)] mb-8 max-w-prose">
-        {t("projects.subtitle")}
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var(--fg)] mb-4">
+          {t("projects.title")}
+        </h2>
+        <p className="font-sans text-[var(--muted)] mb-8 max-w-prose">
+          {t("projects.subtitle")}
+        </p>
 
-      {/* Filter chips */}
-      <div className="flex flex-wrap gap-3 mb-10">
-        {filters.map((f) => (
-          <button
-            key={f.key}
-            onClick={() => setFilter(f.key)}
-            className={`rounded-full border-[2px] border-[var(--border)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.08em] transition-all ${
-              filter === f.key
-                ? "bg-[var(--accent)] text-[var(--on-card)] shadow-[3px_3px_0px_var(--shadow)]"
-                : "bg-[var(--card)] text-[var(--fg)]"
-            }`}
-          >
-            {t(f.label)}
-          </button>
-        ))}
-      </div>
+        {/* Filter chips */}
+        <div className="flex flex-wrap gap-3 mb-10">
+          {filters.map((f) => (
+            <button
+              key={f.key}
+              onClick={() => setFilter(f.key)}
+              className={`rounded-full border-[2px] border-[var(--border)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.08em] transition-all ${
+                filter === f.key
+                  ? "bg-[var(--accent)] text-[var(--on-card)] shadow-[3px_3px_0px_var(--shadow)]"
+                  : "bg-[var(--card)] text-[var(--on-card)]"
+              }`}
+            >
+              {t(f.label)}
+            </button>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Bento grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {visible.map((p, i) => {
-          const featured = filter === "all" && i === 0;
-          return (
-            <button
+      <motion.div 
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <AnimatePresence mode="popLayout">
+          {visible.map((p, i) => (
+            <motion.div
+              layout
               key={p.id}
-              onClick={() => setSelected(p)}
-              className={`group relative text-left rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)] focus:outline-none focus:ring-[3px] focus:ring-[var(--accent)] focus:ring-offset-2 ${
-                featured ? "md:col-span-2 lg:col-span-2" : ""
-              }`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3, delay: i * 0.05 }}
+              className={`group relative rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]`}
             >
               {/* Folder tab */}
               <span
@@ -122,12 +134,12 @@ export default function Projects() {
                 </div>
               </div>
 
-              {featured && p.gambar && (
-                <div className="mb-4 overflow-hidden rounded-[16px] border-[3px] border-[var(--border)]">
+              {p.gambar && (
+                <div className="mb-4 overflow-hidden rounded-[16px] border-[3px] border-[var(--border)] aspect-video bg-[var(--bg)]">
                   <img
                     src={p.gambar}
                     alt={p.nama}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
@@ -140,112 +152,164 @@ export default function Projects() {
                 {p.desk}
               </p>
 
-              <div className="flex flex-wrap gap-1.5">
-                {p.tools.slice(0, 4).map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-2 py-0.5 text-[0.65rem] font-bold text-[var(--on-card)]"
+              <div className="flex items-center justify-between mt-auto">
+                <div className="flex flex-wrap gap-1.5">
+                  {p.tools.slice(0, 3).map((tool) => (
+                    <span
+                      key={tool}
+                      className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-2 py-0.5 text-[0.65rem] font-bold text-[var(--on-card)]"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+                
+                <div className="flex gap-2">
+                  {p.github && (
+                    <motion.a
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--card-alt)] text-[var(--on-card)] shadow-[2px_2px_0px_var(--shadow)]"
+                      title="GitHub"
+                    >
+                      <i className="ri-github-fill text-lg"></i>
+                    </motion.a>
+                  )}
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setSelected(p)}
+                    className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-[var(--on-card)] shadow-[2px_2px_0px_var(--shadow)]"
+                    title="Details"
                   >
-                    {tool}
-                  </span>
-                ))}
+                    <i className="ri-arrow-right-up-line text-lg"></i>
+                  </motion.button>
+                </div>
               </div>
-            </button>
-          );
-        })}
-      </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
 
       {/* Modal */}
-      {selected && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[var(--ink,#111)]/60 p-4"
-          style={{ backgroundColor: "rgba(17,17,17,0.6)" }}
-          onClick={() => setSelected(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label={selected.nama}
-        >
+      <AnimatePresence>
+        {selected && (
           <div
-            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
           >
-            <button
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-[var(--fg)]/60 backdrop-blur-sm"
               onClick={() => setSelected(null)}
-              className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-[var(--bg)] text-[var(--fg)]"
-              aria-label="Close"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
+              onClick={(e) => e.stopPropagation()}
             >
-              <i className="ri-close-line text-xl"></i>
-            </button>
-
-            <div className="flex items-center gap-3 mb-4 pr-12">
-              <span
-                className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-[var(--on-card)]"
-                style={{ backgroundColor: selected.color }}
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-[var(--bg)] text-[var(--on-card)]"
+                aria-label="Close"
               >
-                <i className="ri-folder-2-line text-xl"></i>
-              </span>
-              <span
-                className="rounded-full border-[2px] border-[var(--border)] px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-[var(--on-card)]"
-                style={{ backgroundColor: statusColor[selected.status] }}
-              >
-                {t(statusKey[selected.status])}
-              </span>
-            </div>
+                <i className="ri-close-line text-xl"></i>
+              </button>
 
-            <h3 className="font-sans text-2xl font-bold text-[var(--on-card)] mb-3">
-              {selected.nama}
-            </h3>
-            <p className="font-sans text-[var(--on-card)] leading-relaxed mb-4">
-              {selected.desk}
-            </p>
-
-            {selected.kantor && (
-              <p className="font-sans text-sm text-[var(--muted)] mb-2">
-                {selected.kantor}
-              </p>
-            )}
-
-            <div className="mb-4">
-              <p className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--muted)] mb-2">
-                {t("projects.stackLabel")}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {selected.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-2 py-0.5 text-[0.65rem] font-bold text-[var(--on-card)]"
-                  >
-                    {tool}
-                  </span>
-                ))}
+              <div className="flex items-center gap-3 mb-6 pr-12">
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-[var(--on-card)]"
+                  style={{ backgroundColor: selected.color }}
+                >
+                  <i className="ri-folder-2-line text-xl"></i>
+                </span>
+                <span
+                  className="rounded-full border-[2px] border-[var(--border)] px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-[var(--on-card)]"
+                  style={{ backgroundColor: statusColor[selected.status] }}
+                >
+                  {t(statusKey[selected.status])}
+                </span>
               </div>
-            </div>
 
-            <div className="flex flex-wrap gap-3">
-              {selected.demo && (
-                <a
-                  href={selected.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] px-5 py-2.5 font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)]"
-                >
-                  {t("projects.demo")}
-                </a>
+              {selected.gambar && (
+                <div className="mb-6 overflow-hidden rounded-[20px] border-[3px] border-[var(--border)] bg-[var(--bg)]">
+                   <img
+                    src={selected.gambar}
+                    alt={selected.nama}
+                    className="w-full object-cover"
+                  />
+                </div>
               )}
-              {selected.github && (
-                <a
-                  href={selected.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--card)] px-5 py-2.5 font-sans text-sm font-bold uppercase tracking-wider text-[var(--fg)] shadow-[4px_4px_0px_var(--shadow)]"
-                >
-                  {t("projects.github")}
-                </a>
+
+              <h3 className="font-sans text-2xl font-bold text-[var(--on-card)] mb-3">
+                {selected.nama}
+              </h3>
+              <p className="font-sans text-[var(--on-card)] leading-relaxed mb-6 opacity-80">
+                {selected.desk}
+              </p>
+
+              {selected.kantor && (
+                <div className="flex items-center gap-2 mb-6">
+                  <i className="ri-building-line text-[var(--muted)]"></i>
+                  <p className="font-sans text-sm font-bold text-[var(--muted)]">
+                    {selected.kantor}
+                  </p>
+                </div>
               )}
-            </div>
+
+              <div className="mb-8">
+                <p className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--muted)] mb-3">
+                  {t("projects.stackLabel")}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {selected.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="rounded-full border-[2px] border-[var(--border)] bg-[var(--bg)] px-3 py-1 text-xs font-bold text-[var(--on-card)]"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                {selected.demo && (
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={selected.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)]"
+                  >
+                    {t("projects.demo")}
+                  </motion.a>
+                )}
+                {selected.github && (
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={selected.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--card)] px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)]"
+                  >
+                    <i className="ri-github-fill mr-2"></i>
+                    {t("projects.github")}
+                  </motion.a>
+                )}
+              </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </section>
   );
 }

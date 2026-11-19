@@ -11,23 +11,8 @@ export default function Navbar() {
     applyTheme(theme);
   }, [theme]);
 
-  useEffect(() => {
-    const sync = () => setThemeState(getStoredTheme());
-    window.addEventListener("ecc-theme-change", sync);
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const onSystem = () => {
-      if (getStoredTheme() === "system") applyTheme("system");
-    };
-    mq.addEventListener("change", onSystem);
-    return () => {
-      window.removeEventListener("ecc-theme-change", sync);
-      mq.removeEventListener("change", onSystem);
-    };
-  }, []);
-
   const cycleTheme = () => {
-    const next =
-      theme === "light" ? "dark" : theme === "dark" ? "system" : "light";
+    const next = theme === "dark" ? "light" : "dark";
     setThemeState(next);
     persistTheme(next);
   };
@@ -36,13 +21,13 @@ export default function Navbar() {
     <header className="sticky top-4 z-50 mx-auto max-w-[1200px] px-4">
       <nav className="flex items-center justify-between rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] px-6 py-3 shadow-[6px_6px_0px_var(--shadow)] transition-all">
         {/* Logo */}
-        <a href="#" className="font-display text-2xl tracking-wider text-[var(--fg)]">
-          NYM<span className="text-[var(--accent)]">.</span>
+        <a href="/" className="flex items-center">
+          <img src="/assets/Logo-Nym.png" alt="Logo" className="h-10 w-auto" />
         </a>
 
         {/* Desktop Nav Links */}
         <div className="hidden items-center gap-6 md:flex font-sans font-medium text-sm text-[var(--fg)]">
-          <a href="#about" className="hover:text-[var(--accent)] transition-colors">{t("nav.about")}</a>
+          <a href="#about" className="hover:text-[--accent] transition-colors">{t("nav.about")}</a>
           <a href="#projects" className="hover:text-[var(--accent)] transition-colors">{t("nav.projects")}</a>
           <a href="#services" className="hover:text-[var(--accent)] transition-colors">{t("nav.services")}</a>
           <a href="#experience" className="hover:text-[var(--accent)] transition-colors">{t("nav.experience")}</a>
@@ -52,7 +37,7 @@ export default function Navbar() {
         {/* Controls & CTA */}
         <div className="hidden items-center gap-3 md:flex">
           {/* Lang Selector */}
-          <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-[var(--bg)]">
+          <div className="flex rounded-full border-2 border-var(--border) p-0.5 bg-var(--bg)">
             <button 
               onClick={() => setLang("id")}
               className={`px-2.5 py-0.5 text-xs font-bold rounded-full transition-colors ${lang === "id" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : "text-[var(--muted)]"}`}
@@ -67,13 +52,12 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Theme Selector */}
+          {/* Theme Selector (Light/Dark) */}
           <button 
             onClick={cycleTheme}
             className="flex h-9 w-9 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-[var(--fg)] shadow-[2px_2px_0px_var(--shadow)] transition-transform active:translate-x-[2px] active:translate-y-[2px]"
-            title={`Theme: ${theme}`}
           >
-            {theme === "light" ? <i className="ri-sun-line"></i> : theme === "dark" ? <i className="ri-moon-line"></i> : <i className="ri-computer-line"></i>}
+            {theme === "dark" ? <i className="ri-moon-line"></i> : <i className="ri-sun-line"></i>}
           </button>
 
           {/* Hire Me CTA */}
@@ -112,7 +96,7 @@ export default function Navbar() {
               onClick={cycleTheme}
               className="px-3 py-1 rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-xs font-bold"
             >
-              Theme: {theme}
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
             </button>
           </div>
         </div>

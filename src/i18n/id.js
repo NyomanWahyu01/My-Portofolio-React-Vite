@@ -62,27 +62,69 @@ export default {
     cta: "Diskusi Project"
   },
   experience: {
-    title: "PENGALAMAN",
-    subtitle: "Jejak kerja, pendidikan, dan sertifikasi.",
-    timelineTitle: "Perjalanan",
-    certTitle: "Sertifikasi",
+    title: "PENGALAMAN & PENDIDIKAN",
+    subtitle: "Jejak kerja, riwayat pendidikan, dan sertifikasi profesional.",
+    timelineTitle: "Pengalaman Kerja & Pendidikan",
+    certTitle: "Sertifikasi & Pelatihan",
     present: "Sekarang",
-    todoDate: "Tanggal menyusul",
     timeline: [
       {
-        title: "Anggota Tim Pengembang — JENDIG",
-        org: "Balai BPDAS Jeneberang Saddang",
-        period: "2025",
-        desc: "Sistem arsip dan persuratan berbasis web dengan Laravel + MySQL, dikerjakan bersama tim."
+        title: "Full Stack Web Developer | Freelance",
+        org: "Balai BPDAS Jeneberang Saddang, Makassar",
+        period: "November 2025 – Desember 2025",
+        stack: "Tech Stack: Laravel & MySQL",
+        desc: [
+          "Membangun aplikasi web JENDIG (Jeneberang Arsip Digital) untuk pengelolaan arsip dan persuratan internal kantor menggunakan Laravel, MySQL, RESTful API, dan arsitektur MVC.",
+          "Mengembangkan Content Management System (CMS) untuk mempermudah dalam proses update content website secara mandiri, dilengkapi sistem akses 3 level (Admin, Admin PIC, & Super Admin).",
+          "Melakukan testing dan bug fixing untuk memastikan kestabilan sistem sebelum dan setelah implementasi web.",
+          "Memberikan technical support pasca-launching untuk training pegawai, sehingga aplikasi berhasil digunakan dalam operasional kantor."
+        ]
       },
       {
-        title: "Pendidikan",
+        title: "Full Stack Web Developer | Magang",
+        org: "DPMPTSP Kabupaten Pangkep",
+        period: "Agustus 2023 – Desember 2023",
+        stack: "Tech Stack: PHP Native & MySQL",
+        desc: [
+          "Mengembangkan sistem Survei Kepuasan Masyarakat berbasis web menggunakan PHP Native, MySQL, dan Bootstrap 5 untuk mengevaluasi pelayanan pegawai di Mal Pelayanan Publik Kabupaten Pangkep.",
+          "Merancang dashboard interaktif pada user untuk memantau jumlah kuesioner, data responden, dan saran masyarakat, serta menghasilkan laporan PDF sebagai bahan pelaporan tahunan instansi.",
+          "Mempresentasikan aplikasi kepada pihak instansi dan bertindak sebagai operator teknis hingga sistem diterima dan digunakan tanpa revisi mayor.",
+          "Melatih staf internal dalam penggunaan dan operasional aplikasi untuk mendukung implementasi di lingkungan kerja."
+        ]
+      },
+      {
+        title: "IT Support | Magang",
+        org: "DPMPTSP Kabupaten Pangkep",
+        period: "Agustus 2023 – Desember 2023",
+        stack: "Tech Stack: Hardware & Software Troubleshooting",
+        desc: [
+          "Mendukung staf IT dalam menangani permasalahan perangkat komputer dan aplikasi perkantoran sehingga operasional kantor tetap berjalan lancar tanpa hambatan teknis.",
+          "Melakukan pengecekan serta troubleshooting perangkat keras dan perangkat lunak untuk memastikan komputer dapat digunakan secara optimal oleh karyawan.",
+          "Memperbaiki perangkat keras saat terjadi kerusakan sehingga meminimalisir downtime dan mempercepat proses kerja pegawai.",
+          "Melakukan pembaruan sistem operasi Windows pada komputer karyawan sebelum digunakan sehingga perangkat lebih aman, stabil, dan siap pakai."
+        ]
+      },
+      {
+        title: "Sistem Informasi (S1) – Konsentrasi E-Bisnis | IPK 3.64 / 4.00",
         org: "Universitas Dipa Makassar",
-        period: "TODO",
-        desc: "Latar belakang pendidikan dan jurusan akan dilengkapi oleh pemilik."
+        period: "2021 – 2025",
+        stack: "Skripsi: Algoritma Fuzzy Mamdani",
+        desc: [
+          "Skripsi: “Penerapan Algoritma Fuzzy Mamdani untuk Analisis Kepuasan Masyarakat pada Pelayanan Kantor Mal Pelayanan Publik Pangkep Berbasis Web”.",
+          "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
+          "Magang industri (MBKM) 4 bulan di DPMPTSP Kab. Pangkep.",
+          "Sertifikasi nasional Operator Komputer Madya (BNSP) serta aktif di organisasi kesenian dan olahraga kampus."
+        ]
       }
     ],
-    certs: ["TODO: daftar sertifikasi menunggu data pemilik"]
+    certs: [
+      "Front End Development – Dibimbing.id (2025)",
+      "Pemrograman Python – Special Skill (2025)",
+      "Brand Identity Design – MySkill (2025)",
+      "Webinar Optimalisasi Coding dengan ChatGPT – PT Qwords Company International (2024)",
+      "Operator Komputer Madya – Badan Nasional Sertifikasi Profesi (2023)",
+      "Magang Industri Kampus Merdeka – DPMPTSP Kab. Pangkep (2023)"
+    ]
   },
   tools: {
     title: "TOOLS & STACK",

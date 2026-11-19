@@ -62,27 +62,69 @@ export default {
     cta: "Discuss a Project"
   },
   experience: {
-    title: "EXPERIENCE",
+    title: "EXPERIENCE & EDUCATION",
     subtitle: "Work, education, and certifications.",
-    timelineTitle: "Journey",
-    certTitle: "Certifications",
+    timelineTitle: "Experience & Education",
+    certTitle: "Certifications & Training",
     present: "Present",
-    todoDate: "Date to be confirmed",
     timeline: [
       {
-        title: "Development Team Member — JENDIG",
-        org: "Balai BPDAS Jeneberang Saddang",
-        period: "2025",
-        desc: "Web-based archive and correspondence system built with Laravel + MySQL, delivered with the team."
+        title: "Full Stack Web Developer | Freelance",
+        org: "Balai BPDAS Jeneberang Saddang, Makassar",
+        period: "November 2025 – December 2025",
+        stack: "Tech Stack: Laravel & MySQL",
+        desc: [
+          "Built JENDIG (Jeneberang Digital Archive) web app for internal archive and correspondence management using Laravel, MySQL, RESTful API, and MVC architecture.",
+          "Developed a Content Management System (CMS) for independent website content updates, featuring a 3-level access system (Admin, Admin PIC, & Super Admin).",
+          "Performed testing and bug fixing to ensure system stability pre and post-implementation.",
+          "Provided post-launch technical support and staff training, ensuring successful application adoption."
+        ]
       },
       {
-        title: "Education",
+        title: "Full Stack Web Developer | Intern",
+        org: "DPMPTSP Pangkep Regency",
+        period: "August 2023 – December 2023",
+        stack: "Tech Stack: PHP Native & MySQL",
+        desc: [
+          "Developed a web-based Community Satisfaction Survey system using PHP Native, MySQL, and Bootstrap 5 to evaluate public service at Mal Pelayanan Publik Pangkep.",
+          "Designed an interactive user dashboard for monitoring questionnaires, respondent data, and community feedback, including automated PDF reporting.",
+          "Presented the application to officials and served as the technical operator until the system was accepted for production use without major revisions.",
+          "Trained internal staff on system operation to support implementation."
+        ]
+      },
+      {
+        title: "IT Support | Intern",
+        org: "DPMPTSP Pangkep Regency",
+        period: "August 2023 – December 2023",
+        stack: "Tech Stack: Hardware & Software Troubleshooting",
+        desc: [
+          "Supported IT staff in resolving computer hardware and office application issues to maintain seamless office operations.",
+          "Performed troubleshooting on hardware and software to ensure optimal workstation performance for employees.",
+          "Repaired hardware failures to minimize downtime and accelerate employee workflows.",
+          "Performed Windows OS updates on employee computers to ensure security, stability, and operational readiness."
+        ]
+      },
+      {
+        title: "Information Systems (BSc) – E-Business Concentration | GPA 3.64 / 4.00",
         org: "Universitas Dipa Makassar",
-        period: "TODO",
-        desc: "Education background and major to be completed by the owner."
+        period: "2021 – 2025",
+        stack: "Thesis: Fuzzy Mamdani Algorithm",
+        desc: [
+          "Thesis: “Application of Fuzzy Mamdani Algorithm for Web-Based Community Satisfaction Analysis at Mal Pelayanan Publik Pangkep”.",
+          "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
+          "4-month industrial internship (MBKM) at DPMPTSP Pangkep Regency.",
+          "National Intermediate Computer Operator Certification (BNSP) and active in campus arts and sports organizations."
+        ]
       }
     ],
-    certs: ["TODO: certification list pending owner data"]
+    certs: [
+      "Front End Development – Dibimbing.id (2025)",
+      "Python Programming – Special Skill (2025)",
+      "Brand Identity Design – MySkill (2025)",
+      "Webinar: Coding Optimization with ChatGPT – PT Qwords Company International (2024)",
+      "Intermediate Computer Operator – National Professional Certification Agency (BNSP) (2023)",
+      "Kampus Merdeka Industrial Internship – DPMPTSP Pangkep Regency (2023)"
+    ]
   },
   tools: {
     title: "TOOLS & STACK",

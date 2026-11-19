@@ -89,5 +89,11 @@ export default {
     subtitle: "Perangkat yang saya pakai sehari-hari untuk coding dan desain.",
     coding: "Coding",
     design: "Design"
+  },
+  design: {
+    title: "DESAIN",
+    subtitle: "Karya poster, banner, dan eksplorasi visual.",
+    more: "Lihat Lebih Banyak",
+    less: "Lihat Lebih Sedikit"
   }
 };

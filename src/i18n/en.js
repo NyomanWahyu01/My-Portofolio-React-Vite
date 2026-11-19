@@ -89,5 +89,11 @@ export default {
     subtitle: "The tools I use daily for coding and design.",
     coding: "Coding",
     design: "Design"
+  },
+  design: {
+    title: "DESIGN",
+    subtitle: "Posters, banners, and visual explorations.",
+    more: "View More",
+    less: "View Less"
   }
 };

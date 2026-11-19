@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Services from './components/Services';
 import Experience from './components/Experience';
 import Tools from './components/Tools';
+import Design from './components/Design';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Services />
         <Experience />
         <Tools />
+        <Design />
       </main>
 
       <footer className="mt-20 border-t-[3px] border-[var(--border)] py-10 text-center">

@@ -83,5 +83,11 @@ export default {
       }
     ],
     certs: ["TODO: certification list pending owner data"]
+  },
+  tools: {
+    title: "TOOLS & STACK",
+    subtitle: "The tools I use daily for coding and design.",
+    coding: "Coding",
+    design: "Design"
   }
 };

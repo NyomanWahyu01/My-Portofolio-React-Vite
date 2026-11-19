@@ -83,5 +83,11 @@ export default {
       }
     ],
     certs: ["TODO: daftar sertifikasi menunggu data pemilik"]
+  },
+  tools: {
+    title: "TOOLS & STACK",
+    subtitle: "Perangkat yang saya pakai sehari-hari untuk coding dan desain.",
+    coding: "Coding",
+    design: "Design"
   }
 };

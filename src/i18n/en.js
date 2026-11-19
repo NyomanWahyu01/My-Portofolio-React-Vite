@@ -119,5 +119,8 @@ export default {
   footer: {
     backToTop: "Back to top",
     rights: "All rights reserved."
+  },
+  a11y: {
+    skip: "Skip to content"
   }
 };

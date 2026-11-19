@@ -119,5 +119,8 @@ export default {
   footer: {
     backToTop: "Kembali ke atas",
     rights: "Hak cipta dilindungi."
+  },
+  a11y: {
+    skip: "Lewati ke konten"
   }
 };

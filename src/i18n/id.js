@@ -22,6 +22,10 @@ export default {
     subtitle: "Membangun solusi digital dengan ketelitian dan efisiensi.",
     p1: "Halo! Saya I Nyoman Wahyu, seorang pengembang perangkat lunak yang berfokus pada pembuatan aplikasi web yang responsif, cepat, dan mudah digunakan.",
     p2: "Berpengalaman dalam pengembangan sistem berbasis Laravel, React, dan integrasi API. Saya terbiasa bekerja baik secara mandiri maupun berkolaborasi dalam tim.",
-    p3: "Prinsip saya sederhana: kode yang baik adalah kode yang mudah dipelihara dan memberikan nilai nyata bagi pengguna."
+    p3: "Prinsip saya sederhana: kode yang baik adalah kode yang mudah dipelihara dan memberikan nilai nyata bagi pengguna.",
+    statProjects: "Project Selesai",
+    statYears: "Tahun Pengalaman",
+    rolesTitle: "Peran",
+    roles: ["Frontend", "Full Stack", "UI/UX", "Graphic Design", "Performance"]
   }
 };

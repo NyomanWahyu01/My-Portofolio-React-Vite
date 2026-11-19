@@ -1,0 +1,83 @@
+import React from "react";
+import { useT } from "../i18n/LanguageProvider";
+
+const roleColors = ["var(--yellow)", "var(--pink)", "var(--purple)", "var(--green)", "var(--lime)"];
+
+export default function About() {
+  const { t } = useT();
+  const roles = t("about.roles");
+
+  return (
+    <section id="about" className="py-20 md:py-32">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Left: Story + Stats */}
+        <div>
+          <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-[var(--fg)] mb-4">
+            {t("about.title")}
+          </h2>
+          <p className="font-sans text-[var(--muted)] mb-8 max-w-prose">
+            {t("about.subtitle")}
+          </p>
+
+          <div className="space-y-4 max-w-prose font-sans text-[var(--fg)] leading-[1.65] mb-10">
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
+            <p>{t("about.p3")}</p>
+          </div>
+
+          {/* Stat stickers */}
+          <div className="flex flex-wrap gap-5">
+            <div className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--yellow)] px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+              <p className="font-display text-5xl leading-none text-[var(--on-card)]">10+</p>
+              <p className="font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)]">
+                {t("about.statProjects")}
+              </p>
+            </div>
+            <div className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--pink)] px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+              <p className="font-display text-5xl leading-none text-[var(--on-card)]">3+</p>
+              <p className="font-sans text-sm font-bold uppercase tracking-wider text-[var(--on-card)]">
+                {t("about.statYears")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Role folder cards */}
+        <div>
+          <h3 className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-[var(--muted)] mb-6">
+            {t("about.rolesTitle")}
+          </h3>
+          <div className="space-y-4">
+            {Array.isArray(roles) &&
+              roles.map((role, i) => (
+                <div
+                  key={role}
+                  className={`relative rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] px-6 py-5 shadow-[6px_6px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5 ${
+                    i % 2 === 0 ? "-rotate-1" : "rotate-1"
+                  }`}
+                >
+                  {/* Folder tab */}
+                  <span
+                    className="absolute -top-3 left-6 h-3 w-16 rounded-t-[8px] border-[3px] border-b-0 border-[var(--border)]"
+                    style={{ backgroundColor: roleColors[i % roleColors.length] }}
+                    aria-hidden="true"
+                  />
+                  <div className="flex items-center gap-4">
+                    <span
+                      className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-[var(--on-card)]"
+                      style={{ backgroundColor: roleColors[i % roleColors.length] }}
+                    >
+                      <i className="ri-folder-line text-xl"></i>
+                    </span>
+                    <p className="font-sans text-[1.25rem] font-bold text-[var(--on-card)]">
+                      {role}
+                    </p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

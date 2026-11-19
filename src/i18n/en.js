@@ -22,6 +22,10 @@ export default {
     subtitle: "Building digital solutions with precision and efficiency.",
     p1: "Hello! I'm I Nyoman Wahyu, a software developer focused on building responsive, fast, and user-friendly web applications.",
     p2: "Experienced in developing systems with Laravel, React, and API integrations. Comfortable working both independently and collaboratively in teams.",
-    p3: "My principle is simple: good code is maintainable and delivers real value to users."
+    p3: "My principle is simple: good code is maintainable and delivers real value to users.",
+    statProjects: "Projects Done",
+    statYears: "Years Experience",
+    rolesTitle: "Roles",
+    roles: ["Frontend", "Full Stack", "UI/UX", "Graphic Design", "Performance"]
   }
 };

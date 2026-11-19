@@ -1,6 +1,66 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fbf6ea;
+  --fg: #111111;
+  --muted: #5b5b5b;
+  --card: #ffffff;
+  --on-card: #111111;
+  --card-alt: #ffcb1f;
+  --border: #111111;
+  --line: #111111;
+  --shadow: #111111;
+  --accent: #8e7cff;
+  --cta: #f4511e;
+  --yellow: #ffcb1f;
+  --pink: #ff4f81;
+  --purple: #8e7cff;
+  --green: #3cc63c;
+  --lime: #a8e02a;
+  --orange: #f4511e;
+  --teal: #bfddd9;
+}
+.dark {
+  --bg: #0b0b0b;
+  --fg: #f2ebd3;
+  --muted: #b9b29b;
+  --card: #f2ebd3;
+  --on-card: #111111;
+  --card-alt: #bfddd9;
+  --border: #111111;
+  --line: #f2ebd3;
+  --shadow: #f4511e;
+  --accent: #f4511e;
+  --cta: #f4511e;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-on-card: var(--on-card);
+  --color-card-alt: var(--card-alt);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-cta: var(--cta);
+  --color-yellow: var(--yellow);
+  --color-pink: var(--pink);
+  --color-purple: var(--purple);
+  --color-green: var(--green);
+  --color-lime: var(--lime);
+  --color-orange: var(--orange);
+  --color-teal: var(--teal);
+  --font-display: "Anton", "Impact", sans-serif;
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
 /* Tailwind CSS v4 syntax - valid */
 /* eslint-disable-next-line */
 @custom-variant dark (&:is(.dark *));

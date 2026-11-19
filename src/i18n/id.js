@@ -1,0 +1,27 @@
+export default {
+  nav: {
+    home: "Home",
+    about: "Tentang",
+    projects: "Project",
+    services: "Layanan",
+    experience: "Pengalaman",
+    contact: "Kontak",
+    hire: "Hire Me"
+  },
+  hero: {
+    badge: "Tersedia untuk kerja & freelance",
+    title: "SAYA BANGUN WEBSITE YANG RAPI, CEPAT, DAN SIAP DIPAKAI.",
+    desc: "Full Stack Developer berbasis di Makassar, Indonesia. Fokus pada performa tinggi, kode bersih, dan antarmuka fungsional.",
+    downloadCv: "Download CV",
+    viewProjects: "Lihat Project",
+    role1: "Full Stack Developer",
+    role2: "Makassar, ID"
+  },
+  about: {
+    title: "TENTANG SAYA",
+    subtitle: "Membangun solusi digital dengan ketelitian dan efisiensi.",
+    p1: "Halo! Saya I Nyoman Wahyu, seorang pengembang perangkat lunak yang berfokus pada pembuatan aplikasi web yang responsif, cepat, dan mudah digunakan.",
+    p2: "Berpengalaman dalam pengembangan sistem berbasis Laravel, React, dan integrasi API. Saya terbiasa bekerja baik secara mandiri maupun berkolaborasi dalam tim.",
+    p3: "Prinsip saya sederhana: kode yang baik adalah kode yang mudah dipelihara dan memberikan nilai nyata bagi pengguna."
+  }
+};

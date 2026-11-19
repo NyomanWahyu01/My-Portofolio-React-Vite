@@ -15,7 +15,7 @@ export default function Hero() {
         {/* Status Badge */}
         <div className="fade-up fade-up-delay-1 inline-flex items-center gap-2 rounded-full border-[2px] border-[var(--border)] bg-card px-4 py-1.5 mb-6 shadow-[2px_2px_0px_var(--shadow)]">
           <span className="h-2 w-2 rounded-full bg-green animate-pulse" />
-          <span className="text-[0.75rem] font-bold uppercase tracking-[0.08em] text-on-card">
+          <span className="typing text-[0.75rem] font-bold uppercase tracking-[0.08em] text-on-card">
             {t("hero.badge")}
           </span>
         </div>

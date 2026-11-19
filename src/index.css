@@ -214,3 +214,35 @@
     transition: none;
   }
 }
+
+/* Typing effect */
+.typing {
+  display: inline-block;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--on-card);
+  animation:
+    typingText 3s steps(40) forwards,
+    blink 0.7s step-end infinite;
+}
+
+@keyframes typingText {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing {
+    animation: none;
+    width: auto;
+    border-right: 0;
+  }
+}

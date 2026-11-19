@@ -1,3 +1,4 @@
 {
-  "plugin": ["ecc-universal"]
+  "plugin": ["ecc-universal"],
+  "permission": "ask"
 }

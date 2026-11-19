@@ -1,132 +1,112 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useT } from "../i18n/LanguageProvider";
 
-const Navbar = () => {
-    const [active, setActive] = useState(false);
-    const [activeLink, setActiveLink] = useState("");
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Navbar() {
+  const { lang, setLang, t } = useT();
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "system");
+  const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 150) {
-                setActive(true);
-            } else {
-                setActive(false);
-            }
-        };
+  useEffect(() => {
+    const root = document.documentElement;
+    const isDark = 
+      theme === "dark" || 
+      (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    
+    if (isDark) {
+      root.classList.add("dark");
+      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#0b0b0b");
+    } else {
+      root.classList.remove("dark");
+      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#fbf6ea");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+  return (
+    <header className="sticky top-4 z-50 mx-auto max-w-[1200px] px-4">
+      <nav className="flex items-center justify-between rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] px-6 py-3 shadow-[6px_6px_0px_var(--shadow)] transition-all">
+        {/* Logo */}
+        <a href="#" className="font-display text-2xl tracking-wider text-[var(--fg)]">
+          NYM<span className="text-[var(--accent)]">.</span>
+        </a>
 
-    const handleLinkClick = (linkName) => {
-        setActiveLink(linkName);
-        setIsMenuOpen(false); // Tutup menu saat link diklik
-    };
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
-    return (
-        <div className="navbar py-7 flex items-center justify-between">
-            <div className="logo flex items-center gap-2">
-                <img src="/assets/Logo-Nym.png" alt="Logo" href="#home"   onClick={() => handleLinkClick("home")}  className="object-contain rounded-full w-10 md:w-12"/>
-            </div>
-            
-            {/* Hamburger Button - Mobile Only, di sebelah kanan */}
-            <button
-                onClick={toggleMenu}
-                className="md:hidden z-50 relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 p-2 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
-                aria-label="Toggle menu"
-            >
-                <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-            </button>
-
-            <ul className={`
-                menu flex items-center sm:gap-10 gap-4
-                md:static md:opacity-100 md:translate-x-0 md:flex
-                fixed left-1/2 -translate-x-1/2
-                bg-white/30 backdrop-blur-md p-4 rounded-br-2xl rounded-bl-2xl
-                transition-all duration-300 md:bg-transparent md:transition-none
-                z-40 
-                ${active ? "top-0 opacity-100" : "-top-10 opacity-0"}
-                ${isMenuOpen ? "top-20 opacity-100 flex md:flex" : "top-20 opacity-0 hidden md:flex"}
-            `}>
-                <li>
-                    <a 
-                        href="#home" 
-                        onClick={() => handleLinkClick("home")}
-                        className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-                            ${activeLink === "home" 
-                                ? "text-blue-600 font-semibold" 
-                                : "text-gray-300 hover:text-blue-500"
-                            }
-                        `}
-                    >
-                        Home
-                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-                            ${activeLink === "home" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span> */}
-                    </a>
-                </li>
-                <li>
-                    <a 
-                        href="#about" 
-                        onClick={() => handleLinkClick("about")}
-                        className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-                            ${activeLink === "about" 
-                                ? "text-blue-600 font-semibold" 
-                                : "text-gray-300 hover:text-blue-500"
-                            }
-                        `}
-                    >
-                        About
-                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-                            ${activeLink === "about" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span> */}
-                    </a>
-                </li>
-                <li>
-                    <a 
-                        href="#project" 
-                        onClick={() => handleLinkClick("project")}
-                        className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-                            ${activeLink === "project" 
-                                ? "text-blue-600 font-semibold" 
-                                : "text-gray-300 hover:text-blue-500"
-                            }
-                        `}
-                    >
-                        Project
-                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-                            ${activeLink === "project" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span> */}
-                    </a>
-                </li>
-                <li>
-                    <a 
-                        href="#contact" 
-                        onClick={() => handleLinkClick("contact")}
-                        className={`sm:text-lg text-base font-medium relative transition-all duration-300 ease-in-out
-                            ${activeLink === "contact" 
-                                ? "text-blue-600 font-semibold" 
-                                : "text-gray-300 hover:text-blue-500"
-                            }
-                        `}
-                    >
-                        Contact
-                        {/* <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300 ease-in-out
-                            ${activeLink === "contact" ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}
-                        `}></span> */}
-                    </a>
-                </li>
-            </ul>
+        {/* Desktop Nav Links */}
+        <div className="hidden items-center gap-6 md:flex font-sans font-medium text-sm text-[var(--fg)]">
+          <a href="#about" className="hover:text-[var(--accent)] transition-colors">{t("nav.about")}</a>
+          <a href="#projects" className="hover:text-[var(--accent)] transition-colors">{t("nav.projects")}</a>
+          <a href="#services" className="hover:text-[var(--accent)] transition-colors">{t("nav.services")}</a>
+          <a href="#experience" className="hover:text-[var(--accent)] transition-colors">{t("nav.experience")}</a>
+          <a href="#contact" className="hover:text-[var(--accent)] transition-colors">{t("nav.contact")}</a>
         </div>
-    );
-};
 
-export default Navbar;
+        {/* Controls & CTA */}
+        <div className="hidden items-center gap-3 md:flex">
+          {/* Lang Selector */}
+          <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-[var(--bg)]">
+            <button 
+              onClick={() => setLang("id")}
+              className={`px-2.5 py-0.5 text-xs font-bold rounded-full transition-colors ${lang === "id" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : "text-[var(--muted)]"}`}
+            >
+              ID
+            </button>
+            <button 
+              onClick={() => setLang("en")}
+              className={`px-2.5 py-0.5 text-xs font-bold rounded-full transition-colors ${lang === "en" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : "text-[var(--muted)]"}`}
+            >
+              EN
+            </button>
+          </div>
+
+          {/* Theme Selector */}
+          <button 
+            onClick={() => setTheme(theme === "light" ? "dark" : theme === "dark" ? "system" : "light")}
+            className="flex h-9 w-9 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-[var(--fg)] shadow-[2px_2px_0px_var(--shadow)] transition-transform active:translate-x-[2px] active:translate-y-[2px]"
+            title={`Theme: ${theme}`}
+          >
+            {theme === "light" ? <i className="ri-sun-line"></i> : theme === "dark" ? <i className="ri-moon-line"></i> : <i className="ri-computer-line"></i>}
+          </button>
+
+          {/* Hire Me CTA */}
+          <a 
+            href="#contact"
+            className="rounded-[16px] border-[3px] border-[var(--border)] bg-[var(--cta)] px-4 py-2 font-sans font-bold text-xs uppercase tracking-wider text-[var(--on-card)] shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-x-1 active:translate-y-1 active:shadow-none"
+          >
+            {t("nav.hire")}
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] md:hidden text-[var(--fg)]"
+        >
+          <i className={isOpen ? "ri-close-line text-xl" : "ri-menu-line text-xl"}></i>
+        </button>
+      </nav>
+
+      {/* Mobile Drawer */}
+      {isOpen && (
+        <div className="mt-2 rounded-[24px] border-[3px] border-[var(--border)] bg-[var(--card)] p-6 shadow-[6px_6px_0px_var(--shadow)] md:hidden flex flex-col gap-4 font-sans font-medium text-lg">
+          <a href="#about" onClick={() => setIsOpen(false)}>{t("nav.about")}</a>
+          <a href="#projects" onClick={() => setIsOpen(false)}>{t("nav.projects")}</a>
+          <a href="#services" onClick={() => setIsOpen(false)}>{t("nav.services")}</a>
+          <a href="#experience" onClick={() => setIsOpen(false)}>{t("nav.experience")}</a>
+          <a href="#contact" onClick={() => setIsOpen(false)}>{t("nav.contact")}</a>
+          
+          <div className="flex items-center justify-between pt-4 border-t-[2px] border-[var(--line)]">
+            <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-[var(--bg)]">
+              <button onClick={() => setLang("id")} className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : ""}`}>ID</button>
+              <button onClick={() => setLang("en")} className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-[var(--card-alt)] text-[var(--on-card)]" : ""}`}>EN</button>
+            </div>
+            <button 
+              onClick={() => setTheme(theme === "light" ? "dark" : theme === "dark" ? "system" : "light")}
+              className="px-3 py-1 rounded-[10px] border-[2px] border-[var(--border)] bg-[var(--bg)] text-xs font-bold"
+            >
+              Theme: {theme}
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}

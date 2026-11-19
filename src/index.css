@@ -175,3 +175,42 @@
     filter: none;
   }
 }
+
+/* Hero profile float */
+.slogan-card {
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Hero button hover glow */
+.hero-btn {
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.18);
+}
+
+.hero-btn:active {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slogan-card {
+    animation: none;
+  }
+  .hero-btn {
+    transition: none;
+  }
+}

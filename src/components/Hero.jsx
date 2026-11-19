@@ -35,13 +35,13 @@ export default function Hero() {
             href="https://drive.google.com/drive/folders/1CV1RdSf5p0lBML3RB_ewfTXhdUk8Qiuz?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-[16px] border-[3px] border-[var(--border)] bg-cta px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="hero-btn rounded-[16px] border-[3px] border-[var(--border)] bg-cta px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {t("hero.downloadCv")}
           </a>
           <a 
             href="#projects" 
-            className="rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="hero-btn rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {t("hero.viewProjects")}
           </a>
@@ -49,7 +49,7 @@ export default function Hero() {
       </div>
 
       {/* Profile Image */}
-      <div className="relative z-10 flex justify-center md:justify-end">
+      <div className="slogan-card relative z-10 flex justify-center md:justify-end">
         <div className="profile-hero-img relative rotate-[2deg] rounded-[24px] border-[3px] border-[var(--border)] bg-card-alt p-4 shadow-[10px_10px_0px_var(--shadow)] w-full max-w-[400px]">
           <div className="aspect-square bg-card rounded-[16px] overflow-hidden border-[2px] border-[var(--border)]">
              <img 

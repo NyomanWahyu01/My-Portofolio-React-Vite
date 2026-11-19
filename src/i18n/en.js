@@ -44,5 +44,21 @@ export default {
     github: "GitHub",
     roleLabel: "Role:",
     stackLabel: "Stack:"
+  },
+  services: {
+    title: "SERVICES",
+    subtitle: "From concept to release, I help bring your digital needs to life.",
+    s1Title: "Website & Landing Page",
+    s1Desc: "Fast, responsive company profiles, portfolios, and landing pages that are easy to manage.",
+    s2Title: "Information Systems",
+    s2Desc: "Laravel/PHP and MySQL web applications for operational and administrative needs.",
+    s3Title: "UI/UX & Consulting",
+    s3Desc: "Interface design, usability audits, and technical consulting for your digital product.",
+    processTitle: "How I Work",
+    p1: "Brief",
+    p2: "Design",
+    p3: "Build",
+    p4: "Launch",
+    cta: "Discuss a Project"
   }
 };

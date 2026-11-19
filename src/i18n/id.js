@@ -44,5 +44,21 @@ export default {
     github: "GitHub",
     roleLabel: "Peran:",
     stackLabel: "Stack:"
+  },
+  services: {
+    title: "LAYANAN",
+    subtitle: "Dari konsep sampai rilis, saya bantu wujudkan kebutuhan digital Anda.",
+    s1Title: "Website & Landing Page",
+    s1Desc: "Company profile, portofolio, dan landing page yang cepat, responsif, dan siap dikelola.",
+    s2Title: "Sistem Informasi",
+    s2Desc: "Aplikasi web berbasis Laravel/PHP dan MySQL untuk kebutuhan operasional dan administrasi.",
+    s3Title: "UI/UX & Konsultasi",
+    s3Desc: "Perancangan antarmuka, audit usability, dan konsultasi teknis untuk produk digital Anda.",
+    processTitle: "Proses Kerja",
+    p1: "Brief",
+    p2: "Desain",
+    p3: "Build",
+    p4: "Launch",
+    cta: "Diskusi Project"
   }
 };

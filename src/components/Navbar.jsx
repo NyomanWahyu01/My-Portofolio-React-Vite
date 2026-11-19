@@ -60,7 +60,7 @@ export default function Navbar() {
           {["about", "projects", "services", "experience", "contact"].map(item => (
             <a key={item} href={`#${item}`} onClick={() => setIsOpen(false)}>{t(`nav.${item}`)}</a>
           ))}
-          <div className="pt-4 border-t-[2px] border-line flex items-center justify-between">
+          <div className="pt-4 border-t-(2px) border-line flex items-center justify-between">
              <button onClick={toggleTheme} className="flex items-center gap-2 text-sm">
                 <i className={theme === "dark" ? "ri-moon-line" : "ri-sun-line"}></i>
                 {theme === "dark" ? "Dark Mode" : "Light Mode"}

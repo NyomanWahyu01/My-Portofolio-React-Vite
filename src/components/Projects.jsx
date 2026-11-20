@@ -108,18 +108,18 @@ export default function Projects() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className={`group relative rounded-lg border-3 border-(--border) bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]`}
+              className={`group relative rounded-24 border-3 border-(--border) bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]`}
             >
               {/* Folder tab */}
               <span
-                className="absolute -top-3 left-6 h-3 w-16 rounded-t-[8px] border-3 border-b-0 border-(--border)"
+                className="absolute -top-3 left-6 h-3 w-16 rounded-t-[8px] border-[3px] border-b-0 border-(--border)"
                 style={{ backgroundColor: p.color }}
                 aria-hidden="true"
               />
 
               <div className="flex items-start justify-between mb-4">
                 <span
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border-3 border-(--border) text-on-card"
+                  className="flex h-12 w-12 items-center justify-center rounded-12 border-3 border-(--border) text-on-card"
                   style={{ backgroundColor: p.color }}
                 >
                   <i className="ri-folder-2-line text-xl"></i>
@@ -138,7 +138,7 @@ export default function Projects() {
               </div>
 
               {p.gambar && (
-                <div className="mb-4 overflow-hidden rounded-md border-3 border-(--border) aspect-video bg-bg">
+                <div className="mb-4 overflow-hidden rounded-16 border-3 border-(--border) aspect-video bg-bg">
                   <img
                     src={p.gambar}
                     alt={p.nama}
@@ -160,7 +160,7 @@ export default function Projects() {
                   {p.tools.slice(0, 3).map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-2 border-(--border) bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-fg"
+                      className="rounded-full border-2 border-(--border) bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-on-card"
                     >
                       {tool}
                     </span>
@@ -175,7 +175,7 @@ export default function Projects() {
                       href={p.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-(--border) bg-card-alt text-on-card shadow-[2px_2px_0px_var(--shadow)]"
+                      className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-card-alt text-on-card shadow-[2px_2px_0px_var(--shadow)]"
                       title="GitHub"
                     >
                       <i className="ri-github-fill text-lg"></i>
@@ -185,7 +185,7 @@ export default function Projects() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setSelected(p)}
-                    className="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-(--border) bg-bg text-fg shadow-[2px_2px_0px_var(--shadow)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-bg text-fg shadow-[2px_2px_0px_var(--shadow)]"
                     title="Details"
                   >
                     <i className="ri-arrow-right-up-line text-lg"></i>
@@ -205,7 +205,7 @@ export default function Projects() {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="rounded-md border-3 border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="rounded-[16px] border-[3px] border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {showAll ? t("design.less") : t("design.more")}
           </button>
@@ -229,12 +229,12 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg border-3 border-(--border) bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-(--border) bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-bg text-fg"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-12 border-[3px] border-(--border) bg-bg text-on-card"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
@@ -242,10 +242,10 @@ export default function Projects() {
 
               <div className="flex items-center gap-3 mb-6 pr-12">
                 <span
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border-3 border-(--border) text-on-card"
+                  className="flex h-12 w-12 items-center justify-center rounded-12 border-3p border-(--border) text-on-card"
                   style={{ backgroundColor: selected.color }}
                 >
-                  <i className="ri-folder-2-line text-xl"></i>
+                  <i className="ri-folder-2-line text-xl text-on-card"></i>
                 </span>
                 <span
                   className="rounded-full border-2 border-(--border) px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-on-card"
@@ -256,7 +256,7 @@ export default function Projects() {
               </div>
 
               {selected.gambar && (
-                <div className="mb-6 overflow-hidden rounded-[20px] border-3 border-(--border) bg-bg">
+                <div className="mb-6 overflow-hidden rounded-[20px] border-[3px] border-(--border) bg-bg">
                    <img
                     src={selected.gambar}
                     alt={selected.nama}
@@ -305,7 +305,7 @@ export default function Projects() {
                     href={selected.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center rounded-md border-3 border-(--border) bg-cta px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
+                    className="flex-1 text-center rounded-[16px] border-[3px] border-(--border) bg-cta px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     {t("projects.demo")}
                   </motion.a>
@@ -317,7 +317,7 @@ export default function Projects() {
                     href={selected.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center rounded-md border-3 border-(--border) bg-card px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
+                    className="flex-1 text-center rounded-[16px] border-[3px] border-(--border) bg-card px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     <i className="ri-github-fill mr-2"></i>
                     {t("projects.github")}

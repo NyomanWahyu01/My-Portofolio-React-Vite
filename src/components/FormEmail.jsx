@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useT } from "../i18n/LanguageProvider";
 
 const inputClass =
-  "h-12 w-full rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
+  "h-12 w-full rounded-sm border-2 border-(--border) bg-card px-4 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
 
 const FormEmail = () => {
   const { t } = useT();
@@ -45,12 +45,12 @@ const FormEmail = () => {
       </h3>
 
       {submitStatus === "success" && (
-        <p className="mb-4 rounded-[10px] border-[2px] border-[var(--border)] bg-green px-4 py-3 font-sans text-sm font-bold text-on-card">
+        <p className="mb-4 rounded-sm border-2 border-(--border) bg-green px-4 py-3 font-sans text-sm font-bold text-on-card">
           {t("contact.success")}
         </p>
       )}
       {submitStatus === "error" && (
-        <p className="mb-4 rounded-[10px] border-[2px] border-[var(--border)] bg-pink px-4 py-3 font-sans text-sm font-bold text-on-card">
+        <p className="mb-4 rounded-sm border-2 border-(--border) bg-pink px-4 py-3 font-sans text-sm font-bold text-on-card">
           {t("contact.error")}
         </p>
       )}
@@ -104,7 +104,7 @@ const FormEmail = () => {
             id="pesan"
             rows="5"
             placeholder={t("contact.messagePlaceholder")}
-            className="w-full resize-none rounded-[10px] border-[2px] border-[var(--border)] bg-card px-4 py-3 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow"
+            className="w-full resize-none rounded-sm border-2 border-(--border) bg-card px-4 py-3 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow"
             required
           ></textarea>
         </div>
@@ -112,7 +112,7 @@ const FormEmail = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-[16px] border-[3px] border-[var(--border)] bg-cta font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none disabled:opacity-50"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-md border-3 border-(--border) bg-cta font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none disabled:opacity-50"
         >
           {isSubmitting ? (
             <>

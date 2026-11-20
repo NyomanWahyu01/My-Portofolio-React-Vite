@@ -24,7 +24,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-20 border-t-[3px] border-line bg-bg overflow-hidden">
+    <footer className="mt-20 border-t-3 border-line bg-bg overflow-hidden">
       <div className="container mx-auto px-5 md:px-8 pt-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
           {/* Anchor links */}
@@ -43,20 +43,20 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-github-fill text-xl"></i>
             </a>
             <a
               href="mailto:inyomanwahyu123@gmail.com"
               aria-label="Email"
-              className="flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-mail-fill text-xl"></i>
             </a>
 
             {/* Language */}
-            <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-card">
+            <div className="flex rounded-full border-2 border-(--border) p-0.5 bg-card">
               <button
                 onClick={() => setLang("id")}
                 className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
@@ -72,7 +72,7 @@ export default function Footer() {
             </div>
 
             {/* Theme */}
-            <div className="flex rounded-full border-[2px] border-[var(--border)] p-0.5 bg-card">
+            <div className="flex rounded-full border-2 border-(--border) p-0.5 bg-card">
               {themeOptions.map((opt) => (
                 <button
                   key={opt.key}

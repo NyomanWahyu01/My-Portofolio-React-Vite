@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="my-20 rounded-[24px] border-[3px] border-(--border) bg-cta p-6 md:p-12 shadow-[10px_10px_0px_var(--shadow)]"
+      className="my-20 rounded-lg border-3 border-(--border) bg-cta p-6 md:p-12 shadow-[10px_10px_0px_var(--shadow)]"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         {/* Left: headline */}
@@ -33,7 +33,7 @@ export default function Contact() {
               href="https://wa.me/6285399101184"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-3 rounded-md border-3 border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-green text-on-card">
                 <i className="ri-whatsapp-line text-lg"></i>
@@ -51,7 +51,7 @@ export default function Contact() {
           {/* EMAIL */}
             <a
               href="mailto:inyomanwahyu123@gmail.com"
-              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-3 rounded-md border-3 border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-yellow text-on-card">
                 <i className="ri-mail-line text-lg"></i>
@@ -69,7 +69,7 @@ export default function Contact() {
             {/* GITHUB */}
             <a
               href="https://github.com/NyomanWahyu01"
-              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-3 rounded-md border-3 border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-neutral-500 text-on-card">
                 <i className="ri-github-fill text-xl"></i>
@@ -87,7 +87,7 @@ export default function Contact() {
             {/* LINKEDIN */}
             <a
               href="https://www.linkedin.com/in/i-nyoman-wahyu/"
-              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-3 rounded-md border-3 border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-blue-500 text-on-card">
                 <i className="ri-linkedin-fill text-xl"></i>
@@ -110,7 +110,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-github-fill text-xl"></i>
             </a>
@@ -119,7 +119,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-whatsapp-fill text-xl"></i>
             </a>
@@ -127,7 +127,7 @@ export default function Contact() {
         </div>
 
         {/* Right: form card */}
-        <div className="rounded-[24px] border-[3px] border-(--border) bg-card p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)]">
+        <div className="rounded-lg border-3 border-(--border) bg-card p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)]">
           <FormEmail />
         </div>
       </div>

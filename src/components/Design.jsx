@@ -48,7 +48,7 @@ export default function Design() {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               onClick={() => setSelected(item)}
-              className="group relative block w-full overflow-hidden rounded-[24px] border-[3px] border-[var(--border)] bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)]"
+              className="group relative block w-full overflow-hidden rounded-lg border-3 border-(--border) bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)]"
             >
               <img
                 src={item.gambar}
@@ -56,7 +56,7 @@ export default function Design() {
                 className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
-              <span className="absolute left-4 top-4 rounded-full border-[2px] border-[var(--border)] bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="absolute left-4 top-4 rounded-full border-2 border-(--border) bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">
                 {item.type}
               </span>
             </motion.button>
@@ -72,7 +72,7 @@ export default function Design() {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="rounded-md border-3 border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {showAll ? t("design.less") : t("design.more")}
           </button>
@@ -83,7 +83,7 @@ export default function Design() {
       <AnimatePresence>
         {selected && (
           <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            className="fixed inset-0 z-100 flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -96,18 +96,18 @@ export default function Design() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-[var(--border)] bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
+              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-lg border-3 border-(--border) bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] bg-bg text-fg"
+                className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-bg text-fg"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
               </button>
 
-              <div className="mb-6 overflow-hidden rounded-[20px] border-[3px] border-[var(--border)]">
+              <div className="mb-6 overflow-hidden rounded-[20px] border-3 border-(--border)">
                 <img
                   src={selected.gambar}
                   alt={selected.nama}
@@ -126,7 +126,7 @@ export default function Design() {
                 {selected.tools?.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full border-[2px] border-[var(--border)] bg-bg px-3 py-1 text-xs font-bold text-fg"
+                    className="rounded-full border-2 border-(--border) bg-bg px-3 py-1 text-xs font-bold text-fg"
                   >
                     {tool}
                   </span>
@@ -138,7 +138,7 @@ export default function Design() {
                   href={selected.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full text-center rounded-[16px] border-[3px] border-[var(--border)] bg-cta px-5 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
+                  className="inline-block w-full text-center rounded-md border-3 border-(--border) bg-cta px-5 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                 >
                   {t("projects.demo")}
                 </a>

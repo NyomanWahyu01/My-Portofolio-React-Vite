@@ -13,7 +13,7 @@ export default function Hero() {
 
       <div className="relative z-10">
         {/* Status Badge */}
-        <div className="fade-up fade-up-delay-1 inline-flex items-center gap-2 rounded-full border-[2px] border-[var(--border)] bg-card px-4 py-1.5 mb-6 shadow-[2px_2px_0px_var(--shadow)]">
+        <div className="fade-up fade-up-delay-1 inline-flex items-center gap-2 rounded-full border-2 border-(--border) bg-card px-4 py-1.5 mb-6 shadow-[2px_2px_0px_var(--shadow)]">
           <span className="h-2 w-2 rounded-full bg-green animate-pulse" />
           <span className="typing text-[0.75rem] font-bold uppercase tracking-[0.08em] text-on-card">
             {t("hero.badge")}
@@ -35,13 +35,13 @@ export default function Hero() {
             href="https://drive.google.com/drive/folders/1CV1RdSf5p0lBML3RB_ewfTXhdUk8Qiuz?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-btn rounded-[16px] border-[3px] border-[var(--border)] bg-cta px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="hero-btn rounded-[16px] border-[3px] border-(--border) bg-cta px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {t("hero.downloadCv")}
           </a>
           <a 
             href="#projects" 
-            className="hero-btn rounded-[16px] border-[3px] border-[var(--border)] bg-card px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="hero-btn rounded-[16px] border-[3px] border-(--border) bg-card px-8 py-4 font-sans font-bold text-sm uppercase tracking-wider text-on-card shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {t("hero.viewProjects")}
           </a>
@@ -50,8 +50,8 @@ export default function Hero() {
 
       {/* Profile Image */}
       <div className="slogan-card relative z-10 flex justify-center md:justify-end">
-        <div className="profile-hero-img relative rotate-[2deg] rounded-[24px] border-[3px] border-[var(--border)] bg-card-alt p-4 shadow-[10px_10px_0px_var(--shadow)] w-full max-w-[400px]">
-          <div className="aspect-square bg-card rounded-[16px] overflow-hidden border-[2px] border-[var(--border)]">
+        <div className="profile-hero-img relative rotate-2 rounded-[24px] border-[3px] border-(--border) bg-card-alt p-4 shadow-[10px_10px_0px_var(--shadow)] w-full max-w-[400px]">
+          <div className="aspect-square bg-card rounded-[16px] overflow-hidden border-2 border-(--border)">
              <img 
                src={DataImage.profileBg} 
                alt="Nyoman Wahyu" 
@@ -59,10 +59,10 @@ export default function Hero() {
              />
           </div>
           {/* Stickers */}
-          <div className="absolute -top-4 -left-4 rounded-[12px] border-[2px] border-[var(--border)] bg-pink px-3 py-1 rotate-[-5deg] font-sans font-bold text-xs uppercase text-on-card shadow-[2px_2px_0px_var(--shadow)]">
+          <div className="absolute -top-4 -left-4 rounded-12 border-2 border-(--border) bg-pink px-3 py-1 rotate-[-5deg] font-sans font-bold text-xs uppercase text-on-card shadow-[2px_2px_0px_var(--shadow)]">
             {t("hero.role1")}
           </div>
-          <div className="absolute -bottom-4 -right-4 rounded-[12px] border-[2px] border-[var(--border)] bg-yellow px-3 py-1 rotate-[5deg] font-sans font-bold text-xs uppercase text-on-card shadow-[2px_2px_0px_var(--shadow)]">
+          <div className="absolute -bottom-4 -right-4 rounded-12 border-2 border-(--border) bg-yellow px-3 py-1 rotate-[5deg] font-sans font-bold text-xs uppercase text-on-card shadow-[2px_2px_0px_var(--shadow)]">
             {t("hero.role2")}
           </div>
         </div>

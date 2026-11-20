@@ -22,16 +22,16 @@ export default function Navbar() {
   const isDark = theme === "dark";
 
   return (
-    <header className="sticky top-4 z-50 mx-auto max-w-screen-xl px-4">
+    <header className="sticky top-4 z-50 mx-auto max-w-screen-7xl px-4">
       <nav className="nb-navbar flex items-center justify-between px-6 py-3">
         <a href="/" className="flex items-center">
           <img src="/assets/Logo-Nym.png" alt="Logo" className="h-10 w-auto" />
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-6 font-sans font-medium text-sm text-fg">
+        <div className="hidden md:flex items-center gap-6 font-sans font-medium text-sm text-on-card">
           {NAV_ITEMS.map((item) => (
-            <a key={item} href={`#${item}`} className="hover:text-accent transition-colors">
+            <a key={item} href={`#${item}`} className="underline-offset-8 decoration-accent decoration-3 hover:underline transition-colors">
               {t(`nav.${item}`)}
             </a>
           ))}
@@ -58,7 +58,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <button onClick={toggleTheme} className="nb-mini-btn flex items-center gap-2 px-3 py-2 text-xs font-bold">
+          <button onClick={toggleTheme} className="nb-mini-btn flex items-center gap-2 px-3 py-2 text-xs font-green font-bold">
             <i className={isDark ? "ri-moon-line" : "ri-sun-line"}></i>
             {isDark ? "Dark" : "Light"}
           </button>
@@ -90,8 +90,8 @@ export default function Navbar() {
             </a>
           ))}
 
-          <div className="mt-2 flex items-center justify-between border-t-2 border-line pt-4">
-            <button onClick={toggleTheme} className="flex items-center gap-2 text-sm">
+          <div className="mt-2 flex items-center justify-between border-t-2 border-on-card pt-4">
+            <button onClick={toggleTheme} className="flex items-center gap-2 text-sm text-on-card">
               <i className={isDark ? "ri-moon-line" : "ri-sun-line"}></i>
               {isDark ? "Dark Mode" : "Light Mode"}
             </button>

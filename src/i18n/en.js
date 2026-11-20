@@ -46,20 +46,52 @@ export default {
     stackLabel: "Stack:"
   },
   services: {
-    title: "SERVICES",
+    label: "Services Me",
     subtitle: "From concept to release, I help bring your digital needs to life.",
+
     s1Title: "Website & Landing Page",
     s1Desc: "Fast, responsive company profiles, portfolios, and landing pages that are easy to manage.",
+    s1Item1: "Responsive design for phone, tablet, and desktop",
+    s1Item2: "Basic SEO structure and solid performance",
+    s1Item3: "Contact form or WhatsApp button",
+
     s2Title: "Information Systems",
     s2Desc: "Laravel/PHP and MySQL web applications for operational and administrative needs.",
+    s2Item1: "Login with role-based access",
+    s2Item2: "Data management, search, and reports",
+    s2Item3: "A well-structured MySQL database",
+
     s3Title: "UI/UX & Consulting",
     s3Desc: "Interface design, usability audits, and technical consulting for your digital product.",
+    s3Item1: "Wireframes and prototypes in Figma",
+    s3Item2: "Review of layout and user flow",
+    s3Item3: "Technology advice that fits your needs and budget",
+
+    processLabel: "How I work",
     processTitle: "How I Work",
-    p1: "Brief",
-    p2: "Design",
-    p3: "Build",
-    p4: "Launch",
-    cta: "Discuss a Project"
+    processSubtitle: "Four clear stages, so you know what is happening and what you will receive at each step.",
+    outputLabel: "Output",
+
+    p1Title: "Brief",
+    p1Desc: "We discuss goals, target users, key features, and the timeline.",
+    p1Output: "Requirements and scope",
+
+    p2Title: "Design",
+    p2Desc: "I design the structure and look, and you review it before development starts.",
+    p2Output: "Approved wireframe or mockup",
+
+    p3Title: "Build",
+    p3Desc: "Code is built in stages with progress updates, so revisions can happen early.",
+    p3Output: "A test version you can try",
+
+    p4Title: "Launch",
+    p4Desc: "Final testing, publishing, and a handover with usage guidance.",
+    p4Output: "Live website and handover",
+
+    ctaTitle: "Have an idea or a need?",
+    ctaDesc: "Tell me briefly. I usually reply within 24 hours.",
+    ctaPrimary: "Discuss a Project",
+    ctaSecondary: "View Projects",
   },
   experience: {
     title: "EXPERIENCE & EDUCATION",

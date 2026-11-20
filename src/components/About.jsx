@@ -27,13 +27,13 @@ export default function About() {
 
           {/* Stat stickers */}
           <div className="flex flex-wrap gap-5">
-            <div className="rounded-[16px] border-[3px] border-[var(--border)] bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+            <div className="rounded-[16px] border-[3px] border-(--border) bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
               <p className="font-display text-5xl leading-none text-on-card">10+</p>
               <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
                 {t("about.statProjects")}
               </p>
             </div>
-            <div className="rounded-[16px] border-[3px] border-[var(--border)] bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+            <div className="rounded-[16px] border-[3px] border-(--border) bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
               <p className="font-display text-5xl leading-none text-on-card">3+</p>
               <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
                 {t("about.statYears")}
@@ -52,7 +52,7 @@ export default function About() {
               roles.map((role, i) => (
                 <div
                   key={role}
-                  className={`relative rounded-[24px] border-[3px] border-[var(--border)] bg-card px-6 py-5 shadow-[6px_6px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5 ${
+                  className={`relative rounded-[24px] border-[3px] border-(--border) bg-card px-6 py-5 shadow-[6px_6px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5 ${
                     i % 2 === 0 ? "-rotate-1" : "rotate-1"
                   }`}
                 >
@@ -64,7 +64,7 @@ export default function About() {
                   />
                   <div className="flex items-center gap-4">
                     <span
-                      className="flex h-12 w-12 items-center justify-center rounded-[12px] border-[3px] border-[var(--border)] text-on-card"
+                      className="flex h-12 w-12 items-center justify-center rounded-12 border-[3px] border-(--border) text-on-card"
                       style={{ backgroundColor: roleColors[i % roleColors.length] }}
                     >
                       <i className="ri-folder-line text-xl"></i>

@@ -82,7 +82,7 @@ export default function Projects() {
             <button
               key={f.key}
               onClick={() => setFilter(f.key)}
-              className={`rounded-full border-[2px] border-[var(--border)] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.08em] transition-all ${
+              className={`rounded-full border-2 border-(--border) px-4 py-1.5 text-xs font-bold uppercase tracking-[0.08em] transition-all ${
                 filter === f.key
                   ? "bg-accent text-on-card shadow-[3px_3px_0px_var(--shadow)]"
                   : "bg-card text-on-card"

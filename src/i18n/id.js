@@ -46,20 +46,52 @@ export default {
     stackLabel: "Stack:"
   },
   services: {
-    title: "LAYANAN",
+    label: "lAYANAN SAYA",
     subtitle: "Dari konsep sampai rilis, saya bantu wujudkan kebutuhan digital Anda.",
+
     s1Title: "Website & Landing Page",
     s1Desc: "Company profile, portofolio, dan landing page yang cepat, responsif, dan siap dikelola.",
+    s1Item1: "Desain responsif untuk HP, tablet, dan desktop",
+    s1Item2: "Struktur SEO dasar dan performa yang terjaga",
+    s1Item3: "Formulir kontak atau tombol WhatsApp",
+
     s2Title: "Sistem Informasi",
     s2Desc: "Aplikasi web berbasis Laravel/PHP dan MySQL untuk kebutuhan operasional dan administrasi.",
+    s2Item1: "Login dengan hak akses per peran",
+    s2Item2: "Kelola data, pencarian, dan laporan",
+    s2Item3: "Database MySQL yang terstruktur",
+
     s3Title: "UI/UX & Konsultasi",
     s3Desc: "Perancangan antarmuka, audit usability, dan konsultasi teknis untuk produk digital Anda.",
+    s3Item1: "Wireframe dan prototype di Figma",
+    s3Item2: "Review tampilan dan alur pengguna",
+    s3Item3: "Saran teknologi sesuai kebutuhan dan anggaran",
+
+    processLabel: "Cara kerja",
     processTitle: "Proses Kerja",
-    p1: "Brief",
-    p2: "Desain",
-    p3: "Build",
-    p4: "Launch",
-    cta: "Diskusi Project"
+    processSubtitle: "Empat tahap yang jelas, supaya Anda tahu apa yang terjadi dan apa yang akan diterima di setiap langkah.",
+    outputLabel: "Hasil",
+
+    p1Title: "Brief",
+    p1Desc: "Kita bahas tujuan, target pengguna, fitur utama, dan batas waktu.",
+    p1Output: "Daftar kebutuhan dan ruang lingkup",
+
+    p2Title: "Desain",
+    p2Desc: "Saya rancang struktur dan tampilan, lalu Anda tinjau sebelum pengerjaan dimulai.",
+    p2Output: "Wireframe atau mockup yang disetujui",
+
+    p3Title: "Build",
+    p3Desc: "Kode dikerjakan bertahap dengan update progres, sehingga revisi bisa dilakukan lebih awal.",
+    p3Output: "Versi uji yang bisa dicoba",
+
+    p4Title: "Launch",
+    p4Desc: "Pengujian akhir, publikasi, dan serah terima beserta penjelasan penggunaan.",
+    p4Output: "Website live dan serah terima",
+
+    ctaTitle: "Punya ide atau kebutuhan?",
+    ctaDesc: "Ceritakan secara singkat. Biasanya saya balas dalam 24 jam.",
+    ctaPrimary: "Diskusi Project",
+    ctaSecondary: "Lihat Project",
   },
   experience: {
     title: "PENGALAMAN & PENDIDIKAN",

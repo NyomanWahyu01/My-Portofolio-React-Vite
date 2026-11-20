@@ -8,16 +8,16 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="my-20 rounded-[24px] border-[3px] border-[var(--border)] bg-cta p-6 md:p-12 shadow-[10px_10px_0px_var(--shadow)]"
+      className="my-20 rounded-[24px] border-[3px] border-(--border) bg-cta p-6 md:p-12 shadow-[10px_10px_0px_var(--shadow)]"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
         {/* Left: headline */}
         <div>
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="rounded-full border-[2px] border-[var(--border)] bg-card px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-on-card">
+            <span className="rounded-full border-2 border-(--border) bg-card px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-on-card">
               {t("contact.chipResponse")}
             </span>
-            <span className="rounded-full border-[2px] border-[var(--border)] bg-green px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-on-card">
+            <span className="rounded-full border-2 border-(--border) bg-green px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.08em] text-on-card">
               {t("contact.chipAvailable")}
             </span>
           </div>
@@ -28,13 +28,14 @@ export default function Contact() {
 
           {/* Contact rows */}
           <div className="space-y-3 mb-8">
+            {/* WA */}
             <a
-              href="https://wa.me/62885399101184"
+              href="https://wa.me/6285399101184"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-[16px] border-[3px] border-[var(--border)] bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-green text-on-card">
+              <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-green text-on-card">
                 <i className="ri-whatsapp-line text-lg"></i>
               </span>
               <span className="flex flex-col">
@@ -42,16 +43,17 @@ export default function Contact() {
                   WhatsApp
                 </span>
                 <span className="font-sans text-sm font-bold text-on-card">
-                  +62 885-3991-01184
+                  +62 853-9910-1184
                 </span>
               </span>
             </a>
-
+          
+          {/* EMAIL */}
             <a
               href="mailto:inyomanwahyu123@gmail.com"
-              className="flex items-center gap-3 rounded-[16px] border-[3px] border-[var(--border)] bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[2px] border-[var(--border)] bg-yellow text-on-card">
+              <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-yellow text-on-card">
                 <i className="ri-mail-line text-lg"></i>
               </span>
               <span className="flex flex-col">
@@ -63,10 +65,46 @@ export default function Contact() {
                 </span>
               </span>
             </a>
+
+            {/* GITHUB */}
+            <a
+              href="https://github.com/NyomanWahyu01"
+              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-neutral-500 text-on-card">
+                <i className="ri-github-fill text-xl"></i>
+              </span>
+              <span className="flex flex-col">
+                <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-muted-card">
+                  {t("github")}
+                </span>
+                <span className="font-sans text-sm font-bold text-on-card">
+                  NyomanWahyu01
+                </span>
+              </span>
+            </a>
+
+            {/* LINKEDIN */}
+            <a
+              href="https://www.linkedin.com/in/i-nyoman-wahyu/"
+              className="flex items-center gap-3 rounded-[16px] border-[3px] border-(--border) bg-card px-4 py-3 shadow-[4px_4px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-10 border-2 border-(--border) bg-blue-500 text-on-card">
+                <i className="ri-linkedin-fill text-xl"></i>
+              </span>
+              <span className="flex flex-col">
+                <span className="font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-muted-card">
+                  {t("linkedin")}
+                </span>
+                <span className="font-sans text-sm font-bold text-on-card">
+                  I Nyoman Wahyu Trisna Winda
+                </span>
+              </span>
+            </a>
           </div>
 
           {/* Social */}
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <a
               href="https://github.com/NyomanWahyu01"
               target="_blank"
@@ -85,11 +123,11 @@ export default function Contact() {
             >
               <i className="ri-whatsapp-fill text-xl"></i>
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Right: form card */}
-        <div className="rounded-[24px] border-[3px] border-[var(--border)] bg-card p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)]">
+        <div className="rounded-[24px] border-[3px] border-(--border) bg-card p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)]">
           <FormEmail />
         </div>
       </div>

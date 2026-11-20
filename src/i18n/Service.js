@@ -30,7 +30,6 @@ services; {
   s3Item2; "Review tampilan dan alur pengguna",
   s3Item3; "Saran teknologi sesuai kebutuhan dan anggaran",
 
-  processLabel; "Cara kerja",
   processTitle; "Proses Kerja",
   processSubtitle;
     "Empat tahap yang jelas, supaya Anda tahu apa yang terjadi dan apa yang akan diterima di setiap langkah.",
@@ -99,9 +98,10 @@ services; {
   p2Desc; "I design the structure and look, and you review it before development starts.",
   p2Output; "Approved wireframe or mockup",
 
-  p3Title; "Build",
-  p3Desc; "Code is built in stages with progress updates, so revisions can happen early.",
-  p3Output; "A test version you can try",
+  p3Title; "Payment Commitment",
+  p3Desc; 
+  "A 50/50 project investment agreement. A 50% down payment is due upfront as a deposit to secure the project slot, the remaining 50% is due upon the apps launch.",
+  p3Output; "50% down payment received and 50% of the project completed",
 
   p4Title; "Launch",
   p4Desc; "Final testing, publishing, and a handover with usage guidance.",

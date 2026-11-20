@@ -25,7 +25,7 @@ export default function Navbar() {
     <header className="sticky top-4 z-50 mx-auto max-w-screen-7xl px-4">
       <nav className="nb-navbar flex items-center justify-between px-6 py-3">
         <a href="/" className="flex items-center">
-          <img src="/assets/Logo-Nym.png" alt="Logo" className="h-10 w-auto" />
+          <img src="/assets/Logo-Nym.webp" alt="Logo" className="h-10 w-auto" />
         </a>
 
         {/* Desktop links */}

@@ -7,8 +7,8 @@ import { useT } from "../i18n/LanguageProvider";
    Nama class warna harus ditulis lengkap (bg-yellow, bukan "bg-" + nama).
    ===================================================================== */
 const SERVICES = [
-  { key: "s1", icon: "ri-global-line", color: "bg-yellow", stack: ["React", "Tailwind CSS", "Vite"] },
-  { key: "s2", icon: "ri-database-2-line", color: "bg-pink", stack: ["Laravel", "PHP", "MySQL"] },
+  { key: "s1", icon: "ri-global-line", color: "bg-yellow", stack: ["React.Js", "Next.Js", "Vue.Js", "Wordpress", "Boostrap", "Tailwind CSS", "Vite"] },
+  { key: "s2", icon: "ri-database-2-line", color: "bg-pink", stack: ["Laravel", "PHP", "MySQL", "SQLite", "Blade"] },
   { key: "s3", icon: "ri-pen-nib-line", color: "bg-lime", stack: ["Figma", "Canva", "Photoshop"] },
 ];
 
@@ -107,32 +107,30 @@ export default function Services() {
 
         {/* ---------- Proses kerja ---------- */}
         <Reveal className={`${card} mt-16 bg-card-alt p-6 md:p-10`}>
-          <p className="text-xs font-bold uppercase tracking-widest">{t("services.processLabel")}</p>
           <h3 className="mt-2 font-display text-4xl uppercase leading-none md:text-5xl">
             {t("services.processTitle")}
           </h3>
           <p className="mt-3 max-w-prose text-on-card/75">{t("services.processSubtitle")}</p>
 
-          {/* Mobile: garis di kiri. Desktop: garis di atas, 4 kolom. */}
-          <ol className="mt-10 grid gap-8 md:grid-cols-4 md:gap-6">
+          <ol className="mt-10 grid gap-8 md:grid-cols-4 md:gap-6 items-start">
             {STEPS.map((p, i) => (
               <li
                 key={p}
-                className="border-l-3 border-ink pl-5 md:border-l-0 md:border-t-3 md:pl-0 md:pt-5"
+                className="border-l-3 border-ink pl-5 md:border-l-0 md:border-t-3 md:pl-0 md:pt-5 flex flex-col h-full"
               >
                 <span className="font-display text-5xl leading-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h4 className="mt-3 text-lg font-bold">{t(`services.${p}Title`)}</h4>
-                <p className="mt-2 text-sm text-on-card/75">{t(`services.${p}Desc`)}</p>
+                <h4 className="mt-3 text-lg font-bold grow">{t(`services.${p}Title`)}</h4>
+                <p className="mt-2 text-sm text-on-card/75 grow">{t(`services.${p}Desc`)}</p>
 
                 {/* apa yang diterima klien di tahap ini */}
-                <p className="mt-4 rounded-xl border-2 border-ink bg-card px-3 py-2 text-xs font-bold">
-                  <span className="uppercase tracking-widest opacity-60">
-                    {t("services.outputLabel")}:{" "}
+                <div className="mt-4 rounded-xl border-2 border-ink bg-card px-3 py-2 text-xs font-bold mt-auto">
+                  <span className="uppercase tracking-widest opacity-60 block mb-1">
+                    {t("services.outputLabel")}:
                   </span>
                   {t(`services.${p}Output`)}
-                </p>
+                </div>
               </li>
             ))}
           </ol>

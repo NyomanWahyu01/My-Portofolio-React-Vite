@@ -54,39 +54,42 @@ export default {
     s1Item1: "Desain responsif untuk HP, tablet, dan desktop",
     s1Item2: "Struktur SEO dasar dan performa yang terjaga",
     s1Item3: "Formulir kontak atau tombol WhatsApp",
+    s1Stack: "React.Js, Next.Js, Vue.Js, Wordpress, Boostrap, Tailwind CSS, Vite",
 
     s2Title: "Sistem Informasi",
     s2Desc: "Aplikasi web berbasis Laravel/PHP dan MySQL untuk kebutuhan operasional dan administrasi.",
     s2Item1: "Login dengan hak akses per peran",
     s2Item2: "Kelola data, pencarian, dan laporan",
     s2Item3: "Database MySQL yang terstruktur",
+    s2Stack: "Laravel, PHP, MySQL, SQLite, Blade",
 
     s3Title: "UI/UX & Konsultasi",
     s3Desc: "Perancangan antarmuka, audit usability, dan konsultasi teknis untuk produk digital Anda.",
     s3Item1: "Wireframe dan prototype di Figma",
     s3Item2: "Review tampilan dan alur pengguna",
     s3Item3: "Saran teknologi sesuai kebutuhan dan anggaran",
+    s3Stack: "Figma, Canva, Photoshop",
 
     processLabel: "Cara kerja",
     processTitle: "Proses Kerja",
-    processSubtitle: "Empat tahap yang jelas, supaya Anda tahu apa yang terjadi dan apa yang akan diterima di setiap langkah.",
+    processSubtitle: "Bekerja transparan, terstruktur, dan tepat waktu agar ide Anda jadi kenyataan.",
     outputLabel: "Hasil",
 
-    p1Title: "Brief",
-    p1Desc: "Kita bahas tujuan, target pengguna, fitur utama, dan batas waktu.",
-    p1Output: "Daftar kebutuhan dan ruang lingkup",
+    p1Title: "Briefing Ide",
+    p1Desc: "Kita diskusi santai soal tujuan, target user, dan fitur yang Anda inginkan. Fokus kita di sini memastikan visi Anda dan saya satu frekuensi.",
+    p1Output: "Dokumentasi proyek & estimasi harga",
 
-    p2Title: "Desain",
-    p2Desc: "Saya rancang struktur dan tampilan, lalu Anda tinjau sebelum pengerjaan dimulai.",
-    p2Output: "Wireframe atau mockup yang disetujui",
+    p2Title: "Eksekusi Desain",
+    p2Desc: "Saya buatkan kerangka visualnya. Anda lihat, beri masukan, dan kita poles sampai benar-benar sreg sebelum masuk ke tahap teknis.",
+    p2Output: "Wireframe/Design UI yang disetujui",
 
-    p3Title: "Build",
-    p3Desc: "Kode dikerjakan bertahap dengan update progres, sehingga revisi bisa dilakukan lebih awal.",
-    p3Output: "Versi uji yang bisa dicoba",
+    p3Title: "Komitmen Pembayaran",
+    p3Desc: "Kesepakatan investasi proyek 50/50. DP 50% di awal sebagai tanda jadi untuk mengikat slot pengerjaan, sisanya 50% dilunasi saat aplikasi siap meluncur.",
+    p3Output: "DP 50% Dibayarkan, Proyek 100% Selesai",
 
-    p4Title: "Launch",
-    p4Desc: "Pengujian akhir, publikasi, dan serah terima beserta penjelasan penggunaan.",
-    p4Output: "Website live dan serah terima",
+    p4Title: "Tahap Build & Launch",
+    p4Desc: "Proses coding bertahap dengan update progres rutin. Revisi bisa kita lakukan saat berjalan agar hasilnya presisi. Selesai? Kita rilis dan saya pandu cara pakainya.",
+    p4Output: "Website/Aplikasi Live & Serah terima",
 
     ctaTitle: "Punya ide atau kebutuhan?",
     ctaDesc: "Ceritakan secara singkat. Biasanya saya balas dalam 24 jam.",
@@ -97,8 +100,21 @@ export default {
     title: "PENGALAMAN & PENDIDIKAN",
     subtitle: "Jejak kerja, riwayat pendidikan, dan sertifikasi profesional.",
     timelineTitle: "Pengalaman Kerja & Pendidikan",
+    eduTitle: "Pendidikan",
     certTitle: "Sertifikasi & Pelatihan",
     present: "Sekarang",
+    education: {
+      title: "Sistem Informasi (S1) – Konsentrasi E-Bisnis",
+      org: "Universitas Dipa Makassar",
+      period: "2021 – 2025",
+      gpa: "IPK 3.64 / 4.00",
+      thesis: "Skripsi: “Penerapan Algoritma Fuzzy Mamdani untuk Analisis Kepuasan Masyarakat pada Pelayanan Kantor Mal Pelayanan Publik Pangkep Berbasis Web”.",
+      desc: [
+        "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
+        "Magang industri (MBKM) 4 bulan di DPMPTSP Kab. Pangkep.",
+        "Sertifikasi nasional Operator Komputer Madya (BNSP) serta aktif di organisasi kesenian dan olahraga kampus."
+      ]
+    },
     timeline: [
       {
         title: "Full Stack Web Developer | Freelance",
@@ -134,18 +150,6 @@ export default {
           "Melakukan pengecekan serta troubleshooting perangkat keras dan perangkat lunak untuk memastikan komputer dapat digunakan secara optimal oleh karyawan.",
           "Memperbaiki perangkat keras saat terjadi kerusakan sehingga meminimalisir downtime dan mempercepat proses kerja pegawai.",
           "Melakukan pembaruan sistem operasi Windows pada komputer karyawan sebelum digunakan sehingga perangkat lebih aman, stabil, dan siap pakai."
-        ]
-      },
-      {
-        title: "Sistem Informasi (S1) – Konsentrasi E-Bisnis | IPK 3.64 / 4.00",
-        org: "Universitas Dipa Makassar",
-        period: "2021 – 2025",
-        stack: "Skripsi: Algoritma Fuzzy Mamdani",
-        desc: [
-          "Skripsi: “Penerapan Algoritma Fuzzy Mamdani untuk Analisis Kepuasan Masyarakat pada Pelayanan Kantor Mal Pelayanan Publik Pangkep Berbasis Web”.",
-          "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
-          "Magang industri (MBKM) 4 bulan di DPMPTSP Kab. Pangkep.",
-          "Sertifikasi nasional Operator Komputer Madya (BNSP) serta aktif di organisasi kesenian dan olahraga kampus."
         ]
       }
     ],

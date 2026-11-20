@@ -53,7 +53,7 @@ export default function Design() {
               <img
                 src={item.gambar}
                 alt={item.nama}
-                className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full aspect-3/4 object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
               <span className="absolute left-4 top-4 rounded-full border-2 border-(--border) bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">

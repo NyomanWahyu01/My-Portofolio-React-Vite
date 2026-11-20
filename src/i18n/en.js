@@ -72,21 +72,21 @@ export default {
     processSubtitle: "Four clear stages, so you know what is happening and what you will receive at each step.",
     outputLabel: "Output",
 
-    p1Title: "Brief",
-    p1Desc: "We discuss goals, target users, key features, and the timeline.",
-    p1Output: "Requirements and scope",
+    p1Title: "01. Project Briefing",
+    p1Desc: "We discuss your project goals, target audience, and key features. My priority here is to ensure our visions are aligned from the start.",
+    p1Output: "Project Documentation & Cost Estimates",
 
-    p2Title: "Design",
-    p2Desc: "I design the structure and look, and you review it before development starts.",
-    p2Output: "Approved wireframe or mockup",
+    p2Title: "02. Design Phase",
+    p2Desc: "I create the visual framework. You review it, provide feedback, and we refine the look and feel until it's perfect before development begins.",
+    p2Output: "Approved mockups/wireframes",
 
-    p3Title: "Build",
-    p3Desc: "Code is built in stages with progress updates, so revisions can happen early.",
-    p3Output: "A test version you can try",
+    p3Title: "03. Payment Commitment",
+    p3Desc: "We agree on a 50/50 payment structure. A 50% down payment is required to secure your project slot, with the remaining 50% due upon launch.",
+    p3Output: "50% DP received, project 100% completed.",
 
-    p4Title: "Launch",
-    p4Desc: "Final testing, publishing, and a handover with usage guidance.",
-    p4Output: "Live website and handover",
+    p4Title: "04. Build & Launch",
+    p4Desc: "I build the site in stages with regular updates. Feedback during development ensures a precise result. Once finished, we go live and I guide you through the handover.",
+    p4Output: "Website/App live & Final handover",
 
     ctaTitle: "Have an idea or a need?",
     ctaDesc: "Tell me briefly. I usually reply within 24 hours.",
@@ -97,8 +97,21 @@ export default {
     title: "EXPERIENCE & EDUCATION",
     subtitle: "Work, education, and certifications.",
     timelineTitle: "Experience & Education",
+    eduTitle: "Education",
     certTitle: "Certifications & Training",
     present: "Present",
+    education: {
+      title: "Information Systems (BSc) – E-Business Concentration",
+      org: "Universitas Dipa Makassar",
+      period: "2021 – 2025",
+      gpa: "GPA 3.64 / 4.00",
+      thesis: "Thesis: “Application of Fuzzy Mamdani Algorithm for Web-Based Community Satisfaction Analysis at Mal Pelayanan Publik Pangkep”.",
+      desc: [
+        "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
+        "4-month industrial internship (MBKM) at DPMPTSP Pangkep Regency.",
+        "National Intermediate Computer Operator Certification (BNSP) and active in campus arts and sports organizations."
+      ]
+    },
     timeline: [
       {
         title: "Full Stack Web Developer | Freelance",
@@ -134,18 +147,6 @@ export default {
           "Performed troubleshooting on hardware and software to ensure optimal workstation performance for employees.",
           "Repaired hardware failures to minimize downtime and accelerate employee workflows.",
           "Performed Windows OS updates on employee computers to ensure security, stability, and operational readiness."
-        ]
-      },
-      {
-        title: "Information Systems (BSc) – E-Business Concentration | GPA 3.64 / 4.00",
-        org: "Universitas Dipa Makassar",
-        period: "2021 – 2025",
-        stack: "Thesis: Fuzzy Mamdani Algorithm",
-        desc: [
-          "Thesis: “Application of Fuzzy Mamdani Algorithm for Web-Based Community Satisfaction Analysis at Mal Pelayanan Publik Pangkep”.",
-          "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
-          "4-month industrial internship (MBKM) at DPMPTSP Pangkep Regency.",
-          "National Intermediate Computer Operator Certification (BNSP) and active in campus arts and sports organizations."
         ]
       }
     ],

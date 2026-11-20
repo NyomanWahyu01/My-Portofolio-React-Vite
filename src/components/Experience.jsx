@@ -106,23 +106,31 @@ export default function Experience() {
         viewport={{ once: true }}
       >
         <h3 className="font-display text-[clamp(2rem,4vw,3rem)] leading-none uppercase text-fg mb-8">
-          Pendidikan
+          {t("experience.eduTitle")}
         </h3>
         <div className="rounded-lg border-3 border-(--border) bg-card p-6 md:p-8 shadow-[6px_6px_0px_var(--shadow)]">
           <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
             <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
-              Teknik Informatika (S1)
+              {t("experience.education.title")}
             </h3>
             <span className="rounded-full border-2 border-(--border) bg-card-alt px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card shadow-[2px_2px_0px_var(--shadow)]">
-              2019 - 2023
+              {t("experience.education.period")}
             </span>
           </div>
           <p className="font-sans text-sm font-bold text-muted-card mb-2 flex items-center gap-2">
-            <i className="ri-graduation-cap-line"></i> Universitas Contoh Indonesia
+            <i className="ri-graduation-cap-line"></i> {t("experience.education.org")}
           </p>
-          <p className="font-sans text-sm text-muted-card">
-            Fokus pada Rekayasa Perangkat Lunak, Algoritma, dan Pengembangan Web Modern. Lulus dengan predikat Cum Laude.
+          <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-accent mb-4 bg-bg inline-block px-3 py-1 rounded-md border-2 border-(--border)">
+            {t("experience.education.gpa")}
           </p>
+          <p className="font-sans text-sm font-bold text-on-card mb-4">
+            {t("experience.education.thesis")}
+          </p>
+          <ul className="font-sans text-sm leading-relaxed text-muted-card space-y-2 list-disc list-inside">
+            {t("experience.education.desc").map((d, index) => (
+              <li key={index}>{d}</li>
+            ))}
+          </ul>
         </div>
       </motion.div>
 

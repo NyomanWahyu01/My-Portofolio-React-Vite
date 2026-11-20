@@ -112,7 +112,7 @@ export default function Projects() {
             >
               {/* Folder tab */}
               <span
-                className="absolute -top-3 left-6 h-3 w-16 rounded-t-[8px] border-[3px] border-b-0 border-(--border)"
+                className="absolute -top-3 left-6 h-3 w-16 rounded-t-[8px] border-3 border-b-0 border-(--border)"
                 style={{ backgroundColor: p.color }}
                 aria-hidden="true"
               />
@@ -205,7 +205,7 @@ export default function Projects() {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="rounded-[16px] border-[3px] border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="rounded-md border-3 border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {showAll ? t("design.less") : t("design.more")}
           </button>
@@ -229,12 +229,12 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[24px] border-[3px] border-(--border) bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-lg border-3 border-(--border) bg-card p-6 md:p-8 shadow-[10px_10px_0px_var(--shadow)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-12 border-[3px] border-(--border) bg-bg text-on-card"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-12 border-3 border-(--border) bg-bg text-on-card"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
@@ -256,7 +256,7 @@ export default function Projects() {
               </div>
 
               {selected.gambar && (
-                <div className="mb-6 overflow-hidden rounded-[20px] border-[3px] border-(--border) bg-bg">
+                <div className="mb-6 overflow-hidden rounded-[20px] border-3 border-(--border) bg-bg">
                    <img
                     src={selected.gambar}
                     alt={selected.nama}
@@ -305,7 +305,7 @@ export default function Projects() {
                     href={selected.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center rounded-[16px] border-[3px] border-(--border) bg-cta px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
+                    className="flex-1 text-center rounded-md border-3 border-(--border) bg-cta px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     {t("projects.demo")}
                   </motion.a>
@@ -317,7 +317,7 @@ export default function Projects() {
                     href={selected.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center rounded-[16px] border-[3px] border-(--border) bg-card px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
+                    className="flex-1 text-center rounded-md border-3 border-(--border) bg-card px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     <i className="ri-github-fill mr-2"></i>
                     {t("projects.github")}

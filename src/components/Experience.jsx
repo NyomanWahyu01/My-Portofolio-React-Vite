@@ -55,7 +55,7 @@ export default function Experience() {
                     <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
                       {timeline[current].title}
                     </h3>
-                    <span className="rounded-full border-2 border-(--border) bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card">
+                    <span className="rounded-full border-2 border-(--border) bg-card-alt px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card shadow-[2px_2px_0px_var(--shadow)]">
                       {timeline[current].period}
                     </span>
                   </div>
@@ -64,7 +64,7 @@ export default function Experience() {
                   </p>
 
                   {timeline[current].stack && (
-                    <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-accent mb-4 bg-bg inline-block px-3 py-1 rounded-md border-1 border-(--border)">
+                    <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-accent mb-4 bg-bg inline-block px-3 py-1 rounded-md border-2 border-(--border)">
                       {timeline[current].stack}
                     </p>
                   )}

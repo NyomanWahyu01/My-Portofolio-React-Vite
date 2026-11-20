@@ -205,7 +205,7 @@ export default function Projects() {
         >
           <button
             onClick={() => setShowAll(!showAll)}
-            className="rounded-md border-3 border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-fg shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
+            className="rounded-md border-3 border-(--border) bg-card px-8 py-4 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] active:translate-y-0 active:shadow-none"
           >
             {showAll ? t("design.less") : t("design.more")}
           </button>

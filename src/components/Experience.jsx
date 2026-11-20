@@ -113,7 +113,7 @@ export default function Experience() {
             <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
               Teknik Informatika (S1)
             </h3>
-            <span className="rounded-full border-2 border-(--border) bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card">
+            <span className="rounded-full border-2 border-(--border) bg-card-alt px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card shadow-[2px_2px_0px_var(--shadow)]">
               2019 - 2023
             </span>
           </div>

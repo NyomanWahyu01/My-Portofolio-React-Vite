@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Secrets (DeepL key used by scripts/sync-i18n.mjs)
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

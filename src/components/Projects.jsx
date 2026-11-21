@@ -160,7 +160,7 @@ export default function Projects() {
                   {p.tools.slice(0, 3).map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-2 border-(--border) bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-on-card"
+                      className="rounded-full border-2 border-(--border) bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-fg"
                     >
                       {tool}
                     </span>
@@ -234,7 +234,7 @@ export default function Projects() {
             >
               <button
                 onClick={() => setSelected(null)}
-                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-12 border-3 border-(--border) bg-bg text-on-card"
+                className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-12 border-3 border-(--border) bg-bg text-fg"
                 aria-label="Close"
               >
                 <i className="ri-close-line text-xl"></i>
@@ -242,7 +242,7 @@ export default function Projects() {
 
               <div className="flex items-center gap-3 mb-6 pr-12">
                 <span
-                  className="flex h-12 w-12 items-center justify-center rounded-12 border-3p border-(--border) text-on-card"
+                  className="flex h-12 w-12 items-center justify-center rounded-12 border-3 border-(--border) text-on-card"
                   style={{ backgroundColor: selected.color }}
                 >
                   <i className="ri-folder-2-line text-xl text-on-card"></i>

@@ -3,6 +3,7 @@ import { useT } from "../i18n/LanguageProvider";
 
 const inputClass =
   "h-12 w-full rounded-sm border-2 border-(--border) bg-card px-4 font-sans text-on-card placeholder:text-muted-card focus:outline-none focus:shadow-[3px_3px_0px_var(--accent)] transition-shadow";
+const recipient = "inyomanwahyu123@gmail.com";
 
 const FormEmail = () => {
   const { t } = useT();
@@ -16,6 +17,14 @@ const FormEmail = () => {
 
     const form = e.target;
     const formData = new FormData(form);
+    const senderName = formData.get("nama");
+    const subject = `Pesan portfolio dari ${senderName}`;
+
+    formData.set("_subject", subject);
+    formData.set("_replyto", formData.get("email"));
+    formData.set("Kepada", recipient);
+    formData.set("Subjek", subject);
+    formData.set("Pesan", formData.get("pesan"));
 
     try {
       const response = await fetch(form.action, {
@@ -63,7 +72,7 @@ const FormEmail = () => {
         autoComplete="off"
       >
         <input type="hidden" name="_subject" value="Pesan Baru dari Portfolio Website" />
-        <input type="hidden" name="_template" value="box" />
+        <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="_format" value="plain" />
 

@@ -63,12 +63,6 @@ export default function Navbar() {
             {isDark ? "Dark" : "Light"}
           </button>
 
-          <a
-            href="#contact"
-            className="nb-cta px-4 py-2 font-sans font-bold text-xs uppercase"
-          >
-            {t("nav.hire")}
-          </a>
         </div>
 
         {/* Mobile toggle */}

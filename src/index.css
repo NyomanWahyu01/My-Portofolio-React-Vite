@@ -209,12 +209,37 @@
   transform: scale(0.96);
 }
 
+/* Hero CTA: tarik perhatian tanpa animasi berisik */
+.hero-hire-btn {
+  animation: hirePulse 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.hero-hire-btn:hover {
+  animation-play-state: paused;
+  transform: translateY(-3px) rotate(5deg) scale(1.06);
+  box-shadow: 6px 6px 0 var(--shadow), 0 0 0 5px color-mix(in srgb, var(--cta) 24%, transparent);
+}
+
+@keyframes hirePulse {
+  0%,
+  100% {
+    box-shadow: 4px 4px 0 var(--shadow), 0 0 0 0 color-mix(in srgb, var(--cta) 26%, transparent);
+  }
+  50% {
+    box-shadow: 4px 4px 0 var(--shadow), 0 0 0 6px color-mix(in srgb, var(--cta) 0%, transparent);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .slogan-card {
     animation: none;
   }
   .hero-btn {
     transition: none;
+  }
+  .hero-hire-btn {
+    animation: none;
   }
 }
 
@@ -242,8 +267,32 @@
   }
 }
 
+/* Hero badge: efek mengetik diulang tiap 20 detik (ketik → tahan → hapus) */
+.running {
+  width: 0;
+  animation:
+    typingLoop 20s steps(40, end) infinite,
+    blink 0.7s step-end infinite;
+}
+
+@keyframes typingLoop {
+  0% {
+    width: 0;
+  }
+  15% {
+    width: 100%;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .typing {
+  .typing,
+  .running {
     animation: none;
     width: auto;
     border-right: 0;

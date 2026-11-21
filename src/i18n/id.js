@@ -20,9 +20,8 @@ export default {
   about: {
     title: "TENTANG SAYA",
     subtitle: "Membangun solusi digital dengan ketelitian dan efisiensi.",
-    p1: "Halo! Saya I Nyoman Wahyu, seorang pengembang perangkat lunak yang berfokus pada pembuatan aplikasi web yang responsif, cepat, dan mudah digunakan.",
-    p2: "Berpengalaman dalam pengembangan sistem berbasis Laravel, React, dan integrasi API. Saya terbiasa bekerja baik secara mandiri maupun berkolaborasi dalam tim.",
-    p3: "Prinsip saya sederhana: kode yang baik adalah kode yang mudah dipelihara dan memberikan nilai nyata bagi pengguna.",
+    p1: "Halo! Saya I Nyoman Wahyu, pengembang perangkat lunak yang berfokus pada aplikasi web responsif, cepat, dan mudah digunakan. Berpengalaman mengembangkan sistem dengan Laravel, React, dan integrasi API.",
+    p2: "Saya terbiasa bekerja mandiri maupun dalam tim. Bagi saya, kode yang baik harus mudah dipelihara dan memberi nilai nyata bagi pengguna.",
     statProjects: "Project Selesai",
     statYears: "Tahun Pengalaman",
     rolesTitle: "Peran",
@@ -46,7 +45,7 @@ export default {
     stackLabel: "Stack:"
   },
   services: {
-    label: "lAYANAN SAYA",
+    label: "LAYANAN SAYA",
     subtitle: "Dari konsep sampai rilis, saya bantu wujudkan kebutuhan digital Anda.",
 
     s1Title: "Website & Landing Page",
@@ -150,6 +149,19 @@ export default {
           "Melakukan pengecekan serta troubleshooting perangkat keras dan perangkat lunak untuk memastikan komputer dapat digunakan secara optimal oleh karyawan.",
           "Memperbaiki perangkat keras saat terjadi kerusakan sehingga meminimalisir downtime dan mempercepat proses kerja pegawai.",
           "Melakukan pembaruan sistem operasi Windows pada komputer karyawan sebelum digunakan sehingga perangkat lebih aman, stabil, dan siap pakai."
+        ]
+      },
+// pendidikan
+      {
+        title: "Sistem Informasi (S1) | Ipk 3,64 /4.00",
+        org: "Universitas Dipa Makassar",
+        period: "2021 – 2025",
+        stack: "Konsentrasi E-Bisnis",
+        desc: [
+          "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
+          "Magang industri (MBKM) 4 bulan di DPMPTSP Kab. Pangkep.",
+          "Sertifikasi nasional Operator Komputer Madya (BNSP)",
+          "Aktif di organisasi kesenian dan olahraga kampus."
         ]
       }
     ],

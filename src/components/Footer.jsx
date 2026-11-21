@@ -54,6 +54,24 @@ export default function Footer() {
             >
               <i className="ri-mail-fill text-xl"></i>
             </a>
+            <a
+              href="https://wa.me/6285399101184"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+            >
+              <i className="ri-whatsapp-fill text-xl"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/i-nyoman-wahyu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+            >
+              <i className="ri-linkedin-fill text-xl"></i>
+            </a>
 
             {/* Language */}
             <div className="flex rounded-full border-2 border-(--border) p-0.5 bg-card">

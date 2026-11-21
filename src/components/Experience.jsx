@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 
-const dotColors = ["var(--purple)", "var(--yellow)", "var(--green)", "var(--pink)"];
-
 export default function Experience() {
   const { t } = useT();
   const timeline = t("experience.timeline");
@@ -55,7 +53,7 @@ export default function Experience() {
                     <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
                       {timeline[current].title}
                     </h3>
-                    <span className="rounded-full border-2 border-(--border) bg-card-alt px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card shadow-[2px_2px_0px_var(--shadow)]">
+                    <span className="rounded-full border-2 border-(--border) bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-fg">
                       {timeline[current].period}
                     </span>
                   </div>
@@ -113,20 +111,14 @@ export default function Experience() {
             <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
               {t("experience.education.title")}
             </h3>
-            <span className="rounded-full border-2 border-(--border) bg-card-alt px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card shadow-[2px_2px_0px_var(--shadow)]">
+            <span className="rounded-full border-2 border-(--border) bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-fg">
               {t("experience.education.period")}
             </span>
           </div>
-          <p className="font-sans text-sm font-bold text-muted-card mb-2 flex items-center gap-2">
+          <p className="font-sans text-sm font-bold text-muted-card mb-4 flex items-center gap-2">
             <i className="ri-graduation-cap-line"></i> {t("experience.education.org")}
           </p>
-          <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-accent mb-4 bg-bg inline-block px-3 py-1 rounded-md border-2 border-(--border)">
-            {t("experience.education.gpa")}
-          </p>
-          <p className="font-sans text-sm font-bold text-on-card mb-4">
-            {t("experience.education.thesis")}
-          </p>
-          <ul className="font-sans text-sm leading-relaxed text-muted-card space-y-2 list-disc list-inside">
+          <ul className="font-sans text-sm text-muted-card space-y-2">
             {t("experience.education.desc").map((d, index) => (
               <li key={index}>{d}</li>
             ))}

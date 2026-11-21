@@ -36,24 +36,29 @@ export default function Design() {
 
       <motion.div 
         layout
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
         <AnimatePresence>
           {items.map((item, i) => (
             <motion.button
               layout
               key={item.id}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
+              initial={{ opacity: 0, y: 24, scale: 0.96, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: 16, scale: 0.96, filter: "blur(4px)" }}
+              transition={{
+                layout: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+                opacity: { duration: 0.35, delay: i * 0.06 },
+                filter: { duration: 0.45, delay: i * 0.06 },
+                default: { type: "spring", stiffness: 260, damping: 24, delay: i * 0.06 },
+              }}
               onClick={() => setSelected(item)}
-              className="group relative block w-full overflow-hidden rounded-lg border-3 border-(--border) bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-all hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)]"
+              className="group relative block w-full overflow-hidden rounded-lg border-3 border-(--border) bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-[transform,box-shadow] duration-300 hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)] motion-reduce:transition-none"
             >
               <img
                 src={item.gambar}
                 alt={item.nama}
-                className="w-full aspect-3/4 object-cover transition-transform duration-700 group-hover:scale-110"
+                className="aspect-3/4 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 loading="lazy"
               />
               <span className="absolute left-4 top-4 rounded-full border-2 border-(--border) bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">

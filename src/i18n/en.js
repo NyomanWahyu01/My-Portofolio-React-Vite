@@ -20,9 +20,8 @@ export default {
   about: {
     title: "ABOUT ME",
     subtitle: "Building digital solutions with precision and efficiency.",
-    p1: "Hello! I'm I Nyoman Wahyu, a software developer focused on building responsive, fast, and user-friendly web applications.",
-    p2: "Experienced in developing systems with Laravel, React, and API integrations. Comfortable working both independently and collaboratively in teams.",
-    p3: "My principle is simple: good code is maintainable and delivers real value to users.",
+    p1: "Hello! I'm I Nyoman Wahyu, a software developer focused on responsive, fast, and user-friendly web applications. Experienced in building systems with Laravel, React, and API integrations.",
+    p2: "I work comfortably both independently and collaboratively. To me, good code should be maintainable and deliver real value to users.",
     statProjects: "Projects Done",
     statYears: "Years Experience",
     rolesTitle: "Roles",
@@ -46,7 +45,7 @@ export default {
     stackLabel: "Stack:"
   },
   services: {
-    label: "Services Me",
+    label: "My Services",
     subtitle: "From concept to release, I help bring your digital needs to life.",
 
     s1Title: "Website & Landing Page",
@@ -54,37 +53,40 @@ export default {
     s1Item1: "Responsive design for phone, tablet, and desktop",
     s1Item2: "Basic SEO structure and solid performance",
     s1Item3: "Contact form or WhatsApp button",
+    s1Stack: "React.Js, Next.Js, Vue.Js, Wordpress, Boostrap, Tailwind CSS, Vite",
 
     s2Title: "Information Systems",
     s2Desc: "Laravel/PHP and MySQL web applications for operational and administrative needs.",
     s2Item1: "Login with role-based access",
     s2Item2: "Data management, search, and reports",
     s2Item3: "A well-structured MySQL database",
+    s2Stack: "Laravel, PHP, MySQL, SQLite, Blade",
 
     s3Title: "UI/UX & Consulting",
     s3Desc: "Interface design, usability audits, and technical consulting for your digital product.",
     s3Item1: "Wireframes and prototypes in Figma",
     s3Item2: "Review of layout and user flow",
     s3Item3: "Technology advice that fits your needs and budget",
+    s3Stack: "Figma, Canva, Photoshop",
 
     processLabel: "How I work",
     processTitle: "How I Work",
     processSubtitle: "Four clear stages, so you know what is happening and what you will receive at each step.",
     outputLabel: "Output",
 
-    p1Title: "01. Project Briefing",
+    p1Title: "Project Briefing",
     p1Desc: "We discuss your project goals, target audience, and key features. My priority here is to ensure our visions are aligned from the start.",
     p1Output: "Project Documentation & Cost Estimates",
 
-    p2Title: "02. Design Phase",
+    p2Title: "Design Phase",
     p2Desc: "I create the visual framework. You review it, provide feedback, and we refine the look and feel until it's perfect before development begins.",
     p2Output: "Approved mockups/wireframes",
 
-    p3Title: "03. Payment Commitment",
+    p3Title: "Payment Commitment",
     p3Desc: "We agree on a 50/50 payment structure. A 50% down payment is required to secure your project slot, with the remaining 50% due upon launch.",
     p3Output: "50% DP received, project 100% completed.",
 
-    p4Title: "04. Build & Launch",
+    p4Title: "Build & Launch",
     p4Desc: "I build the site in stages with regular updates. Feedback during development ensures a precise result. Once finished, we go live and I guide you through the handover.",
     p4Output: "Website/App live & Final handover",
 
@@ -147,6 +149,19 @@ export default {
           "Performed troubleshooting on hardware and software to ensure optimal workstation performance for employees.",
           "Repaired hardware failures to minimize downtime and accelerate employee workflows.",
           "Performed Windows OS updates on employee computers to ensure security, stability, and operational readiness."
+        ]
+      },
+// pendidikan
+      {
+        title: "information Systems (S1) | Ipk 3.64 / 4.00",
+        org: "Universitas Dipa Makassar",
+        period: "2021 – 2025",
+        stack: "Focus: Software Engineering, Algorithms, and Modern Web Development",
+        desc: [
+          "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
+          "4-month industrial internship (MBKM) at DPMPTSP Pangkep Regency.",
+          "National Intermediate Computer Operator Certification (BNSP)",
+          "Active in campus arts and sports organizations."
         ]
       }
     ],

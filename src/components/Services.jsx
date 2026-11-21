@@ -1,5 +1,6 @@
 import { MotionConfig, motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
+import { DataImage } from "../data";
 
 /* =====================================================================
    DATA — ubah isi layanan di sini. Teks ada di src/i18n/id.js & en.js
@@ -51,14 +52,33 @@ export default function Services() {
   return (
     <MotionConfig reducedMotion="user">
       <section id="services" className="py-20 md:py-32">
-        {/* ---------- Judul section ---------- */}
-        <Reveal className="mb-12 max-w-2xl">
-        <h2 className="font-display text-[clamp(1.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
-          {t("services.label")}
-        </h2>
-          {/* <h2 className="font-display text-section uppercase text-fg">{t("services.title")}</h2> */}
-        <p className="mt-4 text-lg text-muted">{t("services.subtitle")}</p>
-        </Reveal>
+        {/* ---------- Judul section + kartu foto ---------- */}
+        <div className="mb-12 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <Reveal className="max-w-2xl">
+            <h2 className="font-display text-[clamp(1.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
+              {t("services.label")}
+            </h2>
+            {/* <h2 className="font-display text-section uppercase text-fg">{t("services.title")}</h2> */}
+            <p className="mt-4 text-lg text-muted">{t("services.subtitle")}</p>
+          </Reveal>
+
+          {/* Kartu foto — sejajar dengan judul, gaya folder seperti kartu layanan */}
+          <Reveal className="relative w-full max-w-[190px] shrink-0 self-center pt-3 md:self-start">
+            <span
+              aria-hidden="true"
+              className="absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-ink bg-yellow"
+            />
+            <div className={`${card} ${lift} relative rotate-2 bg-card p-3`}>
+              <div className="aspect-2/3 overflow-hidden rounded-xl border-3 border-ink bg-card-alt">
+                <img
+                  src={DataImage.profileAbout}
+                  alt="I Nyoman Wahyu"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </div>
 
         {/* ---------- 3 kartu layanan (gaya folder) ---------- */}
         <div className="grid gap-8 md:grid-cols-3">
@@ -125,7 +145,7 @@ export default function Services() {
                 <p className="mt-2 text-sm text-on-card/75 grow">{t(`services.${p}Desc`)}</p>
 
                 {/* apa yang diterima klien di tahap ini */}
-                <div className="mt-4 rounded-xl border-2 border-ink bg-card px-3 py-2 text-xs font-bold mt-auto">
+                <div className="rounded-xl border-2 border-ink bg-card px-3 py-2 text-xs font-bold mt-auto">
                   <span className="uppercase tracking-widest opacity-60 block mb-1">
                     {t("services.outputLabel")}:
                   </span>

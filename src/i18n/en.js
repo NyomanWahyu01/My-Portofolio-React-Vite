@@ -103,6 +103,8 @@ export default {
       period: "2021 – 2025",
       gpa: "GPA 3.64 / 4.00",
       thesis: "Thesis: “Application of Fuzzy Mamdani Algorithm for Web-Based Community Satisfaction Analysis at Mal Pelayanan Publik Pangkep”.",
+      thesisLabel: "Thesis link",
+      thesisLink: "https://elibrary.undipa.ac.id/index.php?p=show_detail&id=9675&keywords=fuzzy+mamdani",
       desc: [
         "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
         "4-month industrial internship (MBKM) at DPMPTSP Pangkep Regency.",
@@ -181,14 +183,25 @@ export default {
     more: "View More",
     less: "View Less"
   },
+  // Maintenance: profile fields power src/components/Contact.jsx glass card.
   contact: {
-    title: "LET'S BUILD SOMETHING TOGETHER",
+    title: "COLLAB, PROJECT, OR WORK? JUST WHATSAPP ME",
     chipResponse: "Reply < 24 hours",
     chipAvailable: "Available now",
+    profileName: "inyoman_wahyu1",
+    profileFullName: "I Nyoman Wahyu Trisna Winda",
+    profileRole: "Full Stack Developer",
+    bio: "I'm ready to work. Open to full-time, freelance, and projects. Get in touch.",
+    statWebDev: "Web Dev",
+    statWebDevLabel: "Focus",
+    statDataEntry: "Data Entry",
+    statDataEntryLabel: "Expertise",
+    statLocation: "Makassar",
+    statLocationLabel: "Location",
     emailLabel: "Email",
     whatsappLabel: "WhatsApp",
     locationLabel: "Location",
-    locationValue: "Makassar, Indonesia",
+    locationValue: "Makassar, Indonesian",
   },
   footer: {
     backToTop: "Back to top",

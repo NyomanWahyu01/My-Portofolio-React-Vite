@@ -24,6 +24,16 @@
   --orange: #f4511e;
   --teal: #bfddd9;
   --signal: #f4511e;
+  --theme-badge-bg: #ffffff;
+  --theme-badge-fg: #111111;
+  --theme-badge-border: #111111;
+  --tool-name: #111111;
+  /* Contact palette: keeps hardcoded colors out of Contact.jsx. */
+  --contact-bg: #2f1b14;
+  --contact-overlay-from: rgba(40, 17, 10, 0.92);
+  --contact-overlay-via: rgba(110, 46, 20, 0.45);
+  --contact-overlay-to: rgba(5, 38, 43, 0.45);
+  --contact-avatar-end: #ff9b45;
 }
 .dark {
   --bg: #0b0b0b;
@@ -39,6 +49,10 @@
   --accent: #f4511e;
   --cta: #f4511e;
   --signal: #f4511e;
+  --theme-badge-bg: #000000;
+  --theme-badge-fg: #f4511e;
+  --theme-badge-border: #f4511e;
+  --tool-name: #ffffff;
 }
 
 @theme inline {
@@ -348,4 +362,97 @@
   border: 3px solid var(--border);
   border-radius: 16px;
   box-shadow: 4px 4px 0 var(--shadow);
+}
+
+/*
+  Contact landscape glass maintenance:
+  - Layout, glass opacity, border, blur, hover, and focus live in Contact.jsx
+    as Tailwind utilities.
+  - Change the duration/distance of the float below.
+  - The @supports block is the solid fallback when backdrop-filter is missing.
+*/
+.contact-float {
+  animation: contactFloat 7s ease-in-out infinite;
+}
+
+@keyframes contactFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px))) {
+  .contact-glass-fallback {
+    background: rgba(35, 21, 18, 0.94);
+  }
+
+  .contact-link-fallback {
+    background: rgba(35, 21, 18, 0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-float {
+    animation: none;
+  }
+}
+
+/*
+  Maintenance: stack-badge is text-only by design.
+  Light theme uses readable card text; dark theme uses signal orange.
+  Keep background, border, radius, and shadow disabled here.
+*/
+.stack-badge {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--on-card);
+  font-weight: 700;
+  transition: color 150ms ease;
+}
+
+.dark .stack-badge {
+  color: var(--signal);
+}
+
+/* Maintenance: period, stack, and service-result badges use theme variables. */
+.theme-badge {
+  background: var(--theme-badge-bg);
+  border-color: var(--theme-badge-border);
+  color: var(--theme-badge-fg);
+  font-weight: 700;
+}
+
+/* Maintenance: tool names stay black in light mode and white in dark mode. */
+.tool-name {
+  color: var(--tool-name);
+  font-weight: 700;
+}
+
+/* Project copy follows theme tokens in both light and dark modes. */
+.project-copy {
+  color: var(--on-card);
+  transition: color 150ms ease;
+}
+
+.project-copy-muted {
+  color: var(--muted-card);
+  transition: color 150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-badge {
+    transition: none;
+  }
+
+  .project-copy,
+  .project-copy-muted {
+    transition: none;
+  }
 }

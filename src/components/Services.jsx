@@ -2,11 +2,11 @@ import { MotionConfig, motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listServices } from "../data";
 
-/* =====================================================================
-   DATA — ubah isi layanan di sini. Teks ada di src/i18n/id.js & en.js
-   (kunci: services.<key>Title, <key>Desc, <key>Item1..3)
-   Nama class warna harus ditulis lengkap (bg-yellow, bukan "bg-" + nama).
-   ===================================================================== */
+/*
+  Maintenance: service content comes from src/data.js and src/i18n/*.js.
+  Stack names and process results use .theme-badge; edit listServices when the
+  stack changes.
+*/
 const serviceAccent = {
   yellow: "bg-yellow",
   pink: "bg-pink",
@@ -100,7 +100,7 @@ export default function Services() {
                   {s.stack.map((name) => (
                     <span
                       key={name}
-                      className="rounded-full border-2 border-signal bg-black px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal"
+                      className="theme-badge rounded-full border-2 px-3 py-1 text-xs uppercase tracking-wider"
                     >
                       {name}
                     </span>
@@ -132,8 +132,8 @@ export default function Services() {
                 <p className="mt-2 text-sm text-on-card/75 grow">{t(`services.${p}Desc`)}</p>
 
                 {/* apa yang diterima klien di tahap ini */}
-                <div className="mt-auto rounded-md border-2 border-signal bg-black px-3 py-2 text-xs font-bold text-signal">
-                  <span className="mb-1 block uppercase tracking-widest text-signal/75">
+                <div className="theme-badge mt-auto rounded-md border-2 px-3 py-2 text-xs">
+                  <span className="mb-1 block uppercase tracking-widest opacity-75">
                     {t("services.outputLabel")}:
                   </span>
                   {t(`services.${p}Output`)}

@@ -18,13 +18,10 @@ const statusKey = {
   archived: "projects.statusArchived",
 };
 
-const statusColor = {
-  live: "var(--green)",
-  dev: "var(--yellow)",
-  concept: "var(--pink)",
-  archived: "var(--teal)",
-};
-
+/*
+  Maintenance: project metadata lives in src/data.js; this file only renders it.
+  Status and tech stack badges use .theme-badge from src/index.css.
+*/
 export default function Projects() {
   const { t } = useT();
   const [filter, setFilter] = useState("all");
@@ -111,13 +108,7 @@ export default function Projects() {
                   <i className="ri-folder-2-line text-xl"></i>
                 </span>
                 <div className="flex items-center gap-2 ">
-                  {/* <span className="font-sans text-xs font-black text-muted-card">
-                    {p.tahun}
-                  </span> */}
-                  <span
-                    className="rounded-full border-2 border-(--border) px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card"
-                    style={{ backgroundColor: statusColor[p.status] }}
-                  >
+                  <span className="theme-badge rounded-full border-2 px-2 py-0.5 text-[0.65rem] uppercase tracking-[0.08em]">
                     {t(statusKey[p.status])}
                   </span>
                 </div>
@@ -134,10 +125,10 @@ export default function Projects() {
                 </div>
               )}
 
-              <h3 className="font-sans text-[1.25rem] font-bold leading-tight text-on-card mb-2">
+              <h3 className="project-copy mb-2 font-sans text-[1.25rem] font-bold leading-tight">
                 {p.nama}
               </h3>
-              <p className="font-sans text-sm text-muted-card leading-relaxed line-clamp-2 mb-4">
+              <p className="project-copy-muted mb-4 font-sans text-sm leading-relaxed line-clamp-2">
                 {p.desk}
               </p>
 
@@ -150,7 +141,7 @@ export default function Projects() {
                    {p.tools.slice(0, 4).map((tool) => (
                      <span
                        key={tool}
-                       className="rounded-full border-2 border-signal bg-black px-2 py-0.5 text-[0.65rem] font-bold text-signal"
+                       className="theme-badge rounded-full border-2 px-2 py-0.5 text-[0.65rem]"
                      >
                        {tool}
                      </span>
@@ -238,10 +229,7 @@ export default function Projects() {
                 >
                   <i className="ri-folder-2-line text-xl text-on-card"></i>
                 </span>
-                <span
-                  className="rounded-full border-2 border-(--border) px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-on-card"
-                  style={{ backgroundColor: statusColor[selected.status] }}
-                >
+                <span className="theme-badge rounded-full border-2 px-3 py-1 text-xs uppercase tracking-[0.08em]">
                   {t(statusKey[selected.status])}
                 </span>
               </div>
@@ -259,14 +247,14 @@ export default function Projects() {
               <h3 className="font-sans text-2xl font-bold text-on-card mb-3">
                 {selected.nama}
               </h3>
-              <p className="font-sans text-on-card leading-relaxed mb-6 opacity-80">
+              <p className="project-copy mb-6 font-sans leading-relaxed opacity-80">
                 {selected.desk}
               </p>
 
               {selected.kantor && (
                 <div className="flex items-center gap-2 mb-6">
                   <i className="ri-building-line text-muted"></i>
-                  <p className="font-sans text-sm font-bold text-muted-card">
+                  <p className="project-copy-muted font-sans text-sm font-bold">
                     {selected.kantor}
                   </p>
                 </div>
@@ -280,7 +268,7 @@ export default function Projects() {
                   {selected.tools.map((tool) => (
                     <span
                       key={tool}
-                     className="rounded-full border-2 border-signal bg-black px-3 py-1 text-xs font-bold text-signal"
+                     className="theme-badge rounded-full border-2 px-3 py-1 text-xs"
                     >
                       {tool}
                     </span>

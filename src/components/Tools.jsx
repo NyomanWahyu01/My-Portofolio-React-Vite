@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listToolsCoding, listToolsDesign } from "../data";
 
+/* Maintenance: edit tool names/assets in src/data.js; labels use .tool-name. */
 function ToolGroup({ title, tools }) {
   return (
     <motion.div
@@ -31,7 +32,7 @@ function ToolGroup({ title, tools }) {
                 height="40"
               />
             </div>
-            <span className="rounded-full border-2 border-signal bg-black px-3 py-1 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-signal text-center">
+            <span className="tool-name font-sans text-[0.7rem] uppercase tracking-[0.08em] text-center">
               {tool.nama}
             </span>
           </motion.div>

@@ -103,6 +103,8 @@ export default {
       period: "2021 – 2025",
       gpa: "IPK 3.64 / 4.00",
       thesis: "Skripsi: “Penerapan Algoritma Fuzzy Mamdani untuk Analisis Kepuasan Masyarakat pada Pelayanan Kantor Mal Pelayanan Publik Pangkep Berbasis Web”.",
+      thesisLabel: "Link skripsi",
+      thesisLink: "https://elibrary.undipa.ac.id/index.php?p=show_detail&id=9675&keywords=fuzzy+mamdani",
       desc: [
         "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
         "Magang industri (MBKM) 4 bulan di DPMPTSP Kab. Pangkep.",
@@ -181,10 +183,21 @@ export default {
     more: "Lihat Lebih Banyak",
     less: "Lihat Lebih Sedikit"
   },
+  // Maintenance: profile fields power src/components/Contact.jsx glass card.
   contact: {
-    title: "AYO BIKIN SESUATU BARENG",
+    title: "Kolaborasi, Proyek, atau kerja? Langsung WhatsApp",
     chipResponse: "Respon < 24 jam",
     chipAvailable: "Tersedia sekarang",
+    profileName: "inyoman_wahyu1",
+    profileFullName: "I Nyoman Wahyu Trisna Winda",
+    profileRole: "Full Stack Developer",
+    bio: "Siap bekerja. Terbuka untuk full-time, freelance, dan project. Hubungi saya.",
+    statWebDev: "Web Dev",
+    statWebDevLabel: "Fokus",
+    statDataEntry: "Data Entry",
+    statDataEntryLabel: "Keahlian",
+    statLocation: "Makassar",
+    statLocationLabel: "Lokasi",
     emailLabel: "Email",
     whatsappLabel: "WhatsApp",
     locationLabel: "Lokasi",

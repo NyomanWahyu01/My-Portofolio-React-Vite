@@ -3,17 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listProyek } from "../data";
 
-const projectMeta = {
-  1: { color: "var(--orange)", category: "personal", status: "live" },
-  2: { color: "var(--yellow)", category: "web", status: "archived" },
-  3: { color: "var(--green)", category: "pemerintahan", status: "archived" },
-  4: { color: "var(--pink)", category: "bisnis", status: "archived" },
-  5: { color: "var(--lime)", category: "web", status: "archived" },
-  6: { color: "var(--purple)", category: "personal", status: "archived" },
-  7: { color: "var(--purple)", category: "pemerintahan", status: "live" },
-  8: { color: "var(--pink)", category: "bisnis", status: "archived" },
-};
-
 const filters = [
   { key: "all", label: "projects.filterAll" },
   { key: "web", label: "projects.filterWeb" },
@@ -51,10 +40,7 @@ export default function Projects() {
     return () => window.removeEventListener("keydown", onKey);
   }, [selected]);
 
-  const projects = listProyek.map((p) => ({
-    ...p,
-    ...(projectMeta[p.id] || { color: "var(--yellow)", category: "web", status: "archived" }),
-  }));
+  const projects = listProyek;
 
   const visible =
     filter === "all" ? projects : projects.filter((p) => p.category === filter);
@@ -124,10 +110,10 @@ export default function Projects() {
                 >
                   <i className="ri-folder-2-line text-xl"></i>
                 </span>
-                <div className="flex items-center gap-2">
-                  <span className="font-sans text-xs font-bold text-muted-card">
+                <div className="flex items-center gap-2 ">
+                  {/* <span className="font-sans text-xs font-black text-muted-card">
                     {p.tahun}
-                  </span>
+                  </span> */}
                   <span
                     className="rounded-full border-2 border-(--border) px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card"
                     style={{ backgroundColor: statusColor[p.status] }}
@@ -155,19 +141,23 @@ export default function Projects() {
                 {p.desk}
               </p>
 
-              <div className="flex items-center justify-between mt-auto">
-                <div className="flex flex-wrap gap-1.5">
-                  {p.tools.slice(0, 3).map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full border-2 border-(--border) bg-bg px-2 py-0.5 text-[0.65rem] font-bold text-fg"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
+               <div className="mt-auto">
+                 <p className="mb-2 text-xs font-bold uppercase tracking-[0.08em] text-signal">
+                   {t("projects.stackLabel")}
+                 </p>
+                 <div className="flex items-end justify-between gap-3">
+                   <div className="flex flex-wrap gap-1.5">
+                   {p.tools.slice(0, 4).map((tool) => (
+                     <span
+                       key={tool}
+                       className="rounded-full border-2 border-signal bg-signal px-2 py-0.5 text-[0.65rem] font-bold text-white"
+                     >
+                       {tool}
+                     </span>
+                   ))}
+                   </div>
                 
-                <div className="flex gap-2">
+                   <div className="flex shrink-0 gap-2">
                   {p.github && (
                     <motion.a
                       whileHover={{ scale: 1.1, rotate: 5 }}
@@ -190,8 +180,9 @@ export default function Projects() {
                   >
                     <i className="ri-arrow-right-up-line text-lg"></i>
                   </motion.button>
-                </div>
-              </div>
+                   </div>
+                 </div>
+               </div>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -289,7 +280,7 @@ export default function Projects() {
                   {selected.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="rounded-full border-2 border-(--border) bg-bg px-3 py-1 text-xs font-bold text-fg"
+                     className="rounded-full border-2 border-signal bg-signal px-3 py-1 text-xs font-bold text-white"
                     >
                       {tool}
                     </span>

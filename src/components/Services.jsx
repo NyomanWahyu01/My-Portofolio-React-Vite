@@ -1,16 +1,17 @@
 import { MotionConfig, motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
+import { listServices } from "../data";
 
 /* =====================================================================
    DATA — ubah isi layanan di sini. Teks ada di src/i18n/id.js & en.js
    (kunci: services.<key>Title, <key>Desc, <key>Item1..3)
    Nama class warna harus ditulis lengkap (bg-yellow, bukan "bg-" + nama).
    ===================================================================== */
-const SERVICES = [
-  { key: "s1", icon: "ri-global-line", color: "bg-yellow", stack: ["React.Js", "Next.Js", "Vue.Js", "Wordpress", "Boostrap", "Tailwind CSS", "Vite"] },
-  { key: "s2", icon: "ri-database-2-line", color: "bg-pink", stack: ["Laravel", "PHP", "MySQL", "SQLite", "Blade"] },
-  { key: "s3", icon: "ri-pen-nib-line", color: "bg-lime", stack: ["Figma", "Canva", "Photoshop"] },
-];
+const serviceAccent = {
+  yellow: "bg-yellow",
+  pink: "bg-pink",
+  lime: "bg-lime",
+};
 
 const ITEMS = [1, 2, 3]; // jumlah poin per layanan
 const STEPS = ["p1", "p2", "p3", "p4"]; // urutan proses kerja
@@ -18,15 +19,15 @@ const STEPS = ["p1", "p2", "p3", "p4"]; // urutan proses kerja
 /* =====================================================================
    GAYA — dipakai ulang supaya JSX di bawah tetap pendek
    ===================================================================== */
-const card = "rounded-3xl border-3 border-ink text-on-card shadow-nb dark:shadow-none";
+const card = "rounded-lg border-3 border-(--border) text-on-card shadow-[6px_6px_0px_var(--shadow)]";
 const lift =
   "transition-[transform,box-shadow] duration-150 motion-reduce:transition-none " +
-  "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-nb-lg";
+  "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[9px_9px_0px_var(--shadow)]";
 const button =
-  "inline-flex min-h-11 items-center rounded-2xl border-3 border-ink px-6 py-3 " +
-  "text-sm font-bold uppercase tracking-wider text-ink shadow-nb " +
+  "inline-flex min-h-11 items-center rounded-md border-3 border-(--border) px-6 py-3 " +
+  "text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] " +
   "transition-[transform,box-shadow] duration-150 motion-reduce:transition-none " +
-  "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-nb-lg " +
+  "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] " +
   "active:translate-x-1 active:translate-y-1 active:shadow-none";
 
 /* Muncul pelan saat di-scroll, hanya sekali. Otomatis mati bila pengguna
@@ -63,43 +64,48 @@ export default function Services() {
 
         {/* ---------- 3 kartu layanan (gaya folder) ---------- */}
         <div className="grid gap-8 md:grid-cols-3">
-          {SERVICES.map((s, i) => (
+          {listServices.map((s, i) => (
             <Reveal key={s.key} delay={i * 0.08} className="relative flex flex-col pt-3">
               {/* tab folder berwarna */}
               <span
                 aria-hidden="true"
-                className={`absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-ink ${s.color}`}
+                className={`absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-(--border) ${serviceAccent[s.accent]}`}
               />
 
               <article className={`${card} ${lift} relative flex flex-1 flex-col bg-card p-6`}>
                 <span
-                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl border-3 border-ink text-xl text-ink ${s.color}`}
+                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl border-3 border-(--border) text-xl text-on-card ${serviceAccent[s.accent]}`}
                 >
                   <i className={s.icon} aria-hidden="true" />
                 </span>
 
-                <h3 className="text-xl font-bold">{t(`services.${s.key}Title`)}</h3>
+                <h3 className="text-xl font-bold text-on-card">{t(`services.${s.key}Title`)}</h3>
                 <p className="mt-2 text-on-card/75">{t(`services.${s.key}Desc`)}</p>
 
                 <ul className="mt-5 space-y-2 text-sm font-medium">
                   {ITEMS.map((n) => (
-                    <li key={n} className="flex gap-2">
-                      <i className="ri-check-line mt-0.5 shrink-0" aria-hidden="true" />
+                    <li key={n} className="flex gap-2 text-on-card">
+                      <i className="ri-check-line mt-0.5 shrink-0 text-signal" aria-hidden="true" />
                       {t(`services.${s.key}Item${n}`)}
                     </li>
                   ))}
                 </ul>
 
                 {/* teknologi yang dipakai */}
-                <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                <div className="mt-auto border-t-2 border-(--border) pt-5">
+                  <p className="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-signal">
+                    {t("services.stackLabel")}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
                   {s.stack.map((name) => (
                     <span
                       key={name}
-                      className="rounded-full border-2 border-ink px-3 py-1 text-xs font-bold uppercase tracking-wider"
+                      className="rounded-full border-2 border-signal bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-white"
                     >
                       {name}
                     </span>
                   ))}
+                  </div>
                 </div>
               </article>
             </Reveal>
@@ -117,7 +123,7 @@ export default function Services() {
             {STEPS.map((p, i) => (
               <li
                 key={p}
-                className="border-l-3 border-ink pl-5 md:border-l-0 md:border-t-3 md:pl-0 md:pt-5 flex flex-col h-full"
+                className="flex h-full flex-col border-l-3 border-(--border) pl-5 md:border-l-0 md:border-t-3 md:pl-0 md:pt-5"
               >
                 <span className="font-display text-5xl leading-none">
                   {String(i + 1).padStart(2, "0")}
@@ -126,8 +132,8 @@ export default function Services() {
                 <p className="mt-2 text-sm text-on-card/75 grow">{t(`services.${p}Desc`)}</p>
 
                 {/* apa yang diterima klien di tahap ini */}
-                <div className="rounded-xl border-2 border-ink bg-card px-3 py-2 text-xs font-bold mt-auto">
-                  <span className="uppercase tracking-widest opacity-60 block mb-1">
+                <div className="mt-auto rounded-md border-2 border-signal bg-signal px-3 py-2 text-xs font-bold text-white">
+                  <span className="mb-1 block uppercase tracking-widest text-white/75">
                     {t("services.outputLabel")}:
                   </span>
                   {t(`services.${p}Output`)}
@@ -137,7 +143,7 @@ export default function Services() {
           </ol>
 
           {/* ---------- Ajakan bertindak ---------- */}
-          <div className="mt-10 flex flex-col gap-5 border-t-3 border-ink pt-8 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-10 flex flex-col gap-5 border-t-3 border-(--border) pt-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xl font-bold">{t("services.ctaTitle")}</p>
               <p className="mt-1 text-sm text-on-card/75">{t("services.ctaDesc")}</p>

@@ -42,7 +42,7 @@ export default {
     demo: "Demo",
     github: "GitHub",
     roleLabel: "Role:",
-    stackLabel: "Stack:"
+    stackLabel: "Tech Stack:"
   },
   services: {
     label: "My Services",
@@ -53,22 +53,17 @@ export default {
     s1Item1: "Responsive design for phone, tablet, and desktop",
     s1Item2: "Basic SEO structure and solid performance",
     s1Item3: "Contact form or WhatsApp button",
-    s1Stack: "React.Js, Next.Js, Vue.Js, Wordpress, Boostrap, Tailwind CSS, Vite",
-
     s2Title: "Information Systems",
     s2Desc: "Laravel/PHP and MySQL web applications for operational and administrative needs.",
     s2Item1: "Login with role-based access",
     s2Item2: "Data management, search, and reports",
     s2Item3: "A well-structured MySQL database",
-    s2Stack: "Laravel, PHP, MySQL, SQLite, Blade",
-
     s3Title: "UI/UX & Consulting",
     s3Desc: "Interface design, usability audits, and technical consulting for your digital product.",
     s3Item1: "Wireframes and prototypes in Figma",
     s3Item2: "Review of layout and user flow",
     s3Item3: "Technology advice that fits your needs and budget",
-    s3Stack: "Figma, Canva, Photoshop",
-
+    stackLabel: "Tech Stack:",
     processLabel: "How I work",
     processTitle: "How I Work",
     processSubtitle: "Four clear stages, so you know what is happening and what you will receive at each step.",
@@ -182,6 +177,7 @@ export default {
   },
   design: {
     title: "DESIGN",
+    badge: "Visual Lab",
     subtitle: "Posters, banners, and visual explorations.",
     more: "View More",
     less: "View Less"

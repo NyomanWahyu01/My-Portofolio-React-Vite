@@ -86,9 +86,9 @@ export default function Experience() {
                     <i className="ri-building-line"></i> {timeline[current].org}
                   </p>
 
-                  {timeline[current].stack && (
-                    <p className="font-sans text-xs font-bold uppercase tracking-[0.05em] text-accent mb-4 bg-bg inline-block px-3 py-1 rounded-md border-2 border-(--border)">
-                      {timeline[current].stack}
+                   {timeline[current].stack && (
+                     <p className="mb-4 inline-block rounded-md border-2 border-signal bg-signal px-3 py-1 font-sans text-xs font-bold uppercase tracking-[0.05em] text-white">
+                       {timeline[current].stack}
                     </p>
                   )}
 
@@ -136,7 +136,7 @@ export default function Experience() {
             <h3 className="font-sans text-[1.25rem] font-bold text-on-card">
               {t("experience.education.title")}
             </h3>
-            <span className="rounded-full border-2 border-(--border) bg-bg px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-fg">
+                 <span className="rounded-full border-2 border-signal bg-signal px-4 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-white">
               {t("experience.education.period")}
             </span>
           </div>

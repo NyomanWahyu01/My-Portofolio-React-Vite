@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { MotionConfig, motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listDesign } from "../data";
 
@@ -20,41 +20,70 @@ export default function Design() {
   const items = showAll ? listDesign : listDesign.slice(0, 8);
 
   return (
-    <section id="design" className="py-20 md:py-32">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
-          {t("design.title")}
-        </h2>
-        <p className="font-sans text-muted mb-10 max-w-prose">
-          {t("design.subtitle")}
-        </p>
-      </motion.div>
-
-      <motion.div 
-        layout
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-      >
-        <AnimatePresence>
-          {items.map((item, i) => (
-            <motion.button
-              layout
-              key={item.id}
-              initial={{ opacity: 0, y: 24, scale: 0.96, filter: "blur(6px)" }}
-              animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: 16, scale: 0.96, filter: "blur(4px)" }}
-              transition={{
-                layout: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
-                opacity: { duration: 0.35, delay: i * 0.06 },
-                filter: { duration: 0.45, delay: i * 0.06 },
-                default: { type: "spring", stiffness: 260, damping: 24, delay: i * 0.06 },
-              }}
-              onClick={() => setSelected(item)}
-              className="group relative block w-full overflow-hidden rounded-lg border-3 border-(--border) bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-[transform,box-shadow] duration-300 hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)] motion-reduce:transition-none"
+    <MotionConfig reducedMotion="user">
+      <section id="design" className="relative py-20 md:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mb-12 overflow-hidden rounded-lg border-3 border-(--border) bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] md:p-10"
+        >
+          <span className="mb-5 inline-flex rounded-full border-2 border-signal bg-signal px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white">
+            {t("design.badge")}
+          </span>
+          <div className="relative max-w-3xl">
+            <motion.h2
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-[clamp(3.5rem,10vw,8rem)] leading-[0.82] uppercase text-fg"
             >
+              {t("design.title")}
+            </motion.h2>
+            <motion.span
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-5 block h-2 w-32 bg-signal md:w-56"
+              aria-hidden="true"
+            />
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className="mt-6 max-w-prose font-sans text-muted"
+          >
+            {t("design.subtitle")}
+          </motion.p>
+          <span className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rotate-12 border-3 border-signal md:right-12 md:top-8" aria-hidden="true" />
+        </motion.div>
+
+        <motion.div
+          layout
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <AnimatePresence mode="popLayout">
+            {items.map((item, i) => (
+              <motion.button
+                layout
+                key={item.id}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 16 }}
+                transition={{
+                  layout: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  duration: 0.55,
+                  delay: i * 0.06,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                onClick={() => setSelected(item)}
+                className="group relative block w-full overflow-hidden rounded-lg border-3 border-(--border) bg-card text-left shadow-[6px_6px_0px_var(--shadow)] transition-[transform,box-shadow] duration-300 hover:-translate-y-2 hover:shadow-[12px_12px_0px_var(--shadow)] motion-reduce:transition-none"
+              >
               <img
                 src={item.gambar}
                 alt={item.nama}
@@ -64,12 +93,12 @@ export default function Design() {
               <span className="absolute left-4 top-4 rounded-full border-2 border-(--border) bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">
                 {item.type}
               </span>
-            </motion.button>
-          ))}
-        </AnimatePresence>
-      </motion.div>
+              </motion.button>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
-      {listDesign.length > 8 && (
+        {listDesign.length > 8 && (
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -84,8 +113,8 @@ export default function Design() {
         </motion.div>
       )}
 
-      {/* Modal */}
-      <AnimatePresence>
+        {/* Modal */}
+        <AnimatePresence>
         {selected && (
           <div
             className="fixed inset-0 z-100 flex items-center justify-center p-4"
@@ -151,7 +180,8 @@ export default function Design() {
             </motion.div>
           </div>
         )}
-      </AnimatePresence>
-    </section>
+        </AnimatePresence>
+      </section>
+    </MotionConfig>
   );
 }

@@ -42,7 +42,7 @@ export default {
     demo: "Demo",
     github: "GitHub",
     roleLabel: "Peran:",
-    stackLabel: "Stack:"
+    stackLabel: "Tech Stack:"
   },
   services: {
     label: "LAYANAN SAYA",
@@ -53,22 +53,17 @@ export default {
     s1Item1: "Desain responsif untuk HP, tablet, dan desktop",
     s1Item2: "Struktur SEO dasar dan performa yang terjaga",
     s1Item3: "Formulir kontak atau tombol WhatsApp",
-    s1Stack: "React.Js, Next.Js, Vue.Js, Wordpress, Boostrap, Tailwind CSS, Vite",
-
     s2Title: "Sistem Informasi",
     s2Desc: "Aplikasi web berbasis Laravel/PHP dan MySQL untuk kebutuhan operasional dan administrasi.",
     s2Item1: "Login dengan hak akses per peran",
     s2Item2: "Kelola data, pencarian, dan laporan",
     s2Item3: "Database MySQL yang terstruktur",
-    s2Stack: "Laravel, PHP, MySQL, SQLite, Blade",
-
     s3Title: "UI/UX & Konsultasi",
     s3Desc: "Perancangan antarmuka, audit usability, dan konsultasi teknis untuk produk digital Anda.",
     s3Item1: "Wireframe dan prototype di Figma",
     s3Item2: "Review tampilan dan alur pengguna",
     s3Item3: "Saran teknologi sesuai kebutuhan dan anggaran",
-    s3Stack: "Figma, Canva, Photoshop",
-
+    stackLabel: "Tech Stack:",
     processLabel: "Cara kerja",
     processTitle: "Proses Kerja",
     processSubtitle: "Bekerja transparan, terstruktur, dan tepat waktu agar ide Anda jadi kenyataan.",
@@ -182,6 +177,7 @@ export default {
   },
   design: {
     title: "DESAIN",
+    badge: "Visual Lab",
     subtitle: "Karya poster, banner, dan eksplorasi visual.",
     more: "Lihat Lebih Banyak",
     less: "Lihat Lebih Sedikit"

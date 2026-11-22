@@ -45,34 +45,8 @@ export default function About() {
               </motion.figure>
             </div>
 
-            <div className="space-y-4 max-w-prose font-sans text-fg leading-[1.65] mb-8 lg:mb-12">
-              <p>{t("about.p1")}</p>
-              <p>{t("about.p2")}</p>
-            </div>
-
-            {/* Stat stickers */}
-            <div className="flex flex-wrap gap-4 lg:gap-6">
-              <div className="rounded-md border-3 border-(--border) bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
-                <p className="font-display text-5xl leading-none text-on-card">10+</p>
-                <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
-                  {t("about.statProjects")}
-                </p>
-              </div>
-              <div className="rounded-md border-3 border-(--border) bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
-                <p className="font-display text-5xl leading-none text-on-card">3+</p>
-                <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
-                  {t("about.statYears")}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Role folder cards */}
-          <div>
-            {/* <h3 className="font-sans text-xs font-bold uppercase tracking-[0.08em] text-muted mb-8 lg:mb-12">
-              {t("about.rolesTitle")}
-            </h3> */}
-            <div className="space-y-8 lg:space-y-17">
+            {/* Role cards aligned below photo */}
+            <div className="w-full max-w-md space-y-8 lg:space-y-10">
               {Array.isArray(roles) &&
                 roles.map((role, i) => (
                   <motion.div
@@ -107,6 +81,30 @@ export default function About() {
                     </div>
                   </motion.div>
                 ))}
+            </div>
+          </div>
+
+          {/* Right: Story + Stats */}
+          <div className="lg:pt-24">
+            <div className="space-y-4 max-w-prose font-sans text-fg leading-[1.65] mb-8 lg:mb-12">
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+            </div>
+
+            {/* Stat stickers */}
+            <div className="flex flex-wrap gap-4 lg:gap-6">
+              <div className="rounded-md border-3 border-(--border) bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+                <p className="font-display text-5xl leading-none text-on-card">10+</p>
+                <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
+                  {t("about.statProjects")}
+                </p>
+              </div>
+              <div className="rounded-md border-3 border-(--border) bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+                <p className="font-display text-5xl leading-none text-on-card">3+</p>
+                <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
+                  {t("about.statYears")}
+                </p>
+              </div>
             </div>
           </div>
         </div>

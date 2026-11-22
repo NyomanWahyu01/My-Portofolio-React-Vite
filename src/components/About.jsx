@@ -23,7 +23,7 @@ export default function About() {
             </p>
 
             {/* Flexible full-width photo card */}
-            <div className="relative w-full transition-transform duration-150 hover:-translate-y-0.5 motion-reduce:transition-none">
+            <div className="relative w-full max-w-md transition-transform duration-150 hover:-translate-y-0.5 motion-reduce:transition-none">
               <motion.figure
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}

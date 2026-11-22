@@ -6,10 +6,12 @@ export default function Hero() {
   const { t } = useT();
 
   return (
-    <section id="hero" className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 py-20 md:py-32 relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-10 -left-20 w-64 h-64 rounded-full bg-pink opacity-20 blur-3xl pointer-events-none" aria-hidden="true" />
-      <div className="absolute bottom-10 -right-20 w-80 h-80 rotate-45 bg-purple opacity-20 blur-3xl pointer-events-none" aria-hidden="true" />
+    <section id="hero" className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 py-20 md:py-32 relative">
+      {/* Decorative shapes stay clipped inside Hero without clipping profile frame. */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute top-10 -left-20 w-64 h-64 rounded-full bg-pink opacity-20 blur-3xl" />
+        <div className="absolute bottom-10 -right-20 w-80 h-80 rotate-45 bg-purple opacity-20 blur-3xl" />
+      </div>
 
       <div className="relative z-10">
         {/* Status Badge */}
@@ -49,14 +51,14 @@ export default function Hero() {
       </div>
 
       {/* Profile Image */}
-      <div className="slogan-card relative z-20 flex justify-center md:justify-end">
-        <div className="profile-hero-img relative rotate-2 rounded-lg border-3 border-(--border) bg-card-alt p-4 shadow-[14px_14px_0px_var(--shadow)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[18px_18px_0px_var(--shadow)] w-full max-w-[400px]">
-          <div className="aspect-square bg-card rounded-md overflow-hidden border-2 border-(--border)">
-             <img 
-               src={DataImage.profileBg} 
-               alt="Nyoman Wahyu" 
-               className="w-full h-full object-cover"
-             />
+      <div className="slogan-card relative z-30 flex justify-center md:justify-end">
+        <div className="profile-hero-img relative rotate-1 rounded-lg border-3 border-(--border) bg-card-alt p-4 shadow-[14px_14px_0px_var(--shadow)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-[18px_18px_0px_var(--shadow)] w-full max-w-[440px]">
+          <div className="aspect-4/5 bg-card rounded-md overflow-hidden border-2 border-(--border)">
+            <img
+               src={DataImage.fotoProfil}
+              alt="Nyoman Wahyu"
+              className="w-full h-full object-cover"
+            />
           </div>
           {/* Stickers */}
           <div className="absolute -top-4 -left-4 rounded-12 border-2 border-(--border) bg-pink px-3 py-1 rotate-[-5deg] font-sans font-bold text-xs uppercase text-on-card shadow-[2px_2px_0px_var(--shadow)]">

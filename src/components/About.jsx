@@ -37,8 +37,8 @@ export default function About() {
                 />
                 <div className="aspect-4/3 overflow-hidden rounded-md border-2 border-(--border) bg-card-alt">
                   <img
-                    src={DataImage.profileSlogan}
-                    alt="Slogan pribadi"
+                    src={DataImage.fotoAbout}
+                    alt="I Nyoman Wahyu"
                     className="h-full w-full object-cover"
                   />
                 </div>

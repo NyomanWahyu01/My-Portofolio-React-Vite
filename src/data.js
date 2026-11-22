@@ -1,11 +1,11 @@
-import profileSlogan from "/assets/profile-slogan.webp";
-import profileBg from "/assets/profile-bg.webp";
-import profileAbout from "/assets/profile-about.webp";
+import fotoAbout from "/assets/foto-about.webp";
+import fotoProfil from "/assets/foto-profil.webp";
+import fotoServices from "/assets/foto-services.webp";
 
 export const DataImage = {
-  profileSlogan,
-  profileBg,
-  profileAbout,
+  fotoAbout,
+  fotoProfil,
+  fotoServices,
 };
 
 import Tools1 from "/assets/tools/vscode.png";

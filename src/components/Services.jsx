@@ -53,8 +53,8 @@ export default function Services() {
     <MotionConfig reducedMotion="user">
       <section id="services" className="py-20 md:py-32">
         {/* ---------- Judul section + kartu foto ---------- */}
-        <div className="mb-12 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <Reveal className="max-w-2xl">
+        <div className="mb-12 flex flex-col items-end gap-8">
+          <Reveal className="w-full max-w-2xl self-end text-right">
             <h2 className="font-display text-[clamp(1.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
               {t("services.label")}
             </h2>
@@ -63,7 +63,7 @@ export default function Services() {
           </Reveal>
 
           {/* Kartu foto — sejajar dengan judul, gaya folder seperti kartu layanan */}
-          <Reveal className="relative w-full max-w-[190px] shrink-0 self-center pt-3 md:self-start">
+          <Reveal className="relative w-full max-w-[280px] shrink-0 self-end pt-3">
             <span
               aria-hidden="true"
               className="absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-ink bg-yellow"
@@ -71,7 +71,7 @@ export default function Services() {
             <div className={`${card} ${lift} relative rotate-2 bg-card p-3`}>
               <div className="aspect-2/3 overflow-hidden rounded-xl border-3 border-ink bg-card-alt">
                 <img
-                  src={DataImage.profileAbout}
+                  src={DataImage.fotoServices}
                   alt="I Nyoman Wahyu"
                   className="h-full w-full object-cover"
                 />

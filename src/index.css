@@ -156,12 +156,12 @@
 @keyframes revealImage {
   0% {
     opacity: 0;
-    transform: translateY(50px) scale(0.9) rotate(2deg);
+    transform: translateY(50px) scale(0.9) rotate(1deg);
     filter: blur(8px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(2deg);
+    transform: translateY(0) scale(1) rotate(1deg);
     filter: blur(0);
   }
 }

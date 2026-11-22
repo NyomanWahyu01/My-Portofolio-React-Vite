@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
+import { DataImage } from "../data";
 
 export default function Experience() {
   const { t } = useT();
@@ -22,18 +23,42 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-20 md:py-32">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
-          {t("experience.title")}
-        </h2>
-        <p className="font-sans text-muted mb-16 max-w-prose">
-          {t("experience.subtitle")}
-        </p>
-      </motion.div>
+      <div className="mb-16 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_minmax(220px,280px)]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
+            {t("experience.title")}
+          </h2>
+          <p className="font-sans text-muted max-w-prose">
+            {t("experience.subtitle")}
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.25 }}
+          className="relative w-full max-w-[280px] justify-self-end pt-3"
+        >
+          <span
+            aria-hidden="true"
+            className="absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-b-0 border-(--border) bg-yellow"
+          />
+          <div className="relative rotate-2 rounded-3xl border-3 border-(--border) bg-card p-3 shadow-[6px_6px_0px_var(--shadow)] transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-[9px_9px_0px_var(--shadow)] motion-reduce:transition-none">
+            <div className="aspect-2/3 overflow-hidden rounded-xl border-3 border-(--border) bg-card-alt">
+              <img
+                src={DataImage.fotoServices}
+                alt="I Nyoman Wahyu"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
+      </div>
 
       {/* Experience Carousel */}
       <div className="relative mb-24">

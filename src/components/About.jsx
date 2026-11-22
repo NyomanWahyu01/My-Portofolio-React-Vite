@@ -22,24 +22,24 @@ export default function About() {
               {t("about.subtitle")}
             </p>
 
-            {/* Photo card — gaya folder yang sama dengan kartu peran */}
-            <div className="-rotate-2 transition-transform duration-150 hover:-translate-y-0.5 motion-reduce:transition-none">
+            {/* Flexible full-width photo card */}
+            <div className="relative w-full transition-transform duration-150 hover:-translate-y-0.5 motion-reduce:transition-none">
               <motion.figure
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.25 }}
-                className="relative mb-8 lg:mb-12 w-130 max-w-prose rounded-lg border-3 border-(--border) bg-card p-3 shadow-[6px_6px_0px_var(--shadow)]"
+                className="relative mb-8 w-full rounded-lg border-3 border-(--border) bg-card p-3 shadow-[6px_6px_0px_var(--shadow)] lg:mb-12"
               >
                 <span
-                  className="absolute -top-3 left-6 h-3 w-20 rounded-t-[8px] border-3 border-b-0 bg-yellow"
+                  className="absolute -top-3 left-8 h-3 w-24 rounded-t-[8px] border-3 border-b-0 bg-yellow"
                   aria-hidden="true"
                 />
-                <div className="aspect-4/3 overflow-hidden rounded-md border-2 border-(--border) bg-card-alt">
+                <div className="overflow-hidden rounded-md border-2 border-(--border) bg-card-alt">
                   <img
                     src={DataImage.fotoAbout}
                     alt="I Nyoman Wahyu"
-                    className="h-full w-full object-cover"
+                    className="block h-auto w-full object-cover object-center"
                   />
                 </div>
               </motion.figure>

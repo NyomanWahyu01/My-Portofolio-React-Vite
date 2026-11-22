@@ -23,44 +23,18 @@ export default function Design() {
     <MotionConfig reducedMotion="user">
       <section id="design" className="relative py-20 md:py-32">
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mb-12 overflow-hidden rounded-lg border-3 border-(--border) bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] md:p-10"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
         >
-          <span className="mb-5 inline-flex rounded-full border-2 border-signal bg-signal px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white">
-            {t("design.badge")}
-          </span>
-          <div className="relative max-w-3xl">
-            <motion.h2
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display text-[clamp(3.5rem,10vw,8rem)] leading-[0.82] uppercase text-fg"
-            >
-              {t("design.title")}
-            </motion.h2>
-            <motion.span
-              initial={{ scaleX: 0, originX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-5 block h-2 w-32 bg-signal md:w-56"
-              aria-hidden="true"
-            />
-          </div>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.45 }}
-            className="mt-6 max-w-prose font-sans text-muted"
-          >
+          <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
+            {t("design.title")}
+          </h2>
+          <p className="font-sans text-muted max-w-prose">
             {t("design.subtitle")}
-          </motion.p>
-          <span className="pointer-events-none absolute -right-8 -top-10 h-32 w-32 rotate-12 border-3 border-signal md:right-12 md:top-8" aria-hidden="true" />
+          </p>
         </motion.div>
 
         <motion.div

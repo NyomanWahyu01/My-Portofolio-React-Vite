@@ -177,7 +177,6 @@ export default {
   },
   design: {
     title: "DESAIN",
-    badge: "Visual Lab",
     subtitle: "Karya poster, banner, dan eksplorasi visual.",
     more: "Lihat Lebih Banyak",
     less: "Lihat Lebih Sedikit"

@@ -31,7 +31,7 @@ function ToolGroup({ title, tools }) {
                 height="40"
               />
             </div>
-            <span className="rounded-full border-2 border-signal bg-signal px-3 py-1 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-white text-center">
+            <span className="rounded-full border-2 border-signal bg-black px-3 py-1 font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em] text-signal text-center">
               {tool.nama}
             </span>
           </motion.div>

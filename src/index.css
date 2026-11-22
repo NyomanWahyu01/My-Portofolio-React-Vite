@@ -23,7 +23,7 @@
   --lime: #a8e02a;
   --orange: #f4511e;
   --teal: #bfddd9;
-  --signal: #ed310f;
+  --signal: #f4511e;
 }
 .dark {
   --bg: #0b0b0b;
@@ -38,7 +38,7 @@
   --shadow: #f4511e;
   --accent: #f4511e;
   --cta: #f4511e;
-  --signal: #ed310f;
+  --signal: #f4511e;
 }
 
 @theme inline {

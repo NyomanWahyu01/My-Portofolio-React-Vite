@@ -150,7 +150,7 @@ export default function Projects() {
                    {p.tools.slice(0, 4).map((tool) => (
                      <span
                        key={tool}
-                       className="rounded-full border-2 border-signal bg-signal px-2 py-0.5 text-[0.65rem] font-bold text-white"
+                       className="rounded-full border-2 border-signal bg-black px-2 py-0.5 text-[0.65rem] font-bold text-signal"
                      >
                        {tool}
                      </span>
@@ -280,7 +280,7 @@ export default function Projects() {
                   {selected.tools.map((tool) => (
                     <span
                       key={tool}
-                     className="rounded-full border-2 border-signal bg-signal px-3 py-1 text-xs font-bold text-white"
+                     className="rounded-full border-2 border-signal bg-black px-3 py-1 text-xs font-bold text-signal"
                     >
                       {tool}
                     </span>

@@ -177,7 +177,6 @@ export default {
   },
   design: {
     title: "DESIGN",
-    badge: "Visual Lab",
     subtitle: "Posters, banners, and visual explorations.",
     more: "View More",
     less: "View Less"

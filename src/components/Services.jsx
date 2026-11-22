@@ -100,7 +100,7 @@ export default function Services() {
                   {s.stack.map((name) => (
                     <span
                       key={name}
-                      className="rounded-full border-2 border-signal bg-signal px-3 py-1 text-xs font-bold uppercase tracking-wider text-white"
+                      className="rounded-full border-2 border-signal bg-black px-3 py-1 text-xs font-bold uppercase tracking-wider text-signal"
                     >
                       {name}
                     </span>
@@ -132,8 +132,8 @@ export default function Services() {
                 <p className="mt-2 text-sm text-on-card/75 grow">{t(`services.${p}Desc`)}</p>
 
                 {/* apa yang diterima klien di tahap ini */}
-                <div className="mt-auto rounded-md border-2 border-signal bg-signal px-3 py-2 text-xs font-bold text-white">
-                  <span className="mb-1 block uppercase tracking-widest text-white/75">
+                <div className="mt-auto rounded-md border-2 border-signal bg-black px-3 py-2 text-xs font-bold text-signal">
+                  <span className="mb-1 block uppercase tracking-widest text-signal/75">
                     {t("services.outputLabel")}:
                   </span>
                   {t(`services.${p}Output`)}

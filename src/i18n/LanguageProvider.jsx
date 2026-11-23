@@ -11,7 +11,7 @@ export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(() => {
     const saved = localStorage.getItem("lang");
     if (saved) return saved;
-    return navigator.language.startsWith("id") ? "id" : "en";
+    return "en";
   });
 
   useEffect(() => {

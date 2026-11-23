@@ -1,11 +1,11 @@
 import { MotionConfig, motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 import { listServices } from "../data";
+import WordReveal from "./WordReveal";
 
 /*
-  Maintenance: service content comes from src/data.js and src/i18n/*.js.
-  Stack names and process results use .theme-badge; edit listServices when the
-  stack changes.
+  Maintenance: service content comes from src/data.js and src/i18n/id.js or
+  src/i18n/en.js. Stack names and process results use .theme-badge.
 */
 const serviceAccent = {
   yellow: "bg-yellow",
@@ -51,60 +51,66 @@ export default function Services() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <section id="services" className="py-20 md:py-32">
+      <section id="services" className="py-14 md:py-20">
         {/* ---------- Judul section ---------- */}
-        <div className="mb-12">
+        <div className="mb-8">
           <Reveal className="ml-auto w-full max-w-2xl text-right">
             <h2 className="font-display text-[clamp(1.5rem,6vw,4.5rem)] leading-none uppercase text-fg mb-4">
-              {t("services.label")}
+              <WordReveal>{t("services.label")}</WordReveal>
             </h2>
             <p className="mt-4 text-lg text-muted">{t("services.subtitle")}</p>
           </Reveal>
         </div>
 
         {/* ---------- 3 kartu layanan (gaya folder) ---------- */}
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3 md:grid-rows-[auto_auto_auto_auto_auto] md:gap-6">
           {listServices.map((s, i) => (
-            <Reveal key={s.key} delay={i * 0.08} className="relative flex flex-col pt-3">
+            <Reveal
+              key={s.key}
+              delay={i * 0.08}
+              className="relative pt-3 md:row-span-5 md:grid md:grid-rows-subgrid"
+            >
               {/* tab folder berwarna */}
               <span
                 aria-hidden="true"
                 className={`absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-(--border) ${serviceAccent[s.accent]}`}
               />
 
-              <article className={`${card} ${lift} relative flex flex-1 flex-col bg-card p-6`}>
+              <article
+                className={`${card} ${lift} relative bg-card p-4 md:row-span-5 md:grid md:h-full md:grid-rows-subgrid md:p-5`}
+              >
                 <span
-                  className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl border-3 border-(--border) text-xl text-on-card ${serviceAccent[s.accent]}`}
+                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl border-3 border-(--border) text-xl text-on-card ${serviceAccent[s.accent]}`}
                 >
                   <i className={s.icon} aria-hidden="true" />
                 </span>
 
-                <h3 className="text-xl font-bold text-on-card">{t(`services.${s.key}Title`)}</h3>
-                <p className="mt-2 text-on-card/75">{t(`services.${s.key}Desc`)}</p>
+                <h3 className="text-lg font-bold leading-tight text-on-card">{t(`services.${s.key}Title`)}</h3>
+                <p className="mt-1.5 text-sm leading-snug text-left text-on-card/75">{t(`services.${s.key}Desc`)}</p>
 
-                <ul className="mt-5 space-y-2 text-sm font-medium">
+                <ul className="mt-3 space-y-1.5 text-sm font-medium">
                   {ITEMS.map((n) => (
-                    <li key={n} className="flex gap-2 text-on-card">
+                    <li key={n} className="flex items-start gap-2 text-left text-on-card">
                       <i className="ri-check-line mt-0.5 shrink-0 text-signal" aria-hidden="true" />
-                      {t(`services.${s.key}Item${n}`)}
+                      <span>{t(`services.${s.key}Item${n}`)}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* teknologi yang dipakai */}
-                <div className="mt-auto border-t-2 border-(--border) pt-5">
-                  <p className="mb-3 text-xs font-bold uppercase tracking-[0.08em] text-signal">
+                <div className="border-t-2 border-(--border) pt-3">
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.08em] text-signal">
                     {t("services.stackLabel")}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                  {s.stack.map((name) => (
-                    <span
-                      key={name}
-                      className="theme-badge rounded-full border-2 px-3 py-1 text-xs uppercase tracking-wider"
-                    >
-                      {name}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap content-start gap-2">
+                    {s.stack.map((name) => (
+                      <span
+                        key={name}
+                        className="theme-badge rounded-full border-2 px-2.5 py-0.5 text-[0.7rem] uppercase tracking-wider"
+                      >
+                        {name}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </article>

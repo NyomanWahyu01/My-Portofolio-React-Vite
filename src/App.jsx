@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import PreLoader from './components/PreLoader';
 import Hero from './components/Hero';
@@ -14,6 +15,40 @@ import { useT } from './i18n/LanguageProvider';
 
 export default function App() {
   const { t } = useT();
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduceMotion.matches) return undefined;
+
+    const lenis = new Lenis();
+    let frameId;
+
+    const raf = (time) => {
+      lenis.raf(time);
+      frameId = requestAnimationFrame(raf);
+    };
+
+    const handleAnchorClick = (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      const link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+
+      event.preventDefault();
+      lenis.scrollTo(target);
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+    frameId = requestAnimationFrame(raf);
+    return () => {
+      document.removeEventListener("click", handleAnchorClick);
+      cancelAnimationFrame(frameId);
+      lenis.destroy();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-bg text-fg">

@@ -19,7 +19,7 @@ const chipClass =
   "rounded-full border border-white/20 bg-white/10 px-3 py-1.5 font-sans text-[0.65rem] font-bold uppercase tracking-[0.08em] text-white/90 backdrop-blur-md backdrop-saturate-150";
 
 const contactLinkClass =
-  "contact-link-fallback group flex min-h-24 items-center gap-3 rounded-2xl border border-white/20 bg-white/10 p-3 text-white backdrop-blur-lg backdrop-saturate-150 transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transition-none";
+  "contact-link-fallback group flex min-h-24 items-center gap-1 rounded-2xl border border-white/20 bg-white/10 p-3 text-white backdrop-blur-lg backdrop-saturate-150 transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transition-none";
 
 export default function Contact() {
   const { t } = useT();
@@ -188,6 +188,7 @@ export default function Contact() {
               </p>
             </div>
 
+          {/* MENU CONTACT */}
             <nav aria-label={t("nav.contact")} className="min-w-0">
               <h3 className="sr-only">{t("nav.contact")}</h3>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

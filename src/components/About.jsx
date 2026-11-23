@@ -52,18 +52,36 @@ export default function About() {
 
             {/* Stat stickers */}
             <div className="flex flex-wrap gap-4 lg:gap-6">
-              <div className="rounded-md border-3 border-(--border) bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
-                <p className="font-display text-5xl leading-none text-on-card">10+</p>
-                <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
-                  {t("about.statProjects")}
-                </p>
-              </div>
-              <div className="rounded-md border-3 border-(--border) bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
-                <p className="font-display text-5xl leading-none text-on-card">3+</p>
-                <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
-                  {t("about.statYears")}
-                </p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 14, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ y: -4, scale: 1.03 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="motion-reduce:transform-none"
+              >
+                <div className="rounded-md border-3 border-(--border) bg-yellow px-6 py-4 -rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+                  <p className="font-display text-5xl leading-none text-on-card">10+</p>
+                  <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
+                    {t("about.statProjects")}
+                  </p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ y: -4, scale: 1.03 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.3, delay: 0.08, ease: "easeOut" }}
+                className="motion-reduce:transform-none"
+              >
+                <div className="rounded-md border-3 border-(--border) bg-pink px-6 py-4 rotate-2 shadow-[6px_6px_0px_var(--shadow)]">
+                  <p className="font-display text-5xl leading-none text-on-card">1+</p>
+                  <p className="font-sans text-sm font-bold uppercase tracking-wider text-on-card">
+                    {t("about.statYears")}
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
 

@@ -10,7 +10,7 @@ export default {
   },
   hero: {
     badge: "Available for work & freelance",
-    title: "I BUILD CLEAN, FAST, READY-TO-USE WEBSITES.",
+    title: "I BUILD CLEAN, FAST, READY TO USE WEBSITES.",
     desc: "Full Stack Developer based in Makassar, Indonesia. Focused on high performance, clean code, and functional interfaces.",
     downloadCv: "Download CV",
     viewProjects: "View Projects",
@@ -93,17 +93,19 @@ export default {
   experience: {
     title: "EXPERIENCE & EDUCATION",
     subtitle: "Work, education, and certifications.",
-    timelineTitle: "Experience & Education",
+    timelineTitle: "Work Experience",
     eduTitle: "Education",
     certTitle: "Certifications & Training",
     present: "Present",
+    prev: "Previous experience",
+    next: "Next experience",
     education: {
       title: "Information Systems (BSc) – E-Business Concentration",
       org: "Universitas Dipa Makassar",
       period: "2021 – 2025",
       gpa: "GPA 3.64 / 4.00",
-      thesis: "Thesis: “Application of Fuzzy Mamdani Algorithm for Web-Based Community Satisfaction Analysis at Mal Pelayanan Publik Pangkep”.",
-      thesisLabel: "Thesis link",
+      thesis: "“Application of Fuzzy Mamdani Algorithm for Web-Based Community Satisfaction Analysis at Mal Pelayanan Publik Pangkep”",
+      thesisLabel: "Thesis",
       thesisLink: "https://elibrary.undipa.ac.id/index.php?p=show_detail&id=9675&keywords=fuzzy+mamdani",
       desc: [
         "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
@@ -122,6 +124,38 @@ export default {
           "Developed a Content Management System (CMS) for independent website content updates, featuring a 3-level access system (Admin, Admin PIC, & Super Admin).",
           "Performed testing and bug fixing to ensure system stability pre and post-implementation.",
           "Provided post-launch technical support and staff training, ensuring successful application adoption."
+        ]
+      },
+      {
+        title: "Teaching Assistant | E-Business Course",
+        org: "Universitas Dipa Makassar",
+        period: "January 2024 – July 2024",
+        desc: [
+          "Assisted with the preparation and delivery of the E-Business course for more than 45 students in one class.",
+          "Organized and compiled student assignments in a structured manner for submission to the lecturer.",
+          "Checked attendance and collected student attendance records for each class session.",
+          "Confirmed lecture schedules with the lecturer according to the established timetable."
+        ]
+      },
+      {
+        title: "OSS-RBA Licensing Administration | Intern",
+        org: "DPMPTSP Pangkep Regency",
+        period: "August 2023 – December 2023",
+        desc: [
+          "Served an average of 3–10 applicants per day for OSS-RBA licensing at the Pangkep Public Service Mall.",
+          "Verified documents, provided technical assistance, and entered applicant data with a high level of accuracy.",
+          "Participated in community outreach about OSS-RBA and processed 8+ permits in a single day."
+        ]
+      },
+      {
+        title: "Customer Service | Intern",
+        org: "DPMPTSP Pangkep Regency",
+        period: "August 2023 – December 2023",
+        desc: [
+          "Served more than 50 people per day during agency service registration with a fast and efficient process.",
+          "Explained service requirements clearly and completely to members of the public.",
+          "Handled public questions and complaints professionally while providing solutions.",
+          "Performed initial verification and ensured document completeness before directing applicants to the relevant agency."
         ]
       },
       {
@@ -148,27 +182,50 @@ export default {
           "Performed Windows OS updates on employee computers to ensure security, stability, and operational readiness."
         ]
       },
-// pendidikan
       {
-        title: "information Systems (S1) | Ipk 3.64 / 4.00",
-        org: "Universitas Dipa Makassar",
-        period: "2021 – 2025",
-        stack: "Focus: Software Engineering, Algorithms, and Modern Web Development",
+        title: "Club President | Badminton Smapul Club",
+        org: "SMAN 10 Makassar — Extracurricular Organization",
+        period: "March 2018 – December 2019",
         desc: [
-          "Final Project: Web-based information system for public service data management (PHP Native & MySQL).",
-          "4-month industrial internship (MBKM) at DPMPTSP Pangkep Regency.",
-          "National Intermediate Computer Operator Certification (BNSP)",
-          "Active in campus arts and sports organizations."
+          "Planned and managed regular training schedules for more than 30 members consistently.",
+          "Participated in various interschool tournaments and won second place in the men's doubles event at SMANSA Cup 2019.",
+          "Designed and delivered new work programs, including Basic Leadership Training (LDK) and the General Assembly (MUBES)."
         ]
       }
     ],
     certs: [
-      "Front End Development – Dibimbing.id (2025)",
-      "Python Programming – Special Skill (2025)",
-      "Brand Identity Design – MySkill (2025)",
-      "Webinar: Coding Optimization with ChatGPT – PT Qwords Company International (2024)",
-      "Intermediate Computer Operator – National Professional Certification Agency (BNSP) (2023)",
-      "Kampus Merdeka Industrial Internship – DPMPTSP Pangkep Regency (2023)"
+      {
+        label: "Front End Development – Dibimbing.id (2025)",
+        href: "https://drive.google.com/file/d/10uzEEPsKYYKDP1vDYMHKXFWXO7Hm-WSC/view?usp=drive_link"
+      },
+      {
+        label: "Python Programming – Special Skill (2025)",
+        href: "https://drive.google.com/file/d/1XarMoAAgsCeaLr_wfCZTwdPO9FBetdJK/view?usp=drive_link"
+      },
+      {
+        label: "Brand Identity Design – MySkill (2025)",
+        href: "https://drive.google.com/file/d/18akCujATqU-LsqgWph5kZi3KwvgC7lrG/view?usp=drive_link"
+      },
+      {
+        label: "Webinar: Coding Optimization with ChatGPT – PT Qwords Company International (2024)",
+        href: "https://drive.google.com/file/d/1qnrgo37-_V50lE0fKojS5maa1LJ7sNIA/view?usp=drive_link"
+      },
+      {
+        label: "Intermediate Computer Operator – National Professional Certification Agency (BNSP) (2023)",
+        href: "https://drive.google.com/file/d/1jbZSGg4zBg2iKOthR71rGHJ06m0vUIzI/view?usp=sharing"
+      },
+      {
+        label: "KKN OSS-RBA Operator – DPMPTSP Pangkep Regency (2023)",
+        href: "https://drive.google.com/file/d/1owl-cxYGbX6rcWhHfJCmIJFJaxWiz0Ra/view?usp=drive_link"
+      },
+      {
+        label: "Kampus Merdeka Industrial Internship – DPMPTSP Pangkep Regency (2023)",
+        href: "https://drive.google.com/file/d/1restqDeQb5V4mZS-Svc-xxSSUAqajZGb/view?usp=sharing"
+      },
+      {
+        label: "Event Organizer Skill – CBT Indonesia (2025)",
+        href: "https://drive.google.com/file/d/1ug_Y_8K2F4qW_CHnLkIeCL8himww-p3K/view?usp=drive_link"
+      }
     ]
   },
   tools: {

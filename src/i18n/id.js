@@ -93,17 +93,19 @@ export default {
   experience: {
     title: "PENGALAMAN & PENDIDIKAN",
     subtitle: "Jejak kerja, riwayat pendidikan, dan sertifikasi profesional.",
-    timelineTitle: "Pengalaman Kerja & Pendidikan",
+    timelineTitle: "Pengalaman Kerja",
     eduTitle: "Pendidikan",
     certTitle: "Sertifikasi & Pelatihan",
     present: "Sekarang",
+    prev: "Pengalaman sebelumnya",
+    next: "Pengalaman berikutnya",
     education: {
       title: "Sistem Informasi (S1) – Konsentrasi E-Bisnis",
       org: "Universitas Dipa Makassar",
       period: "2021 – 2025",
       gpa: "IPK 3.64 / 4.00",
-      thesis: "Skripsi: “Penerapan Algoritma Fuzzy Mamdani untuk Analisis Kepuasan Masyarakat pada Pelayanan Kantor Mal Pelayanan Publik Pangkep Berbasis Web”.",
-      thesisLabel: "Link skripsi",
+      thesis: "“Penerapan Algoritma Fuzzy Mamdani untuk Analisis Kepuasan Masyarakat pada Pelayanan Kantor Mal Pelayanan Publik Pangkep Berbasis Web”",
+      thesisLabel: "Skripsi",
       thesisLink: "https://elibrary.undipa.ac.id/index.php?p=show_detail&id=9675&keywords=fuzzy+mamdani",
       desc: [
         "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
@@ -122,6 +124,38 @@ export default {
           "Mengembangkan Content Management System (CMS) untuk mempermudah dalam proses update content website secara mandiri, dilengkapi sistem akses 3 level (Admin, Admin PIC, & Super Admin).",
           "Melakukan testing dan bug fixing untuk memastikan kestabilan sistem sebelum dan setelah implementasi web.",
           "Memberikan technical support pasca-launching untuk training pegawai, sehingga aplikasi berhasil digunakan dalam operasional kantor."
+        ]
+      },
+      {
+        title: "Asisten Dosen | Mata Kuliah E-Bisnis",
+        org: "Universitas Dipa Makassar",
+        period: "Januari 2024 – Juli 2024",
+        desc: [
+          "Membantu persiapan dan pelaksanaan perkuliahan mata kuliah E-Bisnis untuk lebih dari 45 mahasiswa dalam satu kelas.",
+          "Mengelola dan merekap tugas mahasiswa secara terstruktur untuk diserahkan kepada dosen.",
+          "Melakukan pengecekan kehadiran dan pengumpulan absensi mahasiswa setiap perkuliahan.",
+          "Mengonfirmasi jadwal perkuliahan dengan dosen sesuai jadwal yang ditetapkan."
+        ]
+      },
+      {
+        title: "Administrasi Perizinan OSS-RBA | Magang",
+        org: "DPMPTSP Kabupaten Pangkep",
+        period: "Agustus 2023 – Desember 2023",
+        desc: [
+          "Melayani rata-rata 3–10 pemohon per hari untuk perizinan OSS-RBA di Mal Pelayanan Publik Pangkep.",
+          "Melakukan verifikasi dokumen, pendampingan teknis, dan input data pemohon dengan tingkat akurasi tinggi.",
+          "Aktif dalam sosialisasi OSS-RBA ke daerah untuk masyarakat dan mampu memproses 8+ perizinan dalam sehari."
+        ]
+      },
+      {
+        title: "Customer Service | Magang",
+        org: "DPMPTSP Kabupaten Pangkep",
+        period: "Agustus 2023 – Desember 2023",
+        desc: [
+          "Melayani lebih dari 50 masyarakat per hari dalam pendaftaran layanan instansi dengan proses yang cepat dan efisien.",
+          "Menyampaikan informasi persyaratan pelayanan secara jelas dan lengkap kepada masyarakat.",
+          "Menangani pertanyaan dan keluhan masyarakat secara profesional serta memberikan solusi atas permasalahan.",
+          "Melakukan verifikasi awal dan memastikan kelengkapan dokumen sebelum diarahkan ke instansi terkait."
         ]
       },
       {
@@ -148,27 +182,50 @@ export default {
           "Melakukan pembaruan sistem operasi Windows pada komputer karyawan sebelum digunakan sehingga perangkat lebih aman, stabil, dan siap pakai."
         ]
       },
-// pendidikan
       {
-        title: "Sistem Informasi (S1) | Ipk 3,64 /4.00",
-        org: "Universitas Dipa Makassar",
-        period: "2021 – 2025",
-        stack: "Konsentrasi E-Bisnis",
+        title: "Ketua Pengurus | Badminton Smapul Club",
+        org: "SMAN 10 Makassar — Ekstrakurikuler",
+        period: "Maret 2018 – Desember 2019",
         desc: [
-          "Tugas akhir: Sistem informasi berbasis web untuk pengelolaan data pelayanan publik (PHP Native & MySQL).",
-          "Magang industri (MBKM) 4 bulan di DPMPTSP Kab. Pangkep.",
-          "Sertifikasi nasional Operator Komputer Madya (BNSP)",
-          "Aktif di organisasi kesenian dan olahraga kampus."
+          "Merencanakan dan mengelola jadwal latihan rutin untuk lebih dari 30 anggota secara konsisten.",
+          "Mengikuti berbagai turnamen antarsekolah dan meraih juara 2 pada SMANSA Cup 2019 dalam nomor ganda putra.",
+          "Merancang dan melaksanakan program kerja baru berupa Latihan Dasar Kepemimpinan (LDK) dan Musyawarah Besar (MUBES)."
         ]
       }
     ],
     certs: [
-      "Front End Development – Dibimbing.id (2025)",
-      "Pemrograman Python – Special Skill (2025)",
-      "Brand Identity Design – MySkill (2025)",
-      "Webinar Optimalisasi Coding dengan ChatGPT – PT Qwords Company International (2024)",
-      "Operator Komputer Madya – Badan Nasional Sertifikasi Profesi (2023)",
-      "Magang Industri Kampus Merdeka – DPMPTSP Kab. Pangkep (2023)"
+      {
+        label: "Front End Development – Dibimbing.id (2025)",
+        href: "https://drive.google.com/file/d/10uzEEPsKYYKDP1vDYMHKXFWXO7Hm-WSC/view?usp=drive_link"
+      },
+      {
+        label: "Pemrograman Python – Special Skill (2025)",
+        href: "https://drive.google.com/file/d/1XarMoAAgsCeaLr_wfCZTwdPO9FBetdJK/view?usp=drive_link"
+      },
+      {
+        label: "Brand Identity Design – MySkill (2025)",
+        href: "https://drive.google.com/file/d/18akCujATqU-LsqgWph5kZi3KwvgC7lrG/view?usp=drive_link"
+      },
+      {
+        label: "Webinar Optimalisasi Coding dengan ChatGPT – PT Qwords Company International (2024)",
+        href: "https://drive.google.com/file/d/1qnrgo37-_V50lE0fKojS5maa1LJ7sNIA/view?usp=drive_link"
+      },
+      {
+        label: "Operator Komputer Madya – Badan Nasional Sertifikasi Profesi (2023)",
+        href: "https://drive.google.com/file/d/1jbZSGg4zBg2iKOthR71rGHJ06m0vUIzI/view?usp=sharing"
+      },
+      {
+        label: "KKN Operator OSS-RBA – DPMPTSP Kab. Pangkep (2023)",
+        href: "https://drive.google.com/file/d/1owl-cxYGbX6rcWhHfJCmIJFJaxWiz0Ra/view?usp=drive_link"
+      },
+      {
+        label: "Magang Industri Kampus Merdeka – DPMPTSP Kab. Pangkep (2023)",
+        href: "https://drive.google.com/file/d/1restqDeQb5V4mZS-Svc-xxSSUAqajZGb/view?usp=sharing"
+      },
+      {
+        label: "Event Organizer Skill – CBT Indonesia (2025)",
+        href: "https://drive.google.com/file/d/1ug_Y_8K2F4qW_CHnLkIeCL8himww-p3K/view?usp=drive_link"
+      }
     ]
   },
   tools: {

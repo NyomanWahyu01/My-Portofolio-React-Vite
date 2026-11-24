@@ -282,8 +282,6 @@ export default function Projects() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     href={selected.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="flex-1 text-center rounded-md border-3 border-(--border) bg-cta px-6 py-3 font-sans text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)]"
                   >
                     {t("projects.demo")}

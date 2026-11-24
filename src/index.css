@@ -372,7 +372,7 @@
   - The @supports block is the solid fallback when backdrop-filter is missing.
 */
 .contact-float {
-  animation: contactFloat 7s ease-in-out infinite;
+  animation: contactFloat 10s ease-in-out infinite;
 }
 
 @keyframes contactFloat {
@@ -382,7 +382,7 @@
   }
 
   50% {
-    transform: translateY(-7px);
+    transform: translateY(-4px);
   }
 }
 

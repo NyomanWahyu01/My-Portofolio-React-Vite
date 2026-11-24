@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionConfig, motion } from "motion/react";
 import { useT } from "../i18n/LanguageProvider";
 
 const PROFILE_IMAGE = "/assets/foto-services.webp";
@@ -20,6 +21,15 @@ const chipClass =
 
 const contactLinkClass =
   "contact-link-fallback group flex min-h-24 items-center gap-1 rounded-2xl border border-white/20 bg-white/10 p-3 text-white backdrop-blur-lg backdrop-saturate-150 transition-[background-color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-200 focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transition-none";
+
+const contactReveal = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export default function Contact() {
   const { t } = useT();
@@ -69,11 +79,15 @@ export default function Contact() {
   ];
 
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-title"
-      className="relative isolate my-20 min-h-105 overflow-hidden rounded-lg bg-(--contact-bg) p-4 sm:min-h-115 sm:p-6 lg:min-h-125 lg:p-8"
-    >
+    <MotionConfig reducedMotion="user">
+      <motion.section
+        id="contact"
+        aria-labelledby="contact-title"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="relative isolate my-20 min-h-105 overflow-hidden rounded-lg bg-(--contact-bg) p-4 sm:min-h-115 sm:p-6 lg:min-h-125 lg:p-8"
+      >
       <img
         src={PROFILE_IMAGE}
         alt=""
@@ -93,7 +107,7 @@ export default function Contact() {
       />
 
       <div className="relative z-10 flex flex-col gap-6 lg:gap-8">
-        <div className="max-w-160">
+        <motion.div variants={contactReveal} className="max-w-160">
           <h5
             id="contact-title"
             className="font-display text-[clamp(3.5rem,9vw,7rem)] leading-[0.82] uppercase text-white"
@@ -107,8 +121,13 @@ export default function Contact() {
             <span className={chipClass}>{t("contact.chipResponse")}</span>
             <span className={chipClass}>{t("contact.chipAvailable")}</span>
           </div>
-        </div>
+        </motion.div>
 
+        <motion.div
+          variants={contactReveal}
+          transition={{ delay: 0.15 }}
+          className="w-full"
+        >
         <article className="contact-float contact-glass-fallback relative w-full overflow-hidden rounded-3xl border-2 border-white/30 bg-white/12 p-4 text-white shadow-[0_24px_70px_rgba(8,10,14,0.4),0_0_0_1px_rgba(104,235,235,0.14)] backdrop-blur-lg backdrop-saturate-150 sm:p-6">
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-linear-to-br from-white/20 to-transparent"
@@ -192,12 +211,22 @@ export default function Contact() {
             <nav aria-label={t("nav.contact")} className="min-w-0">
               <h3 className="sr-only">{t("nav.contact")}</h3>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {contactLinks.map((link) => (
-                  <a
+                {contactLinks.map((link, index) => (
+                  <motion.a
                     key={link.label}
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
+                    initial={{ opacity: 0, x: 18 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 90,
+                      damping: 18,
+                      mass: 0.7,
+                      delay: 0.25 + index * 0.08,
+                    }}
                     className={contactLinkClass}
                   >
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/12 text-lg text-white">
@@ -217,13 +246,15 @@ export default function Contact() {
                       className="ri-arrow-up-right-line shrink-0 text-base text-white/70 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
                       aria-hidden="true"
                     />
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </nav>
           </div>
         </article>
+        </motion.div>
       </div>
-    </section>
+      </motion.section>
+    </MotionConfig>
   );
 }

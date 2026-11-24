@@ -246,7 +246,7 @@ export const listProyek = [
     status: "live",
     kantor : "",
     github: "https://github.com/NyomanWahyu01/My-Portofolio-React-Vite",
-    demo: "",
+    demo: "/src/App.jsx",
   },
   {
     id: 2,

@@ -155,7 +155,7 @@ export default function Experience() {
         <Reveal className="mt-16 border-t-3 border-line pt-16">
           <h3 className={SUBHEADING}>{t("experience.eduTitle")}</h3>
 
-          <div className="rounded-lg border-3 border-(--border) bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] md:p-8">
+          <div className="rounded-lg border-3 border-border bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] md:p-8">
             <p className="flex items-center gap-2 font-sans text-sm font-bold text-muted-card">
               <i className="ri-graduation-cap-line" aria-hidden="true" />
               {education.org}
@@ -172,13 +172,13 @@ export default function Experience() {
             </div>
 
             <p className="mt-6 font-sans text-sm leading-relaxed text-fg">
-              <span className="font-bold text-on-card">{education.thesisLabel}:</span>{" "}
+              <span className="font-bold">{education.thesisLabel}:</span>{" "}
               <a
                 href={education.thesisLink}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${education.thesisLabel}: ${education.thesis}`}
-                className="group inline-block font-medium text-accent no-underline transition-[transform] duration-200 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent dark:text-signal dark:hover:text-signal dark:focus:text-signal dark:active:text-signal motion-reduce:transition-none"
+                aria-label={`${education.thesisLabel}: $ter{education.thesis}`}
+                className="group inline-block font-medium text-accent no-underline transition-[color,transform] duration-200 hover:-translate-y-0.5 hover:text-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent dark:text-signal dark:hover:text-signal dark:focus:text-signal dark:active:text-signal motion-reduce:transition-none"
               >
                 {education.thesis}
               </a>

@@ -32,7 +32,7 @@ export default function About() {
                 className="relative mb-8 w-full rounded-lg border-3 border-(--border) bg-card p-3 shadow-[6px_6px_0px_var(--shadow)] lg:mb-12"
               >
                 <span
-                  className="absolute -top-3 left-8 h-3 w-24 rounded-t-[8px] border-3 border-b-0 bg-yellow"
+                  className="absolute -top-3 left-8 h-3 w-24 rounded-t-sm border-3 border-b-0 bg-yellow"
                   aria-hidden="true"
                 />
                 <div className="overflow-hidden rounded-md border-2 border-(--border) bg-card-alt">
@@ -104,13 +104,13 @@ export default function About() {
                     >
                       {/* Folder tab */}
                       <span
-                        className="absolute -top-3 left-6 h-3 w-16 rounded-t-[8px] border-3 border-b-0 "
+                        className="absolute -top-3 left-6 h-3 w-16 rounded-t-sm border-3 border-b-0"
                         style={{ backgroundColor: roleColors[i % roleColors.length] }}
                         aria-hidden="true"
                       />
                       <div className="flex items-center gap-7">
                         <span
-                          className="flex h-12 w-12 items-center justify-center rounded-12 border-3 border-(--border) text-on-card"
+                          className="flex h-12 w-12 items-center justify-center rounded-xl border-3 border-(--border) text-on-card"
                           style={{ backgroundColor: roleColors[i % roleColors.length] }}
                         >
                           <i className="ri-folder-line text-xl"></i>

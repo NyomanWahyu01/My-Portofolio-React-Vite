@@ -115,7 +115,7 @@ export default function Design() {
                 <i className="ri-close-line text-xl"></i>
               </button>
 
-              <div className="mb-6 overflow-hidden rounded-[20px] border-3 border-(--border)">
+              <div className="mb-6 overflow-hidden rounded-md border-3 border-(--border)">
                 <img
                   src={selected.gambar}
                   alt={selected.nama}

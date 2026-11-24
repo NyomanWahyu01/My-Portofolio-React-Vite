@@ -65,7 +65,7 @@ export default function Design() {
                 loading="lazy"
               />
               <span className="absolute left-4 top-4 rounded-full border-2 border-(--border) bg-card-alt px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.08em] text-on-card opacity-0 transition-opacity group-hover:opacity-100">
-                {item.type}
+                {t(`design.types.${item.type}`)}
               </span>
               </motion.button>
             ))}

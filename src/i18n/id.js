@@ -238,7 +238,15 @@ export default {
     title: "DESAIN",
     subtitle: "Karya poster, banner, dan eksplorasi visual.",
     more: "Lihat Lebih Banyak",
-    less: "Lihat Lebih Sedikit"
+    less: "Lihat Lebih Sedikit",
+    types: {
+      "Benner Profile": "Benner Profile",
+      "Banner Profile": "Banner Profile",
+      "Poster Ilmiah": "Poster Ilmiah",
+      "Poster Kegiatan": "Poster Kegiatan",
+      "UI/UX": "UI/UX",
+      "IU/UX SuperAdmin": "IU/UX SuperAdmin"
+    }
   },
   // Maintenance: profile fields power src/components/Contact.jsx glass card.
   contact: {

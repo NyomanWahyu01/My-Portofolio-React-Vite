@@ -238,7 +238,15 @@ export default {
     title: "DESIGN",
     subtitle: "Posters, banners, and visual explorations.",
     more: "View More",
-    less: "View Less"
+    less: "View Less",
+    types: {
+      "Benner Profile": "Profile Banner",
+      "Banner Profile": "Profile Banner",
+      "Poster Ilmiah": "Academic Poster",
+      "Poster Kegiatan": "Event Poster",
+      "UI/UX": "UI/UX",
+      "IU/UX SuperAdmin": "SuperAdmin UI/UX"
+    }
   },
   // Maintenance: profile fields power src/components/Contact.jsx glass card.
   contact: {

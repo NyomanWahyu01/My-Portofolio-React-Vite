@@ -22,7 +22,7 @@ function ToolGroup({ title, tools }) {
             whileHover={{ scale: 1.1, rotate: i % 2 === 0 ? 2 : -2 }}
             className="flex flex-col items-center gap-3 group"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-card border-2 border-border shadow-[4px_4px_0px_var(--shadow)] group-hover:shadow-[6px_6px_0px_var(--shadow)] transition-all">
+            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-card border-2 border-(--border) shadow-[4px_4px_0px_var(--shadow)] group-hover:shadow-[6px_6px_0px_var(--shadow)] transition-all">
               <img
                 src={tool.gambar}
                 alt={tool.nama}

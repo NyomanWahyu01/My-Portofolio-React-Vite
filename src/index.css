@@ -338,6 +338,49 @@
   border: 2px solid var(--border);
   border-radius: 10px;
   box-shadow: 2px 2px 0 var(--shadow);
+  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease,
+    box-shadow 250ms ease, transform 180ms ease;
+}
+
+.nb-mini-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--shadow);
+}
+
+.theme-toggle-icon {
+  display: inline-block;
+  animation: themeIconIn 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.language-toggle-label {
+  display: inline-block;
+  animation: languageLabelIn 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes themeIconIn {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.55);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes languageLabelIn {
+  from {
+    color: var(--accent);
+    opacity: 0;
+    transform: translateY(-3px) scale(0.9);
+  }
+
+  to {
+    color: inherit;
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .nb-menu {
@@ -397,6 +440,18 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .nb-mini-btn {
+    transition: none;
+  }
+
+  .theme-toggle-icon {
+    animation: none;
+  }
+
+  .language-toggle-label {
+    animation: none;
+  }
+
   .contact-float {
     animation: none;
   }

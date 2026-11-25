@@ -5,9 +5,6 @@ import { useT } from "../i18n/LanguageProvider";
 const NAV_BUTTON =
   "flex h-12 w-12 items-center justify-center rounded-md border-3 border-(--border) bg-card text-on-card shadow-[4px_4px_0px_var(--shadow)] transition-[transform,box-shadow] duration-150 motion-reduce:transition-none hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-x-1 active:translate-y-1 active:shadow-none";
 
-const DOT_BUTTON =
-  "flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
-
 const SUBHEADING =
   "font-display text-[clamp(1.75rem,4vw,2.5rem)] leading-none uppercase text-fg mb-8";
 
@@ -108,10 +105,18 @@ export default function Experience() {
                         </span>
                       </div>
 
-                      <p className="theme-badge mb-3 inline-flex w-fit max-w-full self-start flex-wrap items-center gap-2 rounded-md border-2 px-3 py-1 font-sans text-sm">
-                        <i className="ri-building-line" aria-hidden="true" />
-                        {slide.org}
-                      </p>
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
+                        <p className="theme-badge inline-flex w-fit max-w-full items-center gap-2 rounded-md border-2 px-3 py-1 font-sans text-sm">
+                          <i className="ri-building-line" aria-hidden="true" />
+                          {slide.org}
+                        </p>
+                        {slide.stack && (
+                          <p className="theme-badge inline-flex w-fit max-w-full items-center gap-2 rounded-md border-2 px-3 py-1 font-sans text-xs uppercase tracking-[0.05em]">
+                            <i className="ri-code-s-slash-line" aria-hidden="true" />
+                            {slide.stack}
+                          </p>
+                        )}
+                      </div>
 
                       <ul className="list-disc space-y-2 pl-5 font-sans text-sm leading-relaxed text-muted-card">
                         {slide.desc.map((line, lineIndex) => (
@@ -155,7 +160,7 @@ export default function Experience() {
         <Reveal className="mt-16 border-t-3 border-line pt-16">
           <h3 className={SUBHEADING}>{t("experience.eduTitle")}</h3>
 
-          <div className="rounded-lg border-3 border-border bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] md:p-8">
+          <div className="rounded-lg border-3 border-(--border) bg-card p-6 shadow-[6px_6px_0px_var(--shadow)] md:p-8">
             <p className="flex items-center gap-2 font-sans text-sm font-bold text-muted-card">
               <i className="ri-graduation-cap-line" aria-hidden="true" />
               {education.org}
@@ -172,12 +177,12 @@ export default function Experience() {
             </div>
 
             <p className="mt-6 font-sans text-sm leading-relaxed text-fg">
-              <span className="font-bold">{education.thesisLabel}:</span>{" "}
+              <span className="font-bold text-on-card">{education.thesisLabel}:</span>{" "}
               <a
                 href={education.thesisLink}
                 target="_blank"
-                rel="noreferrer"
-                aria-label={`${education.thesisLabel}: $ter{education.thesis}`}
+                rel="noopener noreferrer"
+                aria-label={`${education.thesisLabel}: ${education.thesis}`}
                 className="group inline-block font-medium text-accent no-underline transition-[color,transform] duration-200 hover:-translate-y-0.5 hover:text-signal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent dark:text-signal dark:hover:text-signal dark:focus:text-signal dark:active:text-signal motion-reduce:transition-none"
               >
                 {education.thesis}

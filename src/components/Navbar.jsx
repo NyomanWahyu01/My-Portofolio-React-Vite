@@ -46,7 +46,7 @@ export default function Navbar() {
                 lang === "id" ? "bg-card-alt text-on-card" : "text-muted-card"
               }`}
             >
-              ID
+              <span className={lang === "id" ? "language-toggle-label" : undefined}>ID</span>
             </button>
             <button
               onClick={() => setLang("en")}
@@ -54,12 +54,16 @@ export default function Navbar() {
                 lang === "en" ? "bg-card-alt text-on-card" : "text-muted-card"
               }`}
             >
-              EN
+              <span className={lang === "en" ? "language-toggle-label" : undefined}>EN</span>
             </button>
           </div>
 
           <button onClick={toggleTheme} className="nb-mini-btn flex items-center gap-2 px-3 py-2 text-xs font-green font-bold">
-            <i className={isDark ? "ri-moon-line" : "ri-sun-line"}></i>
+            <i
+              key={theme}
+              className={`theme-toggle-icon ${isDark ? "ri-moon-line" : "ri-sun-line"}`}
+              aria-hidden="true"
+            />
             {isDark ? "Dark" : "Light"}
           </button>
 
@@ -86,7 +90,11 @@ export default function Navbar() {
 
           <div className="mt-2 flex items-center justify-between border-t-2 border-on-card pt-4">
             <button onClick={toggleTheme} className="flex items-center gap-2 text-sm text-on-card">
-              <i className={isDark ? "ri-moon-line" : "ri-sun-line"}></i>
+              <i
+                key={theme}
+                className={`theme-toggle-icon ${isDark ? "ri-moon-line" : "ri-sun-line"}`}
+                aria-hidden="true"
+              />
               {isDark ? "Dark Mode" : "Light Mode"}
             </button>
 
@@ -95,13 +103,13 @@ export default function Navbar() {
                 onClick={() => setLang("id")}
                 className={lang === "id" ? "text-accent" : "text-on-card"}
               >
-                ID
+                <span className={lang === "id" ? "language-toggle-label" : undefined}>ID</span>
               </button>
               <button
                 onClick={() => setLang("en")}
                 className={lang === "en" ? "text-accent" : "text-on-card"}
               >
-                EN
+                <span className={lang === "en" ? "language-toggle-label" : undefined}>EN</span>
               </button>
             </div>
           </div>

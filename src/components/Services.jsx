@@ -19,12 +19,12 @@ const STEPS = ["p1", "p2", "p3", "p4"]; // urutan proses kerja
 /* =====================================================================
    GAYA — dipakai ulang supaya JSX di bawah tetap pendek
    ===================================================================== */
-const card = "rounded-lg border-3 border-(--border) text-on-card shadow-[6px_6px_0px_var(--shadow)]";
+const card = "rounded-lg border-3 border-border text-on-card shadow-[6px_6px_0px_var(--shadow)]";
 const lift =
   "transition-[transform,box-shadow] duration-150 motion-reduce:transition-none " +
   "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[9px_9px_0px_var(--shadow)]";
 const button =
-  "inline-flex min-h-11 items-center rounded-md border-3 border-(--border) px-6 py-3 " +
+  "inline-flex min-h-11 items-center rounded-md border-3 border-border px-6 py-3 " +
   "text-sm font-bold uppercase tracking-wider text-on-card shadow-[4px_4px_0px_var(--shadow)] " +
   "transition-[transform,box-shadow] duration-150 motion-reduce:transition-none " +
   "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_var(--shadow)] " +
@@ -73,14 +73,14 @@ export default function Services() {
               {/* tab folder berwarna */}
               <span
                 aria-hidden="true"
-                className={`absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-(--border) ${serviceAccent[s.accent]}`}
+                className={`absolute left-6 top-0 h-6 w-20 rounded-t-xl border-3 border-border ${serviceAccent[s.accent]}`}
               />
 
               <article
                 className={`${card} ${lift} relative bg-card p-4 md:row-span-5 md:grid md:h-full md:grid-rows-subgrid md:p-5`}
               >
                 <span
-                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl border-3 border-(--border) text-xl text-on-card ${serviceAccent[s.accent]}`}
+                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl border-3 border-border text-xl text-on-card ${serviceAccent[s.accent]}`}
                 >
                   <i className={s.icon} aria-hidden="true" />
                 </span>
@@ -98,7 +98,7 @@ export default function Services() {
                 </ul>
 
                 {/* teknologi yang dipakai */}
-                <div className="border-t-2 border-(--border) pt-3">
+                <div className="border-t-2 border-border pt-3">
                   <p className="mb-2 text-xs font-bold uppercase tracking-[0.08em] text-signal">
                     {t("services.stackLabel")}
                   </p>
@@ -129,7 +129,7 @@ export default function Services() {
             {STEPS.map((p, i) => (
               <li
                 key={p}
-                className="flex h-full flex-col border-l-3 border-(--border) pl-5 md:border-l-0 md:border-t-3 md:pl-0 md:pt-5"
+                className="flex h-full flex-col border-l-3 border-border pl-5 md:border-l-0 md:border-t-3 md:pl-0 md:pt-5"
               >
                 <span className="font-display text-5xl leading-none">
                   {String(i + 1).padStart(2, "0")}
@@ -149,7 +149,7 @@ export default function Services() {
           </ol>
 
           {/* ---------- Ajakan bertindak ---------- */}
-                <div className="mt-10 flex flex-col gap-5 border-t-3 border-(--border) pt-8 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mt-10 flex flex-col gap-5 border-t-3 border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xl font-bold">{t("services.ctaTitle")}</p>
               <p className="mt-1 text-sm text-on-card/75">{t("services.ctaDesc")}</p>

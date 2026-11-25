@@ -26,12 +26,9 @@ export default function Footer() {
   return (
     <footer className="mt-20 border-t-3 border-line bg-bg overflow-hidden">
       <div className="container mx-auto px-5 md:px-8 pt-12">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
-          {/* Language and theme controls stay before footer menu. */}
-          <div className="flex flex-wrap items-center gap-3">
-
-          {/* Anchor links */}
-          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm font-medium text-fg">
+        <div className="flex flex-col gap-6 mb-8 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
+          {/* Left: footer menu. */}
+          <nav className="order-1 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm font-medium text-fg md:order-0">
             <a href="#about" className="hover:text-accent">{t("nav.about")}</a>
             <a href="#projects" className="hover:text-accent">{t("nav.projects")}</a>
             <a href="#services" className="hover:text-accent">{t("nav.services")}</a>
@@ -39,24 +36,15 @@ export default function Footer() {
             <a href="#contact" className="hover:text-accent">{t("nav.contact")}</a>
           </nav>
 
-            {/* Language */}
-            <div className="flex rounded-full border-2 border-border bg-card p-0.5">
-              <button
-                onClick={() => setLang("id")}
-                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
-              >
-                ID
-              </button>
-              <button
-                onClick={() => setLang("en")}
-                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
-              >
-                EN
-              </button>
-            </div>
+          {/* Center: copyright. */}
+          <p className="order-3 font-sans text-sm text-muted md:order-0 md:text-center">
+            © {year} I Nyoman Wahyu. {t("footer.rights")}
+          </p>
 
+          {/* Right: language, theme, and contact icons. */}
+          <div className="order-2 flex flex-wrap items-center justify-start gap-3 md:order-0 md:justify-end">
             {/* Theme */}
-            <div className="flex rounded-full border-2 border-border bg-card p-0.5">
+            <div className="flex rounded-full border-2 border-(--border) bg-card p-0.5">
               {themeOptions.map((opt) => (
                 <button
                   key={opt.key}
@@ -73,23 +61,38 @@ export default function Footer() {
                 </button>
               ))}
             </div>
-          </div>
 
-          {/* Social */}
-          <div className="flex items-center gap-3">
+            {/* Language */}
+            <div className="flex rounded-full border-2 border-(--border) bg-card p-0.5">
+              <button
+                onClick={() => setLang("id")}
+                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "id" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
+              >
+                ID
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`px-3 py-1 text-xs font-bold rounded-full ${lang === "en" ? "bg-card-alt text-on-card" : "text-muted-card"}`}
+              >
+                EN
+              </button>
+            </div>
+
+            {/* Contact icons */}
+            <div className="flex items-center gap-3">
             <a
               href="https://github.com/NyomanWahyu01"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-border bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-github-fill text-xl"></i>
             </a>
             <a
               href="mailto:inyomanwahyu123@gmail.com"
               aria-label="Email"
-              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-border bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-mail-fill text-xl"></i>
             </a>
@@ -98,7 +101,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-border bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-whatsapp-fill text-xl"></i>
             </a>
@@ -107,24 +110,23 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-border bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border-3 border-(--border) bg-card text-on-card shadow-[3px_3px_0px_var(--shadow)] transition-transform hover:-translate-y-0.5"
             >
               <i className="ri-linkedin-fill text-xl"></i>
             </a>
+            </div>
           </div>
+
         </div>
 
-        <p className="font-sans text-sm text-muted mb-6">
-          © {year} I Nyoman Wahyu. {t("footer.rights")}
-        </p>
       </div>
 
       {/* Giant wordmark */}
-      <div className="relative select-none pointer-events-none" aria-hidden="true">
+      {/* <div className="relative select-none pointer-events-none" aria-hidden="true">
         <p className="font-display uppercase leading-[0.75] text-center text-[clamp(6rem,22vw,20rem)] text-fg opacity-[0.08] translate-y-[12%]">
           NYM
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 }
